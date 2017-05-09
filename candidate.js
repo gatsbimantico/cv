@@ -60,6 +60,12 @@ class Candidate {
 		this.summary = summary || '';
 
 	}
+	
+	addSkill (skill) {
+
+		this.skills = skill || '';
+
+	}
 
 	addPhone (phone) {
 
