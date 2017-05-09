@@ -69,19 +69,19 @@ class Candidate {
 
 	addPhone (phone) {
 
-		this.role = role || '';
+		this.contact.phones = phone || '';
 
 	}
 
 	addEmail (email) {
 
-		this.role = role || '';
+		this.contact.email = email || '';
 
 	}
 
 	addSite (site) {
 
-		this.role = role || '';
+		this.contact.site = site || '';
 
 	}
 
