@@ -10,7 +10,7 @@ class Candidate {
 
 		this.setName(config.name);
 		
-		this.setRole(config.role || '';
+		this.setRole(config.role);
 		
 		this.skills = [];
 		this.addSkill(config.skills || config.skill);
