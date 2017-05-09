@@ -1,12 +1,12 @@
 /**
- * CESAR COSTAS CARRRERA
+ * CESAR COSTAS CARRERA
  * ---------------------
  * CURRICULUM VITAE
  */
 
 var Cesar = new Candidate({
 	name: 'César Costas Carrera',
-	role: 'Mid-Level JavaScript Engineer'
+	role: 'Mid-Level JavaScript Engineer',
 	skills: [
 		'FrontEnd enthusiast',
 		'Fast learner',
@@ -14,7 +14,7 @@ var Cesar = new Candidate({
 		'Agile developer'
 	],
 	contact: {
-		phone: +447920158374,
+		phone: '+447920158374',
 		emails: [
 			'costascarrera.cesar@gmail.com',
 			'costascarrera.cesar@outlook.com'
@@ -36,11 +36,11 @@ var Cesar = new Candidate({
 	`
 });
 
-Cesar.addExperience(new Experience({
+Cesar.addExperience({
 
 	is: 'FRONT END WEB DEVELOPER',
 	at: 'TRIBAL WORLDWIDE',
-	on: { start: '2017 JAN', end: undefined }
+	on: { start: '2017 JAN', end: undefined },
 	tools: {
 		front: ['POLYMER', 'JQUERY', 'GULP', 'GIT', 'Handlebars', 'WordPress', 'AEM'],
 	},
@@ -67,13 +67,13 @@ Cesar.addExperience(new Experience({
 		The time management is done in JIRA and Projector PSA.
 	`
 
-}));
+});
 
-Cesar.addExperience(new Experience({
+Cesar.addExperience({
 
 	was: 'FULL STACK WEB DEVELOPER',
 	at: 'IMATIA INNOVATION',
-	on: { start: '2016 JUN', end: '2016 DEC' }
+	on: { start: '2016 JUN', end: '2016 DEC' },
 	tools: {
 		front: ['ANGULAR2', 'GULP', 'NODEjs', 'DOCKER', 'GIT'],
 		back: []
@@ -95,13 +95,13 @@ Cesar.addExperience(new Experience({
 		and to keep documented the time invested in every task through Elastic Projects.
 	`
 
-}));
+});
 
-Cesar.addExperience(new Experience({
+Cesar.addExperience({
 
 	was: 'FULL STACK WEB DEVELOPER',
 	at: 'INSA',
-	on: { start: '2015 JUN', end: '2016 JUN' }
+	on: { start: '2015 JUN', end: '2016 JUN' },
 	tools: {
 		front: ['JQUERY', 'HTML4', 'CSS2', 'SVN'],
 		back: []
@@ -137,13 +137,13 @@ Cesar.addExperience(new Experience({
 		and submit the time spent on every task through an internal tool.
 	`
 
-}));
+});
 
-Cesar.addExperience(new Experience({
+Cesar.addExperience({
 
 	was: 'WEB DEVELOPER',
 	at: 'UNIVERSITY OF VIGO',
-	on: { start: '2013 NOV', end: '2015 MAY' }
+	on: { start: '2013 NOV', end: '2015 MAY' },
 	tools: {
 		front: ['JQUERY', 'HTML5', 'CSS3', 'UNDERSCOREjs', 'D3js', 'CROSSFILTERjs'],
 		back: []
@@ -166,7 +166,7 @@ Cesar.addExperience(new Experience({
 		and register the time I spend in every task.
 	`
 
-}));
+});
 
 Cesar.addEducation([{
 
