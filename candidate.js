@@ -151,20 +151,16 @@ class Candidate {
 		// console.log(this);
 
 		var text = `
-
-<h1>${this.name}</h1>
-<h2>${this.role}</h2>
-<p>${this.summary}</p>
-
+			<h1>${this.name}</h1>
+			<h2>${this.role}</h2>
+			<p>${this.summary}</p>
 		`;
 
 		text += '<div class="skill-set">';
 		this.skills.forEach(skill => {
 
 			text += `
-
-<li>${skill}</li>
-
+				<li>${skill}</li>
 			`;
 
 		});
@@ -173,13 +169,13 @@ class Candidate {
 		text += '<div class="contact-set">';
 		this.contact.phones.forEach(phone => {
 
-			text += `<div><a href="tel:${phone}">&#9990;: ${phone}</a></div>`;
+			text += `<div><a href="tel:${phone}">&#9990; ${phone}</a></div>`;
 
 		});
 
 		this.contact.emails.forEach(email => {
 
-			text += `<div><a href="mailto:${email}">&#9993;: ${email}</a></div>`;
+			text += `<div><a href="mailto:${email}">&#9993; ${email}</a></div>`;
 
 		});
 
@@ -199,7 +195,8 @@ class Candidate {
 			text += '<div class="job-experience">';
 			text += `
 				<h4>${role}</h4>
-				<p>${experience.at}</p>
+				<div class="job-experience__meta">
+					<p>${experience.at}</p>
 			`;
 
 			if (experience.on) {
@@ -221,25 +218,21 @@ class Candidate {
 				text += '</p>';
 
 			}
+			text += '</div>';
 
 			if (experience.tools && experience.tools.front) {
 
-				text += '<p>';
+				text += '<p class="job-experience__tool-set">';
 
 				experience.tools.front.forEach(tool => {
 
-					text += ` <span>${tool}</span> `;
+					text += ` <span class="job-experience__tool">${tool}</span> `;
 
 				});
 
 				text += '</p>';
 
 			}
-
-			text += (function () {
-				var description = experience.description.replace(/(\n)(\n)/g, '$1<br><br>$2');
-				return `<p>${description}</p>`;
-			}());
 
 			if (experience.portfolio) {
 
@@ -281,6 +274,12 @@ class Candidate {
 				text += "</p>";
 
 			}
+
+			text += (function () {
+				var description = experience.description.replace(/(\n)(\n)/g, '$1<br><br>$2');
+				return `<p>${description}</p>`;
+			}());
+
 			text += "</div>";
 
 		});

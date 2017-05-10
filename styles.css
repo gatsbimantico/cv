@@ -1,0 +1,41 @@
+body {
+    font-family: Roboto, arial, sans-serif;
+}
+
+a,
+.job-experience__tool {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 3px 7px;
+    line-height: 34px;
+    color: black;
+    background: lightgrey;
+
+}
+
+a {
+    text-decoration: none;
+    box-shadow: -4px 0 0 0 grey;
+    margin: 0 0px 0 4px;
+    transition: 0.2s;
+}
+
+a:hover,
+a:focus {
+    box-shadow: 0px 0 0 0 grey;
+    margin: 0 2px 0 2px;
+}
+
+a:active {
+    box-shadow: 4px 0 0 0 grey;
+    margin: 0 4px 0 0px;
+}
+
+.job-experience__meta {
+    display: flex;
+    flex-direction: row;
+}
+
+.job-experience__meta p {
+    flex: 1 1;
+}
