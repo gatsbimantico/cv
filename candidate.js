@@ -1,3 +1,181 @@
+templates = {
+
+	header: function (name, role) {
+
+		return `<div class="header">
+			<img class="header__pic" src="http://www.gravatar.com/avatar/e6deefe7eb4c5f22991e392cc720fed5.jpg?s=512&r=x" />
+			<h1 class="header__name">${name}</h1>
+			<h2 class="header__role">${role}</h2>
+		</div>`;
+
+	},
+
+	skillSet: function (skills) {
+
+		var text = '<div class="skill-set">';
+		skills.forEach(skill => {
+
+			text += `<li class="skill-set__item">${skill}</li>`;
+
+		});
+		text += '</div>';
+
+		return text;
+
+	},
+
+	contactSet: function (contact) {
+
+		var text = '<div class="contact-set"><div class="contact-set__row">';
+		contact.emails.forEach(email => {
+
+			text += `<span><a href="mailto:${email}">&#9993; ${email}</a></span>`;
+
+		});
+		text += `</div><div class="contact-set__row">`;
+		contact.phones.forEach(phone => {
+
+			text += `<span><a href="tel:${phone}">&#9990; ${phone}</a></span>`;
+
+		});
+		text += `</div><div class="contact-set__row">`;
+		text += contact.sites.map(templates.url).join('');
+		text += '</div></div>';
+
+		return text;
+
+	},
+
+	experience: function (experiences) {
+
+		var text = '<h3>Experiences</h3><div class="experience-set">';
+		experiences.forEach(experience => {
+
+			var role = experience.is || experience.was;
+
+			text += '<div class="job-experience">';
+			text += `
+				<h4>${role}</h4>
+				<div class="job-experience__meta">
+					<p>${experience.at}</p>
+			`;
+
+			if (experience.on) {
+
+				text += '<p class="job-experience__date">';
+
+				if (experience.on.start) {
+
+					text += `<span>from ${experience.on.start}</span> `;
+
+				}
+
+				if (experience.on && experience.on.end) {
+
+					text += ` <span>to ${experience.on.end}</span>`;
+
+				}
+
+				text += '</p>';
+
+			}
+			text += '</div>';
+
+			if (experience.tools && experience.tools.front) {
+
+				text += '<p class="job-experience__tool-set">';
+
+				experience.tools.front.forEach(tool => {
+
+					text += ` <span class="job-experience__tool">${tool}</span> `;
+
+				});
+
+				text += '</p>';
+
+			}
+
+			if (experience.portfolio) {
+
+				text += '<p class="job-experience__portfolio">';
+
+				if (experience.portfolio.released) {
+
+					text += experience.portfolio.released.map(templates.url).join('');
+
+				}
+
+				if (experience.portfolio.unreleased) {
+
+					text += experience.portfolio.unreleased.map(templates.url).join('');
+
+				}
+
+				if (experience.portfolio.dismissed) {
+
+					text += experience.portfolio.dismissed.map(templates.url).join('');
+
+				}
+
+				text += "</p>";
+
+			}
+
+			text += templates.summary('job-experience__summary', experience.description);
+
+			text += "</div></div>";
+
+		});
+
+		return text;
+
+	},
+
+	education: function (educations) {
+
+		var text = '<h3>Education</h3><div class="education-set">';
+		educations.forEach(education => {
+
+			text += '<div class="education-experience">';
+			if (education.titles) {
+
+				education.titles.forEach(title => {
+
+					text += `<h4 class="education-experience__title">${title}</h4>`;
+
+				});
+
+			}
+
+			text += `
+				<span>${education.on}</span>
+				<span>@ ${education.at}</span>
+			`;
+
+			text += "</div></div>";
+
+		});
+
+		return text;
+
+	},
+
+	url: function (url) {
+
+		var siteName = url.match(/\/\/([^\.]*)\./)[1];
+		return ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
+
+	},
+
+	summary: function (className, summary) {
+
+		var text = summary.replace(/(\n)(\n)/g, '$1<br><br>$2');
+		return `<p class="${className}">${text}</p>`;
+
+	}
+
+};
+
 class Candidate {
 
 	constructor (config) {
@@ -148,165 +326,14 @@ class Candidate {
 	render() {
 
 		document.title = this.name + ' - CV';
-		// console.log(this);
 
-		var text = `
-			<h1>${this.name}</h1>
-			<h2>${this.role}</h2>
-			<p>${this.summary}</p>
-		`;
-
-		text += '<div class="skill-set">';
-		this.skills.forEach(skill => {
-
-			text += `
-				<li>${skill}</li>
-			`;
-
-		});
-		text += '</div>';
-
-		text += '<div class="contact-set">';
-		this.contact.phones.forEach(phone => {
-
-			text += `<div><a href="tel:${phone}">&#9990; ${phone}</a></div>`;
-
-		});
-
-		this.contact.emails.forEach(email => {
-
-			text += `<div><a href="mailto:${email}">&#9993; ${email}</a></div>`;
-
-		});
-
-		this.contact.sites.forEach(site => {
-
-			var siteName = site.match(/\/\/([^\.]*)\./)[1];
-			text += `<div><a href="${site}" target="_blank">&#707; ${siteName}</a></div>`;
-
-		});
-		text += '</div>';
-
-		text += '<h3>Experiences</h3>';
-		this.experiences.forEach(experience => {
-
-			var role = experience.is || experience.was;
-
-			text += '<div class="job-experience">';
-			text += `
-				<h4>${role}</h4>
-				<div class="job-experience__meta">
-					<p>${experience.at}</p>
-			`;
-
-			if (experience.on) {
-
-				text += '<p>';
-
-				if (experience.on.start) {
-
-					text += `<span>from ${experience.on.start}</span> `;
-
-				}
-
-				if (experience.on && experience.on.end) {
-
-					text += ` <span>to ${experience.on.end}</span>`;
-
-				}
-
-				text += '</p>';
-
-			}
-			text += '</div>';
-
-			if (experience.tools && experience.tools.front) {
-
-				text += '<p class="job-experience__tool-set">';
-
-				experience.tools.front.forEach(tool => {
-
-					text += ` <span class="job-experience__tool">${tool}</span> `;
-
-				});
-
-				text += '</p>';
-
-			}
-
-			if (experience.portfolio) {
-
-				text += "<p>";
-
-				if (experience.portfolio.released) {
-
-					experience.portfolio.released.forEach(url => {
-
-						var siteName = url.match(/\/\/([^\.]*)\./)[1];
-						text += ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
-
-					});
-
-				}
-
-				if (experience.portfolio.unreleased) {
-
-					experience.portfolio.unreleased.forEach(url => {
-
-						var siteName = url.match(/\/\/([^\.]*)\./)[1];
-						text += ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
-
-					});
-
-				}
-
-				if (experience.portfolio.dismissed) {
-
-					experience.portfolio.dismissed.forEach(url => {
-
-						var siteName = url.match(/\/\/([^\.]*)\./)[1];
-						text += ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
-
-					});
-
-				}
-
-				text += "</p>";
-
-			}
-
-			text += (function () {
-				var description = experience.description.replace(/(\n)(\n)/g, '$1<br><br>$2');
-				return `<p>${description}</p>`;
-			}());
-
-			text += "</div>";
-
-		});
-
-		text += '<h3>Education</h3>';
-		this.education.forEach(education => {
-
-			text += '<div class="education-experience">';
-			if (education.titles) {
-
-				education.titles.forEach(title => {
-
-					text += `<h4>${title}</h4>`;
-
-				});
-
-			}
-
-			text += `
-				<span>${education.on}</span>
-				<span>@ ${education.at}</span>
-			`;
-			text += "</div>";
-
-		});
-
-		document.body.innerHTML = text;
+		document.body.innerHTML = '';
+		document.body.innerHTML += templates.header(this.name, this.role);
+		document.body.innerHTML += templates.contactSet(this.contact);
+		document.body.innerHTML += templates.summary('summary', this.summary || '');
+		//document.body.innerHTML += templates.skillSet(this.skills);
+		document.body.innerHTML += templates.experience(this.experiences);
+		document.body.innerHTML += templates.education(this.education);
 
 	}
 
