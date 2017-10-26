@@ -1,6 +1,6 @@
 /**
- * CESAR COSTAS CARRERA
- * ---------------------
+ * @author César Costas Carrera
+ *
  * CURRICULUM VITAE
  */
 
@@ -16,11 +16,11 @@ var Cesar = new Candidate({
 		]
 	},
 	summary: `
-I am a front end web developer with over 3 years of experience.
+I am a front end web developer with over 4 years of experience.
 
-My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on projects for a number of clients including Volkswagen, Lipton and Inditex Group.
+My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Volkswagen, Lipton and Inditex Group.
 
-I'm fully competent with modern frameworks (Polymer or Angular), frontend utilities (NodeJs, Gulp, Git, Docker) and agile methodologies (Scrum or Khanban).
+I'm fully competent with modern frameworks (Angular and Polymer), frontend utilities (NodeJs, Gulp, Git, Docker) and agile methodologies (Scrum or Khanban).
 
 	`,
 	skills: [
@@ -41,10 +41,10 @@ Cesar.addExperience({
 	},
 	portfolio: {
 		released: [
-			'//lipton.com'
+			'//lipton.com',
+			'//cartedor.co.uk/maisoncartedor'
 		],
 		unreleased: [
-			'//cartedor.co.uk/maisoncartedor',
 			'//vw.co.uk'
 		]
 	},
