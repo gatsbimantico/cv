@@ -42,7 +42,7 @@ Cesar.addExperience({
 	portfolio: {
 		released: [
 			'//lipton.com',
-			'//cartedor.co.uk/maisoncartedor'
+			'//cartedor.co.uk/maisoncartedor',
 			'//vw.co.uk'
 		]
 	},
