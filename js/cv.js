@@ -37,14 +37,12 @@ Cesar.addExperience({
 	at: 'TRIBAL WORLDWIDE',
 	on: { start: '2017 JAN', end: 'present' },
 	tools: {
-		front: ['POLYMER', 'JQUERY', 'GULP', 'GIT', 'HANDELBARS', 'WORDPRESS', 'AEM'],
+		front: ['POLYMER', 'JQUERY', 'GULP', 'GIT', 'HANDELBARS', 'WORDPRESS', 'AEM', 'JAHIA'],
 	},
 	portfolio: {
 		released: [
 			'//lipton.com',
 			'//cartedor.co.uk/maisoncartedor'
-		],
-		unreleased: [
 			'//vw.co.uk'
 		]
 	},

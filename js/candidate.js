@@ -1,4 +1,5 @@
-templates = {
+alert('yes');
+var templates = {
 
 	header: function (name, role) {
 
@@ -10,39 +11,43 @@ templates = {
 
 	},
 
+  skill: funcntion (skill) {
+
+    return `<li class="skill-set__item">${skill}</li>`;
+
+  },
+
 	skillSet: function (skills) {
 
-		var text = '<div class="skill-set">';
-		skills.forEach(skill => {
-
-			text += `<li class="skill-set__item">${skill}</li>`;
-
-		});
-		text += '</div>';
-
-		return text;
+		return '<div class="skill-set">' +
+		  skills.map(templates.skill).join('') +
+		'</div>';
 
 	},
 
+email: function (email) {
+
+return `<span><a href="mailto:${email}">&#9993; ${email}</a></span>`;
+
+},
+
+phone: function (phone) {
+
+return `<span><a href="tel:${phone}">&#9990; ${phone}</a></span>`;
+
+},
+
 	contactSet: function (contact) {
 
-		var text = '<div class="contact-set"><div class="contact-set__row">';
-		contact.emails.forEach(email => {
-
-			text += `<span><a href="mailto:${email}">&#9993; ${email}</a></span>`;
-
-		});
-		text += `</div><div class="contact-set__row">`;
-		contact.phones.forEach(phone => {
-
-			text += `<span><a href="tel:${phone}">&#9990; ${phone}</a></span>`;
-
-		});
-		text += `</div><div class="contact-set__row">`;
-		text += contact.sites.map(templates.url).join('');
-		text += '</div></div>';
-
-		return text;
+		return '<div class="contact-set">' +
+    '<div class="contact-set__row">' +
+		    contact.emails.map(templates.email).join('') +
+		  '</div><div class="contact-set__row">' +
+		    contact.phones.map(templates.phone).join('') +
+		  '</div><div class="contact-set__row">' +
+		    contact.sites.map(templates.url).join('') +
+		  '</div>' +
+  '</div>';
 
 	},
 
@@ -131,38 +136,43 @@ templates = {
 
 	},
 
-	education: function (educations) {
+	education: function (education) {
 
-		var text = '<h3>Education</h3><div class="education-set">';
-		educations.forEach(education => {
+		var text = '<div class="education-experience">';
 
-			text += '<div class="education-experience">';
-			if (education.titles) {
+		if (education.titles) {
 
-				education.titles.forEach(title => {
+    education.titles.forEach(title => {
 
-					text += `<h4 class="education-experience__title">${title}</h4>`;
+      text += `<h4 class="education-experience__title">${title}</h4>`;
 
-				});
+    });
 
-			}
+  }
 
-			text += `
-				<span>${education.on}</span>
-				<span>@ ${education.at}</span>
-			`;
+  text += `
+    <span>${education.on}</span>
+    <span>@ ${education.at}</span>
+		`;
 
-			text += "</div></div>";
-
-		});
+		text += '</div>';
 
 		return text;
 
 	},
 
+  educationSet: function (educations) {
+
+return '<h3>Education</h3><div class="education-set">' +
+		educations.map(templates.education).join('') +
+  '</div>';
+
+},
+
 	url: function (url) {
 
 		var siteName = url.match(/\/\/([^\.]*)\./)[1];
+
 		return ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
 
 	},
@@ -170,6 +180,7 @@ templates = {
 	summary: function (className, summary) {
 
 		var text = summary.replace(/(\n)(\n)/g, '$1<br><br>$2');
+
 		return `<p class="${className}">${text}</p>`;
 
 	}
@@ -327,13 +338,13 @@ class Candidate {
 
 		document.title = this.name + ' - CV';
 
-		document.body.innerHTML = '';
-		document.body.innerHTML += templates.header(this.name, this.role);
-		document.body.innerHTML += templates.contactSet(this.contact);
-		document.body.innerHTML += templates.summary('summary', this.summary || '');
+		document.body.innerHTML = 'hello';
+		//document.body.innerHTML += templates.header(this.name, this.role);
+		//document.body.innerHTML += templates.contactSet(this.contact);
+		//document.body.innerHTML += templates.summary('summary', this.summary || '');
 		//document.body.innerHTML += templates.skillSet(this.skills);
-		document.body.innerHTML += templates.experience(this.experiences);
-		document.body.innerHTML += templates.education(this.education);
+		//document.body.innerHTML += templates.experience(this.experiences);
+		//document.body.innerHTML += templates.education(this.education);
 
 	}
 
