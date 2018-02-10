@@ -52,7 +52,7 @@ var templates = {
 
   experience: function (experiences) {
 
-    var text = '<h3>Experiences</h3><div class="experience-set">';
+    var text = '<div class="experience-set"><h3>Experiences</h3>';
     experiences.forEach(experience => {
 
       var role = experience.is || experience.was;
@@ -101,7 +101,32 @@ var templates = {
 
       if (experience.portfolio) {
 
-        text += '<p class="job-experience__portfolio">';
+        text += '<p class="job-experience__portfolio column column--' + (function (length) {
+
+          switch (length) {
+            case 4:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+              return "four";
+
+            case 3:
+            case 5:
+            case 6:
+            case 9:
+            case 11:
+              return "three";
+
+            case 2:
+              return "two";
+
+            default:
+              return "single";
+          }
+
+        }((experience.portfolio.released || '').length + (experience.portfolio.unreleased || '').length + (experience.portfolio.dismissed || '').length)) + '">';
+
 
         if (experience.portfolio.released) {
 
@@ -127,9 +152,11 @@ var templates = {
 
       text += templates.summary('job-experience__summary', experience.description);
 
-      text += "</div></div>";
+      text += "</div>";
 
     });
+
+    text += "</div>";
 
     return text;
 
@@ -138,6 +165,8 @@ var templates = {
   education: function (education) {
 
     var text = '<div class="education-experience">';
+
+    console.log(education);
 
     if (education.titles) {
 
@@ -162,7 +191,7 @@ var templates = {
 
   educationSet: function (educations) {
 
-    return '<h3>Education</h3><div class="education-set">' +
+    return '<div class="education-set"><h3>Education</h3>' +
       educations.map(templates.education).join('') +
       '</div>';
 
@@ -172,7 +201,7 @@ var templates = {
 
     var siteName = url.match(/\/\/([^\.]*)\./)[1];
 
-    return ` <span><a href="${url}" target="_blank">&#707; ${siteName}</a></span> `;
+    return ` <span><a href="${url}" target="_blank">${siteName}</a></span> `;
 
   },
 
@@ -343,7 +372,7 @@ class Candidate {
     document.body.innerHTML += templates.summary('summary', this.summary || '');
     document.body.innerHTML += templates.skillSet(this.skills);
     document.body.innerHTML += templates.experience(this.experiences);
-    document.body.innerHTML += templates.education(this.education);
+    document.body.innerHTML += templates.educationSet(this.education);
 
   }
 
