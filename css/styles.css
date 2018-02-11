@@ -10,26 +10,42 @@ html {
 body {
   background-color: #FFF;
   margin: 0;
-  max-width: 800px;
-  transition: 1s;
+  max-width: 812px;
   box-shadow: 0 0.3em 0.7em -0.3em;
 }
 
-@media (min-width:800px) {
-  body {
-    margin: 1em auto;
-  }
+.page-intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   background-color: #84425d;
   color: #EEE;
   overflow: hidden;
-  padding: 20vh 0;
   position: relative;
   text-align: center;
+  flex: 1 1 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
+@media (min-width:813px) {
+  body {
+    margin: 1em auto;
+  }
+
+  .page-intro {
+    height: initial;
+  }
+
+  .header {
+    height: 50vh;
+  }
+}
 
 .header__pic {
   border-radius: 50%;
@@ -197,6 +213,11 @@ a:active {
 @media print {
   body {
     margin: 0;
+  }
+
+  .page-intro {
+    display: block;
+    height: initial;
   }
 
   .header {

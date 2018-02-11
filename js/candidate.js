@@ -166,8 +166,6 @@ var templates = {
 
     var text = '<div class="education-experience">';
 
-    console.log(education);
-
     if (education.titles) {
 
       education.titles.forEach(title => {
@@ -367,8 +365,10 @@ class Candidate {
     document.title = this.name + ' - CV';
 
     document.body.innerHTML = '';
-    document.body.innerHTML += templates.header(this.name, this.role);
-    document.body.innerHTML += templates.contactSet(this.contact);
+    document.body.innerHTML += '<div class="page-intro">' +
+        templates.header(this.name, this.role) +
+        templates.contactSet(this.contact) +
+      '</div>';
     document.body.innerHTML += templates.summary('summary', this.summary || '');
     document.body.innerHTML += templates.skillSet(this.skills);
     document.body.innerHTML += templates.experience(this.experiences);
