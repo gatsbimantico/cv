@@ -31,6 +31,8 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
 	]
 });
 
+Cesar.setFavouriteColor('teal');
+
 Cesar.addExperience({
 
 	is: 'FRONT END WEB DEVELOPER',

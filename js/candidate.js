@@ -283,6 +283,26 @@ class Candidate {
 
   }
 
+  setFavouriteColor(color) {
+
+    document
+      .querySelector('meta[name="theme-color"]')
+      .content = color;
+    document
+      .querySelector('meta[name="msapplication-navbutton-color"]')
+      .content = color;
+    document
+      .querySelector('meta[name="msapplication-TileColor"]')
+      .content = color;
+    document
+      .querySelector('meta[name="apple-mobile-web-app-status-bar-style"]')
+      .content = color;
+    document
+      .querySelector('.header')
+      .setAttribute('style', 'background-color:' + color);
+
+  }
+
   addSkill(skill) {
 
     if (!skill) return;
