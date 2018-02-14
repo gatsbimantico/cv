@@ -18,9 +18,9 @@ var templates = {
 
   skillSet: function (skills) {
 
-    return '<div class="skill-set">' +
+    return '<ul class="skill-set">' +
       skills.map(templates.skill).join('') +
-      '</div>';
+      '</ul>';
 
   },
 
@@ -61,7 +61,7 @@ var templates = {
       text += `
 				<h4>${role}</h4>
 				<div class="job-experience__meta">
-					<p>${experience.at}</p>
+					<p class="job-experience__business">${experience.at}</p>
 			`;
 
       if (experience.on) {
@@ -189,10 +189,28 @@ var templates = {
 
   educationSet: function (educations) {
 
-    return '<div class="education-set"><h3>Education</h3>' +
-      educations.map(templates.education).join('') +
+    return '<div class="education-set"><h3>Courses & Education</h3>' +
+        educations.map(templates.education).join('') +
       '</div>';
 
+  },
+
+  themeStyles: function (color) {
+
+    return `
+<style>
+  .header {
+    background-color: ${color};
+  }
+  
+  h3, h4, h5, h6,
+  .job-experience__tool,
+  a:hover,
+  a:focus {
+    color: ${color};
+  }
+</style>
+    `;
   },
 
   url: function (url) {
@@ -236,11 +254,14 @@ class Candidate {
 
     this.setRole(config.role);
 
+    this.setFavouriteColor(config.color);
+
     this.addSkill(config.skills || config.skill);
 
     this.addPhone(config.phones || config.phone);
     this.addEmail(config.emails || config.email);
     this.addSite(config.sites || config.site);
+
     if (config.contact) {
 
       this.addPhone(config.contact.phones || config.contact.phone);
@@ -263,15 +284,11 @@ class Candidate {
 
     this.name = name || 'Annon Candidate';
 
-    this.render();
-
   }
 
   setRole(role) {
 
     this.role = role || '';
-
-    this.render();
 
   }
 
@@ -279,27 +296,11 @@ class Candidate {
 
     this.summary = summary || '';
 
-    this.render();
-
   }
 
   setFavouriteColor(color) {
 
-    document
-      .querySelector('meta[name="theme-color"]')
-      .content = color;
-    document
-      .querySelector('meta[name="msapplication-navbutton-color"]')
-      .content = color;
-    document
-      .querySelector('meta[name="msapplication-TileColor"]')
-      .content = color;
-    document
-      .querySelector('meta[name="apple-mobile-web-app-status-bar-style"]')
-      .content = color;
-    document
-      .querySelector('.header')
-      .setAttribute('style', 'background-color:' + color);
+    this.favouriteColor = color || 'steelblue';
 
   }
 
@@ -308,7 +309,6 @@ class Candidate {
     if (!skill) return;
 
     this._checkIsSimple(this.skills, skill, this.addSkill);
-    this.render();
 
   }
 
@@ -317,7 +317,6 @@ class Candidate {
     if (!phone) return;
 
     this._checkIsSimple(this.contact.phones, phone, this.addPhone);
-    this.render();
 
   }
 
@@ -326,7 +325,6 @@ class Candidate {
     if (!email) return;
 
     this._checkIsSimple(this.contact.emails, email, this.addEmail);
-    this.render();
 
   }
 
@@ -335,7 +333,6 @@ class Candidate {
     if (!site) return;
 
     this._checkIsSimple(this.contact.sites, site, this.addSite);
-    this.render();
 
   }
 
@@ -346,7 +343,6 @@ class Candidate {
 
 
     this._checkIsSimple(this.experiences, experience, this.addExperience);
-    this.render();
 
   }
 
@@ -355,7 +351,6 @@ class Candidate {
     if (!education) return;
 
     this._checkIsSimple(this.education, education, this.addEducation);
-    this.render();
 
   }
 
@@ -393,7 +388,23 @@ class Candidate {
     document.body.innerHTML += templates.skillSet(this.skills);
     document.body.innerHTML += templates.experience(this.experiences);
     document.body.innerHTML += templates.educationSet(this.education);
+    document.body.innerHTML += templates.themeStyles(this.favouriteColor);
+
+    document
+      .querySelector('meta[name="theme-color"]')
+      .content = this.favouriteColor;
+    document
+      .querySelector('meta[name="msapplication-navbutton-color"]')
+      .content = this.favouriteColor;
+    document
+      .querySelector('meta[name="msapplication-TileColor"]')
+      .content = this.favouriteColor;
+    document
+      .querySelector('meta[name="apple-mobile-web-app-status-bar-style"]')
+      .content = this.favouriteColor;
 
   }
 
 }
+
+export {Candidate};
