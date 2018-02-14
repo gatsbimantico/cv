@@ -46,9 +46,9 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
     },
     portfolio: {
       released: [
-        '//lipton.com',
-        '//cartedor.co.uk/maisoncartedor',
-        '//vw.co.uk'
+        'http://lipton.com',
+        'http://cartedor.co.uk/maisoncartedor',
+        'http://vw.co.uk'
       ]
     },
     description: `
