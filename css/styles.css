@@ -99,6 +99,12 @@ a:active {
   background: #CCC;
 }
 
+p br {
+  content: '';
+  display: block;
+  margin: .3em 0 0;
+}
+
 .summary,
 .job-experience__summary {
   text-align: justify;
@@ -310,5 +316,12 @@ a:focus {
   .skill-set__item,
   .education-experience__title {
     display: inline-block;
+  }
+
+  .summary,
+  .skill-set,
+  .experience-set,
+  .education-set {
+    padding: 15px calc(2vw) 0;
   }
 }

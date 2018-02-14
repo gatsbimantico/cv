@@ -85,13 +85,29 @@ var templates = {
       }
       text += '</div>';
 
-      if (experience.tools && experience.tools.front) {
+      if (experience.tools && experience.tools.main) {
 
         text += '<p class="job-experience__tool-set">';
 
-        experience.tools.front.forEach(tool => {
+        experience.tools.main.forEach(tool => {
 
-          text += ` <span class="job-experience__tool">${tool}</span> `;
+          let toolHtml = [null];
+
+          if (tool.name) {
+
+            toolHtml.push(`<span class="job-experience__tool">${tool.name}</span>`);
+
+          }
+
+          if (tool.version) {
+
+            toolHtml.push(`<span class="job-experience__tool-version">${tool.version}</span>`);
+
+          }
+
+          toolHtml.push(null);
+
+          text += toolHtml.join(' ');
 
         });
 

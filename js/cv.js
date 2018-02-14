@@ -35,7 +35,14 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
     at: 'TRIBAL WORLDWIDE',
     on: { start: '2017 JAN', end: 'present' },
     tools: {
-      front: ['POLYMER', 'JQUERY', 'GULP', 'NODE', 'GIT', 'HANDELBARS', 'WORDPRESS', 'AEM', 'JAHIA'],
+			main: [
+				{name: 'POLYMER', version: '1'},
+				{name: 'JQUERY', version: '3'},
+				{name: 'GULP', version: '4'},
+				{name: 'NODE', version: '6'},
+				{name: 'GIT'}
+			],
+			others: ['HANDELBARS', 'WORDPRESS', 'AEM', 'JAHIA']
     },
     portfolio: {
       released: [
@@ -45,16 +52,16 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
       ]
     },
     description: `
-      Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
-      Each project is handled by a small team of 2 to 4 specialists.
-  
-      We use gulp and git for the front end, then the backend supplies the data. 
-      I managed front-end development using my expertise in Polymer, jQuery and Handlebars, or pure HTML and CSS.
-      Also had to work with AEM and Jahia.
-  
-      The workflow is a ticket based board with JIRA and Scrum.
-      The goal is to provide the maximum value within the estimated time for the ticket.
-      The time management is done in JIRA and Projector PSA.
+Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
+Each project is handled by a small team of 2 to 4 specialists.
+
+We use gulp and git for the front end, then the backend supplies the data. 
+I managed front-end development using my expertise in Polymer, jQuery and Handlebars, or pure HTML and CSS.
+Also had to work with AEM and Jahia.
+
+The workflow is a ticket based board with JIRA and Scrum.
+The goal is to provide the maximum value within the estimated time for the ticket.
+The time management is done in JIRA and Projector PSA.
     `
 
   }, {
@@ -63,20 +70,27 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
     at: 'IMATIA INNOVATION',
     on: { start: '2016 JUN', end: '2016 DEC' },
     tools: {
-      front: ['ANGULAR2', 'GULP', 'NODEjs', 'DOCKER', 'GIT'],
-      back: []
+      main: [
+				{name: 'ANGULAR', version: '2'},
+				{name: 'TYPESCRIPT', version: '2'},
+				{name: 'GULP', version: '3'},
+				{name: 'NODE', version: '6'},
+				{name: 'DOCKER'},
+				{name: 'GIT'}
+			],
+      others: ['JAVA', 'SCALA', 'HADOOP']
     },
     description: `
-      At Imatia I worked on the design and implementation of a business analytics dashboard for local administrations.
-      
-      Working with a team of 4 developers, I defined and implemented the data workflow and its visualization.
-  
-      I used Docker and Jekins for automatic deploy, Java to serve REST decoupled services 
-      and Angular2 with TypeScript for the web components based front-end development.
-  
-      The workflow was to acomplish the tasks written on Redmine by the project manager,
-      commit the work every time it reaches a stable status
-      and to keep documented the time invested in every task through Elastic Projects.
+At Imatia I worked on the design and implementation of a business analytics dashboard for local administrations.
+
+Working with a team of 4 developers, I defined and implemented the data workflow and its visualization.
+
+I used Docker and Jekins for automatic deploy, Java to serve REST decoupled services 
+and Angular2 with TypeScript for the web components based front-end development.
+
+The workflow was to acomplish the tasks written on Redmine by the project manager,
+commit the work every time it reaches a stable status
+and to keep documented the time invested in every task through Elastic Projects.
     `
 
   }, {
@@ -85,8 +99,15 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
     at: 'INSA',
     on: { start: '2015 JUN', end: '2016 JUN' },
     tools: {
-      front: ['JQUERY', 'HTML4', 'CSS2', 'SVN'],
-      back: []
+      main: [
+				{name: 'ANGULAR', version: '1'},
+				{name: 'BACKBONE'},
+				{name: 'JQUERY', version: '1'},
+				{name: 'HTML', version: '4'},
+				{name: 'CSS', version: '2'},
+				{name: 'SVN'}
+			],
+      others: ['JSP', 'JAVA', 'DB2', 'JIRA']
     },
     portfolio: {
       dismissed: [
@@ -101,21 +122,21 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
       ]
     },
     description: `
-      I managed web maintenance for a range of international Inditex's websites including 
-      MassimoDutti, ZaraHome, Oysho, Bershka, Stradivarius and PullAndBear.
-  
-      I worked within a team of about 20 developers, 15 testers and 10 project managers,
-      with some remote team memebers.
-  
-      I used IBM tools for the backend and jquery for the frontend.
-      While I was working there, we were migrating the web
-      to use a decoupled backend via REST and migrating to Angular1.4
-  
-      The workflow was to implement the task,
-      written and assigned in Jira by one of the Projects Managers,
-      commit the code only once its finished and tested in a local machine,
-      then review the bugs found by the testers team
-      and submit the time spent on every task through an internal tool.
+I managed web maintenance for a range of international Inditex's websites including 
+MassimoDutti, ZaraHome, Oysho, Bershka, Stradivarius and PullAndBear.
+
+I worked within a team of about 20 developers, 15 testers and 10 project managers,
+with some remote team memebers.
+
+I used IBM tools for the backend and jquery for the frontend.
+While I was working there, we were migrating the web
+to use a decoupled backend via REST and migrating to Angular1.4
+
+The workflow was to implement the task,
+written and assigned in Jira by one of the Projects Managers,
+commit the code only once its finished and tested in a local machine,
+then review the bugs found by the testers team
+and submit the time spent on every task through an internal tool.
     `
 
   }, {
@@ -124,25 +145,32 @@ I'm fully competent with modern frameworks (Angular and Polymer), frontend utili
     at: 'UNIVERSITY OF VIGO',
     on: { start: '2013 NOV', end: '2015 MAY' },
     tools: {
-      front: ['JQUERY', 'HTML5', 'CSS3', 'UNDERSCOREjs', 'D3js', 'CROSSFILTERjs'],
-      back: []
+      main: [
+				{name: 'JQUERY', version: '1'},
+				{name: 'HTML', version: '5'},
+				{name: 'CSS', version: '3'},
+				{name: 'UNDERSCOREjs'},
+				{name: 'D3js'},
+				{name: 'CROSSFILTERjs'}
+			],
+      others: ['RUBY-ON-RAILS', 'JAVA', 'WEKA', 'RAPIDMINER', 'PYTHON']
     },
     description: `
-      After a brief attempt of being a entrepreneur with a social e-classroom website
-      and due my background with data mining,
-  
-      I worked for UVigo on a state-of-the-art
-      cloud based recommendation and prediction dashboard for e-learning.
-  
-      We were a small team of 3 developers and 2 researchers,
-      my job goal was focused on data mining and data visualization.
-  
-      We used D3js for the graphs and Undescore and Crossfilter to manage the data.
-  
-      We were using Scrum, with daily and weekly meetings,
-      so the workflow was to write and select the tasks with the client,
-      choose my own tasks, commit soon even unfinished
-      and register the time I spend in every task.
+After a brief attempt of being a entrepreneur with a social e-classroom website
+and due my background with data mining,
+
+I worked for UVigo on a state-of-the-art
+cloud based recommendation and prediction dashboard for e-learning.
+
+We were a small team of 3 developers and 2 researchers,
+my job goal was focused on data mining and data visualization.
+
+We used D3js for the graphs and Undescore and Crossfilter to manage the data.
+
+We were using Scrum, with daily and weekly meetings,
+so the workflow was to write and select the tasks with the client,
+choose my own tasks, commit soon even unfinished
+and register the time I spend in every task.
     `
 
   }],
