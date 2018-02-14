@@ -91,23 +91,21 @@ var templates = {
 
         experience.tools.main.forEach(tool => {
 
-          let toolHtml = [null];
+          text += ' <span class="job-experience__tool">';
 
           if (tool.name) {
 
-            toolHtml.push(`<span class="job-experience__tool">${tool.name}</span>`);
+            text += `<span class="job-experience__tool-name">${tool.name}</span>`;
 
           }
 
           if (tool.version) {
 
-            toolHtml.push(`<span class="job-experience__tool-version">${tool.version}</span>`);
+            text += `<span class="job-experience__tool-version">${tool.version}</span>`;
 
           }
 
-          toolHtml.push(null);
-
-          text += toolHtml.join(' ');
+          text += '</span> ';
 
         });
 

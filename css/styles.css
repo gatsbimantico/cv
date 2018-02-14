@@ -157,9 +157,19 @@ p br {
 }
 
 .job-experience__tool {
-  font-family: Muli, sans-serif;
-  font-weight: 700;
+  display: inline-block;
   font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.job-experience__tool-name,
+.job-experience__tool-version {
+  font-family: Muli, sans-serif;
+  font-weight: 200;
+}
+
+.job-experience__tool-version {
+  margin: 0 0 0 5px;
 }
 
 .job-experience__portfolio {
