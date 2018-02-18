@@ -1,6 +1,6 @@
 import PageIntro     from '../components/page-intro/page-intro.js';
 import Text          from '../components/text/text.js';
-// import SkillSet      from '../components/skill-set/skill-set.js';
+import SkillSet      from '../components/skill-set/skill-set.js';
 // import ExperienceSet from '../components/experience-set/experience-set.js';
 // import EducationSet  from '../components/education-set/education-set.js';
 
@@ -24,8 +24,8 @@ export default class CandidatePage {
 
       this.$ = {
         pageIntro     : new PageIntro(cv),
-        summary       : new Text('summary', cv.summary)
-        // skillSet      : new SkillSet(cv.skills),
+        summary       : new Text('summary', cv.summary),
+        skillSet      : new SkillSet(cv.skills),
         // experienceSet : new ExperienceSet(cv.experiences),
         // educationSet  : new EducationSet(cv.education)
       };
@@ -50,10 +50,10 @@ export default class CandidatePage {
       return `
 ${this.$.pageIntro.outerHTML}
 ${this.$.summary.outerHTML}
+${this.$.skillSet.outerHTML}
       `;
-// ${this.$.skillSet}
-// ${this.$.experienceSet}
-// ${this.$.educationSet}
+// ${this.$.experienceSet.outerHTML}
+// ${this.$.educationSet.outerHTML}
 
   }
 
