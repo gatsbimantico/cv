@@ -24,6 +24,7 @@
 		<p style="font-size: 1.7em;" title="...ok, call me picky, I don't want to work with it">
 			If you can see this
 			<br>your browser is too old
+      <br>or you're offline
 		</p>
 		<br><br><br><br>
 		<p style="font-size: 1.3em;">
@@ -49,7 +50,25 @@
 				target="_blank">Opera</a></span>
 		</div>
 	</center>
-	<script src="./js/app.js" type="module"></script>
+	<script src="./pages/app.js" type="module"></script>
+  <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function (registration) {
+                    // console.log('Registered:', registration);
+                })
+                .catch(function (error) {
+                    // console.log('Registration failed: ', error);
+                });
+        }
+    </script>
+  <script>
+    window.onload = function () {
+
+      document.getElementsByTagName('body')[0].className += 'loaded';
+
+    }
+  </script>
 </body>
 
 </html>

@@ -9,9 +9,15 @@ html {
 
 body {
   background-color: #FFF;
+  box-shadow: 0 0.3em 0.7em -0.3em;
   margin: 0;
   max-width: 812px;
-  box-shadow: 0 0.3em 0.7em -0.3em;
+  opacity: 0;
+  transition: opacity .2s .1s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 .page-intro {
@@ -124,14 +130,21 @@ p br {
   flex-direction: column;
 }
 
-.contact-set__row {
+.phone-set,
+.email-set,
+.site-set {
   display: flex;
-  flex-direction: row;
-  text-align: center;
   flex: 1 1;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
-.contact-set__row span {
+.phone-set .phone,
+.email-set .email,
+.site-set .url {
   flex: 1 1;
 }
 
