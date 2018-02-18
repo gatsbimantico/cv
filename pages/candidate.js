@@ -58,10 +58,12 @@ export default class CandidatePage {
 
       return `
 ${this.$.pageIntro.outerHTML}
-${this.$.summary.outerHTML}
-${this.$.skillSet.outerHTML}
-${this.$.experienceSet.outerHTML}
-${this.$.educationSet.outerHTML}
+<main>
+  ${this.$.summary.outerHTML}
+  ${this.$.skillSet.outerHTML}
+  ${this.$.experienceSet.outerHTML}
+  ${this.$.educationSet.outerHTML}
+</main>
       `;
 
   }

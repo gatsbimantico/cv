@@ -15,10 +15,10 @@ export default class PageIntro {
   get outerHTML () {
 
     return `
-<div class="page-intro">
+<header class="page-intro">
   ${this.header.outerHTML}
   ${this.contact.outerHTML}
-</div>
+</header>
     `;
 
   }

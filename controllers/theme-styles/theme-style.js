@@ -10,12 +10,13 @@ export default class ThemeStyleController {
 
     return `
 <style>
-  .header {
+  .hero {
     background-color: ${this.color};
   }
   
   h3, h4, h5, h6,
   .job-experience__tool,
+  .education-experience__title-set,
   a:hover,
   a:focus {
     color: ${this.color};

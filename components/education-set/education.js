@@ -25,7 +25,7 @@ export default class Education {
 
     return `
 <li class="education-experience">
-  <ul>
+  <ul class="education-experience__title-set">
     ${this.titleSet.outerHTML}
   </ul>
   <span>${this.on}</span> <span>@ ${this.at}</span>
@@ -35,27 +35,3 @@ export default class Education {
   }
 
 }
-//   education: function (education) {
-
-//     var text = '<div class="education-experience">';
-
-//     if (education.titles) {
-
-//       education.titles.forEach(title => {
-
-//         text += `<h4 class="education-experience__title">${title}</h4>`;
-
-//       });
-
-//     }
-
-//     text += `
-//     <span>${education.on}</span>
-//     <span>@ ${education.at}</span>
-// 		`;
-
-//     text += '</div>';
-
-//     return text;
-
-//   },
