@@ -26,7 +26,7 @@ body.loaded {
   flex-direction: column;
 }
 
-.header {
+.hero {
   color: #EEE;
   overflow: hidden;
   position: relative;
@@ -38,21 +38,21 @@ body.loaded {
   flex-direction: column;
 }
 
-.header__pic {
+.hero__pic {
   border-radius: 50%;
   height: 7em;
   margin-bottom: 1em;
   width: 7em;
 }
 
-.header__name {
+.hero__name {
   margin: 0;
   font-family: Muli, sans-serif;
   text-transform: uppercase;
   font-weight: 200;
 }
 
-.header__role {
+.hero__role {
   margin: 0;
   font-family: Muli, sans-serif;
   text-transform: uppercase;
@@ -136,7 +136,6 @@ p br {
   display: flex;
   flex: 1 1;
   flex-direction: row;
-  list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -186,8 +185,9 @@ p br {
 }
 
 .job-experience__portfolio {
-  text-align: center;
+  padding: 0;
   overflow: auto;
+  text-align: center;
 }
 
 .job-experience__tool-set,
@@ -220,9 +220,29 @@ p br {
   margin: 10px 0 0;
 }
 
+.education-experience__title-set {
+  color: steelblue;
+  padding: 0;
+  text-transform: uppercase;
+}
+
 .education-experience__title {
   display: block;
+  font-family: Muli, sans-serif;
+  font-weight: 200;
   margin-top: 0;
+}
+
+
+.phone-set,
+.email-set,
+.site-set,
+.skill-set,
+.experience-set,
+.job-experience__portfolio,
+.education-set,
+.education-experience__title-set {
+  list-style-type: none;
 }
 
 .summary,
@@ -250,7 +270,7 @@ p br {
 }
 
 /* THEME */
-.header {
+.hero {
   background-color: steelblue;
 }
 
@@ -270,7 +290,7 @@ a:focus {
     height: initial;
   }
 
-  .header {
+  .hero {
     height: 50vh;
   }
 
@@ -299,13 +319,13 @@ a:focus {
     height: initial;
   }
 
-  .header {
+  .hero {
     padding: 3em 1em 1em;
     position: relative;
     text-align: right;
   }
 
-  .header__pic {
+  .hero__pic {
     border-radius: 0 30% 70% 20%;
     top: 0;
     left: 0;
