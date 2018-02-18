@@ -7,6 +7,12 @@ export default class List {
 
   }
 
+  get length () {
+
+    return this.list.length;
+
+  }
+
   get outerHTML () {
 
     return this.list
