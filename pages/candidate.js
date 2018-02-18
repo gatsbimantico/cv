@@ -1,8 +1,8 @@
 import PageIntro     from '../components/page-intro/page-intro.js';
 import Text          from '../components/text/text.js';
 import SkillSet      from '../components/skill-set/skill-set.js';
-// import ExperienceSet from '../components/experience-set/experience-set.js';
-// import EducationSet  from '../components/education-set/education-set.js';
+import ExperienceSet from '../components/experience-set/experience-set.js';
+import EducationSet  from '../components/education-set/education-set.js';
 
 import ThemeStyleController from '../controllers/theme-styles/theme-style.js';
 
@@ -25,13 +25,22 @@ export default class CandidatePage {
       this.$ = {
         pageIntro     : new PageIntro(cv),
         summary       : new Text('summary', cv.summary),
-        skillSet      : new SkillSet(cv.skills),
-        // experienceSet : new ExperienceSet(cv.experiences),
-        // educationSet  : new EducationSet(cv.education)
+        skillSet      : new SkillSet(
+          [
+            cv.skill,
+            ...cv.skills
+          ]
+          .filter(o => o)
+        ),
+        experienceSet : new ExperienceSet(
+          [
+            cv.experience,
+            ...cv.experiences
+          ]
+          .filter(o => o)
+        ),
+        educationSet  : new EducationSet(cv.education)
       };
-      // this.addSkill(config.skills || config.skill);
-      // this.addExperience(config.experiences || config.experience);
-      // this.addEducation(config.education);
 
       this.controllers = {
         themeStyle: new ThemeStyleController(cv.color)
@@ -51,9 +60,9 @@ export default class CandidatePage {
 ${this.$.pageIntro.outerHTML}
 ${this.$.summary.outerHTML}
 ${this.$.skillSet.outerHTML}
+${this.$.experienceSet.outerHTML}
+${this.$.educationSet.outerHTML}
       `;
-// ${this.$.experienceSet.outerHTML}
-// ${this.$.educationSet.outerHTML}
 
   }
 
@@ -71,12 +80,6 @@ ${this.$.skillSet.outerHTML}
     }
 
     return;
-
-  }
-
-  setFavouriteColor(color) {
-
-    this.favouriteColor = color || 'steelblue';
 
   }
 

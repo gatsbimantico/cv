@@ -2,7 +2,7 @@ export default class ThemeStyleController {
 
   constructor(color) {
 
-    this.color = color;
+    this.color = color || 'steelblue';
 
   }
 
