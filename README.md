@@ -22,3 +22,14 @@ I hope you enjoy it.
 
 Cheers,
 Cesar.
+
+---------
+## How to do your own?
+
+You can fork the repo and keep it in sync,
+<br>or simply host in a repo (new or a existing one)
+<br>a copy of the file `cv.js` replacing all the information you want.
+
+In order to get an evergreen CV,
+<br>the address of your CV will be `https://gatsbimantico.github.io/cv/?cv=` +
+the address of your `cv.js` file.
