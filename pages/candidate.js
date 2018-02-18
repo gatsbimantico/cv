@@ -1,5 +1,5 @@
 import PageIntro      from '../components/page-intro/page-intro.js';
-// import Text           from '../components/text/text.js';
+import Text           from '../components/text/text.js';
 // import SkillSet       from '../components/skill-set/skill-set.js';
 // import ExperienceSet  from '../components/experience-set/experience-set.js';
 // import EducationSet   from '../components/education-set/education-set.js';
@@ -22,11 +22,11 @@ export default class CandidatePage {
       document.title = cv.name + ' - CV';
 
       this.pageIntro        = new PageIntro(cv);
-      // this.summary       = new Text('summary', cv.summary);
-      // this.skillSet      = new SkillSet(cv.skills);
-      // this.experienceSet = new ExperienceSet(cv.experiences);
-      // this.educationSet  = new EducationSet(cv.education);
-      // this.themeStyles   = new ThemeStyles(cv.favouriteColor);
+      this.summary          = new Text('summary', cv.summary);
+      // this.skillSet         = new SkillSet(cv.skills);
+      // this.experienceSet    = new ExperienceSet(cv.experiences);
+      // this.educationSet     = new EducationSet(cv.education);
+      // this.themeStyles      = new ThemeStyles(cv.favouriteColor);
 
       document.body.innerHTML = this.outerHTML;
 
@@ -45,8 +45,8 @@ export default class CandidatePage {
 
       return `
 ${this.pageIntro.outerHTML}
+${this.summary.outerHTML}
       `;
-// ${this.summary}
 // ${this.skillSet}
 // ${this.experienceSet}
 // ${this.educationSet}
