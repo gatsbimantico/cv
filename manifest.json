@@ -1,0 +1,20 @@
+{
+  "name": "Curriculum Vitae",
+  "short_name": "cv",
+  "start_url": "/cv",
+  "display": "standalone",
+  "background_color": "black",
+  "icons": [{
+    "src": "/cv/cv-icon.png",
+    "type": "image/png",
+    "sizes": "144x144"
+  }],
+  "background": {
+    "scripts": ["service-worker.js"]
+  },
+  "permissions": [
+    "notifications"
+  ],
+  "gcm_sender_id": "my_gcm_sender_id",
+  "gcm_user_visible_only": true
+}
