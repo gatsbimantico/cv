@@ -7,8 +7,12 @@ export default class PageIntro {
 
     let config = cv || {};
 
-    this.header = new Header(config.name, config.role);
     this.contact = new ContactSet(config);
+    this.header = new Header(
+      config.name,
+      config.role,
+      this.contact.emailSet.emailSet.list[0]
+    );
 
   }
 
