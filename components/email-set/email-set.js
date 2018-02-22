@@ -12,9 +12,11 @@ export default class EmailSet {
   get outerHTML () {
 
     return `
+<span aria-label="Email:"></span>
 <ul class="email-set">
   ${this.emailSet.outerHTML}
 </ul>
+<span aria-label="."></span>
     `;
 
   }

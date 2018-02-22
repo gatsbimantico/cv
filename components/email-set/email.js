@@ -9,7 +9,7 @@ export default class Email {
   get outerHTML () {
 
     return `
-<li class="email"><a href="mailto:${this.email}">&#9993; ${this.email}</a></li>
+<li class="email"><a href="mailto:${this.email}">${this.email}<span aria-label=","></span></a></li>
     `;
 
   }

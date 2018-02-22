@@ -21,28 +21,28 @@ I am a front end web developer with over 4 years of experience.
 
 My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Volkswagen, Lipton and Inditex Group.
 
-I'm fully competent with modern frameworks (Angular and Polymer), frontend utilities (NodeJs, Gulp, Git, Docker) and agile methodologies (Scrum or Khanban).
+I'm fully competent with modern frameworks (like Angular and Polymer), frontend utilities (like NodeJs, Gulp, Git, Docker) and agile methodologies (like Scrum or Khanban).
 	`,
   skills: [
-    'FrontEnd enthusiast',
+    'Front end enthusiast',
     'Fast learner',
     'Team builder',
     'Agile developer'
   ],
   experiences: [{
 
-    is: 'FRONT END WEB DEVELOPER',
-    at: 'TRIBAL WORLDWIDE',
-    on: { start: '2017 JAN', end: 'present' },
+    is: 'Front end web developer',
+    at: 'Tribal worldwide',
+    on: { start: '2017 Jan', end: 'now' },
     tools: {
 			main: [
-				{name: 'POLYMER', version: '1'},
-				{name: 'JQUERY', version: '3'},
-				{name: 'GULP', version: '4'},
-				{name: 'NODE', version: '6'},
-				{name: 'GIT'}
+				{name: 'Polymer', version: '1'},
+				{name: 'jQuery', version: '3'},
+				{name: 'Gulp', version: '4'},
+				{name: 'Node', version: '6'},
+				{name: 'Git'}
 			],
-			others: ['HANDELBARS', 'WORDPRESS', 'AEM', 'JAHIA']
+			others: ['Handlebars', 'Wordpress', 'Aem', 'Jahia']
     },
     portfolio: {
       released: [
@@ -66,19 +66,19 @@ The time management is done in JIRA and Projector PSA.
 
   }, {
 
-    was: 'FULL STACK WEB DEVELOPER',
-    at: 'IMATIA INNOVATION',
-    on: { start: '2016 JUN', end: '2016 DEC' },
+    was: 'Full stack web developer',
+    at: 'Imatia innovation',
+    on: { start: '2016 Jun', end: '2016 Dec' },
     tools: {
       main: [
-				{name: 'ANGULAR', version: '2'},
-				{name: 'TYPESCRIPT', version: '2'},
-				{name: 'GULP', version: '3'},
-				{name: 'NODE', version: '6'},
-				{name: 'DOCKER'},
-				{name: 'GIT'}
+				{name: 'Angular', version: '2'},
+				{name: 'TypeScript', version: '2'},
+				{name: 'Gulp', version: '3'},
+				{name: 'Node', version: '6'},
+				{name: 'Docker'},
+				{name: 'Git'}
 			],
-      others: ['JAVA', 'SCALA', 'HADOOP']
+      others: ['Java', 'Scala', 'Hadoop']
     },
     description: `
 At Imatia I worked on the design and implementation of a business analytics dashboard for local administrations.
@@ -95,19 +95,19 @@ and to keep documented the time invested in every task through Elastic Projects.
 
   }, {
 
-    was: 'FULL STACK WEB DEVELOPER',
-    at: 'INSA',
-    on: { start: '2015 JUN', end: '2016 JUN' },
+    was: 'Full stack web developer',
+    at: 'ViewNext',
+    on: { start: '2015 Jun', end: '2016 Jun' },
     tools: {
       main: [
-				{name: 'ANGULAR', version: '1'},
-				{name: 'BACKBONE'},
-				{name: 'JQUERY', version: '1'},
+				{name: 'Angular', version: '1'},
+				{name: 'Backbone'},
+				{name: 'jQuery', version: '1'},
 				{name: 'HTML', version: '4'},
 				{name: 'CSS', version: '2'},
 				{name: 'SVN'}
 			],
-      others: ['JSP', 'JAVA', 'DB2', 'JIRA']
+      others: ['JSP', 'Java', 'DB2', 'Jira']
     },
     portfolio: {
       dismissed: [
@@ -141,19 +141,17 @@ and submit the time spent on every task through an internal tool.
 
   }, {
 
-    was: 'WEB DEVELOPER',
-    at: 'UNIVERSITY OF VIGO',
-    on: { start: '2013 NOV', end: '2015 MAY' },
+    was: 'Full stack web developer',
+    at: 'University of Vigo',
+    on: { start: '2013 Nov', end: '2015 May' },
     tools: {
       main: [
-				{name: 'JQUERY', version: '1'},
+				{name: 'jQuery', version: '1'},
 				{name: 'HTML', version: '5'},
 				{name: 'CSS', version: '3'},
-				{name: 'UNDERSCOREjs'},
-				{name: 'D3js'},
-				{name: 'CROSSFILTERjs'}
+				{name: 'D3'},
 			],
-      others: ['RUBY-ON-RAILS', 'JAVA', 'WEKA', 'RAPIDMINER', 'PYTHON']
+      others: ['Ruby-on-Rails', 'Java', 'Weka', 'RapidMiner', 'Python']
     },
     description: `
 After a brief attempt of being a entrepreneur with a social e-classroom website
@@ -180,34 +178,34 @@ and register the time I spend in every task.
 			'Time Management',
 			'How to speak in public',
 			'Strength Deployment Inventory'
-    ], at: 'TRIBAL', on: '2018 - 2017'
+    ], at: 'Tribal', on: '2018 - 2017'
 
   }, {
 
     titles: [
       'Full Stack Web Development especialization'
-    ], at: 'COURSERA', on: 2016
+    ], at: 'Coursera', on: 2016
 
   }, {
 
     titles: [
-      'ANGULAR',
+      'Angular',
       'TDD',
-      'ECOMMERCE',
-      'JAVAEE'
-    ], at: 'VIEWNEXT', on: 2015
+      'eCommerce',
+      'JavaEE'
+    ], at: 'ViewNext', on: 2015
 
   }, {
 
     titles: [
       'Intro to Machine Learning'
-    ], at: 'UDACITY', on: 2012
+    ], at: 'Udacity', on: 2012
 
   }, {
 
     titles: [
-      'BSC. PHYSICS'
-    ], at: 'UNIVERSITY OF VIGO', on: 2005
+      'BSC. Physics'
+    ], at: 'University of Vigo', on: 2005
 
   }]
 };

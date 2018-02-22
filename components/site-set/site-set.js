@@ -12,9 +12,11 @@ export default class SiteSet {
   get outerHTML () {
 
     return `
+<span aria-label="Sites:"></span>
 <ul class="site-set">
   ${this.siteSet.outerHTML}
 </ul>
+<span aria-label="."></span>
     `;
 
   }

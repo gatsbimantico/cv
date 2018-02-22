@@ -15,9 +15,10 @@ export default class Header {
 
     return `
 <section class="hero">
-  <img class="hero__pic" src="http://www.gravatar.com/avatar/${md5(this.email)}.jpg?s=512&r=x" />
-  <h1 class="hero__name">${this.name}</h1>
-  <h2 class="hero__role">${this.role}</h2>
+  <div class="hero__pic hero__pic--div" style="background-image: url('http://www.gravatar.com/avatar/${md5(this.email)}.jpg?s=512&r=x');"></div>
+  <img class="hero__pic hero__pic--img" src="http://www.gravatar.com/avatar/${md5(this.email)}.jpg?s=512&r=x"/>
+  <h1 class="hero__name">${this.name}<span aria-label="."></span></h1>
+  <h2 class="hero__role">${this.role}<span aria-label="."></span></h2>
 </section>
     `;
 

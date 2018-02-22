@@ -15,9 +15,11 @@ export default class ToolSet {
   get outerHTML () {
 
     return this.toolSet ? `
-<p class="job-experience__tool-set">
+<h5><span aria-label="where I used "></span>Tools<span aria-label=" like"></span>:</h5>
+<ul class="job-experience__tool-set">
   ${this.toolSet.outerHTML}
-</p>
+</ul>
+<span aria-label=";."></span>
     ` : '';
 
   }

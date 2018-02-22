@@ -10,7 +10,7 @@ export default class Url {
   get outerHTML () {
 
     return `
-<li class="url"><a href="${this.url}" target="_blank">${this.siteName}</a></li>
+<li class="url"><a href="${this.url}" target="_blank">${this.siteName}<span aria-label=","></span></a></li>
     `;
 
   }

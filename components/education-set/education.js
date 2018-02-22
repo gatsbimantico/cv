@@ -29,6 +29,7 @@ export default class Education {
     ${this.titleSet.outerHTML}
   </ul>
   <span>${this.on}</span> <span>@ ${this.at}</span>
+  <span aria-label="."></span>
 </li>
     `;
 

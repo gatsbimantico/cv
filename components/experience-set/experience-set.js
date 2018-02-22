@@ -12,8 +12,8 @@ export default class ExperienceSet {
   get outerHTML () {
 
     return `
+<h3 class="experience-set__title">Experiences<span aria-label="."></span></h3>
 <ul class="experience-set">
-  <h3>Experiences</h3>
   ${this.experienceSet.outerHTML}
 </ul>
     `;

@@ -12,8 +12,8 @@ export default class EducationSet {
   get outerHTML () {
 
     return `
+<h3 class="education-set__title">Courses & Education<span aria-label="."></span></h3>
 <ul class="education-set">
-  <h3>Courses & Education</h3>
   ${this.educationSet.outerHTML}
 </ul>
     `;

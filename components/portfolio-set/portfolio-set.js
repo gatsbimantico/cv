@@ -57,11 +57,13 @@ export default class PortfolioSet {
 
   get outerHTML () {
 
-    return `
+    return this.sites.length ? `
+<h5><span aria-label="and I helped to build "></span>Sites<span aria-label=" like"></span>:</h5>
 <ul class="job-experience__portfolio ${this.columnClass}">
   ${this.sites.outerHTML}
 </ul>
-    `;
+<span aria-label=";."></span>
+    ` : '';
 
   }
 

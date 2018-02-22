@@ -26,10 +26,11 @@ export default class Tool {
   get outerHTML () {
 
     return this.name || this.version ? `
-<span class="job-experience__tool">
+<li class="job-experience__tool">
   ${this.nameInnerHTML}
   ${this.versionInnerHTML}
-</span>
+  <span aria-label=","></span>
+</li>
     ` : '';
 
   }

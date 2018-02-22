@@ -21,6 +21,12 @@ export default class ThemeStyleController {
   a:focus {
     color: ${this.color};
   }
+
+  .summary__title,
+  .experience-set__title,
+  .education-set__title {
+    background: ${this.color};
+  }
 </style>
     `;
 

@@ -9,7 +9,7 @@ export default class Skill {
   get outerHTML () {
 
     return `
-<li class="skill-set__item">${this.skill}</li>
+<li class="skill-set__item">${this.skill}<span aria-label=","></span></li>
     `;
 
   }

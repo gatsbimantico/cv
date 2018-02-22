@@ -9,7 +9,7 @@ export default class Phone {
   get outerHTML () {
 
     return `
-<li class="phone"><a href="tel:${this.phone}">&#9990; ${this.phone}</a></li>
+<li class="phone"><a href="tel:${this.phone}">${this.phone}<span aria-label=","></span></a></li>
     `;
 
   }

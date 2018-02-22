@@ -59,6 +59,7 @@ export default class CandidatePage {
       return `
 ${this.$.pageIntro.outerHTML}
 <main>
+  <h3 class="summary__title">Summary</h3>
   ${this.$.summary.outerHTML}
   ${this.$.skillSet.outerHTML}
   ${this.$.experienceSet.outerHTML}

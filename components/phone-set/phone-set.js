@@ -12,9 +12,11 @@ export default class PhoneSet {
   get outerHTML () {
 
     return `
+<span aria-label="Telephone:"></span>
 <ul class="phone-set">
   ${this.phoneSet.outerHTML}
 </ul>
+<span aria-label="."></span>
     `;
 
   }
