@@ -22,16 +22,22 @@ export default class Experience {
 
     return `
 <li class="job-experience">
-  <h4>${this.role}<span aria-label="."></span></h4>
-  <div class="job-experience__meta">
-    <p class="job-experience__business"><span aria-label="at "></span>${this.at}</p>
-    ${this.dateSet.outerHTML}
-    <span aria-label="."></span>
-  </div>
-  ${this.toolSet.outerHTML}
-  ${this.portfolio.outerHTML}
-  ${this.description.outerHTML}
-  <span aria-label="."></span>
+  <article class="job-experience__article">
+    <header class="job-experience__header">
+      <h4>${this.role}<span aria-label="."></span></h4>
+      <div class="job-experience__meta">
+        <p class="job-experience__business"><span aria-label="at "></span>${this.at}</p>
+        ${this.dateSet.outerHTML}
+        <span aria-label="."></span>
+      </div>
+    </header>
+    <section class="job-experience__main-section">
+      ${this.toolSet.outerHTML}
+      ${this.portfolio.outerHTML}
+      ${this.description.outerHTML}
+      <span aria-label="."></span>
+    </section>
+  </article>
 </li>
     `;
 

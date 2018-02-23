@@ -14,8 +14,8 @@ body {
   max-width: 812px;
   opacity: 0;
   transition: opacity .2s .1s ease-in-out;
-  -webkit-scroll-snap-type: proximity;
-  scroll-snap-type: y proximity;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 body.loaded {
@@ -150,22 +150,32 @@ p br {
 }
 
 .job-experience {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.job-experience__article {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
   max-height: calc(100vh - 15px);
-  position: relative;
+}
+
+.job-experience__header {
+  flex: 1 0;
+}
+
+.job-experience__main-section {
+  flex: 1 1;
+  overflow: auto;
 }
 
 .job-experience__meta {
   display: flex;
-  flex: 0 0;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .job-experience__business {
-  flex: 1 0;
   text-transform: uppercase;
 }
 
@@ -209,7 +219,6 @@ p br {
 
 .job-experience__tool-set,
 .job-experience__portfolio {
-  flex: 1 0;
   margin: 0 0 .7em;
 }
 
@@ -232,12 +241,6 @@ p br {
 
 .job-experience__portfolio span {
   display: block;
-}
-
-.job-experience__summary {
-  display: block;
-  flex: 1 1;
-  overflow: auto;
 }
 
 .education-experience {
@@ -306,8 +309,8 @@ p br {
 }
 
 .job-experience {
-  -webkit-scroll-snap-coordinate: 10px 10px 10px 10px;
-  scroll-snap-coordinate: 10px 10px 10px 10px;
+  -webkit-scroll-snap-coordinate: 0% 0%;
+  scroll-snap-coordinate: 0% 0%;
   scroll-snap-align: start;
 }
 
@@ -335,6 +338,13 @@ a:focus {
 .experience-set__title,
 .education-set__title {
   background: steelblue;
+}
+
+@media (min-height:641px) {
+  body {
+    -webkit-scroll-snap-type: proximity;
+    scroll-snap-type: y proximity;
+  }
 }
 
 @media (min-width:813px) {
