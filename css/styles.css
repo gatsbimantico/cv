@@ -14,6 +14,8 @@ body {
   max-width: 812px;
   opacity: 0;
   transition: opacity .2s .1s ease-in-out;
+  -webkit-scroll-snap-type: proximity;
+  scroll-snap-type: y proximity;
 }
 
 body.loaded {
@@ -73,12 +75,16 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-h1, h3, h4, h6 {
+h1, h3, h4, h5 {
   font-weight: 900;
 }
 
-h2, h5 {
+h2, h6 {
   font-weight: 200;
+}
+
+h5 {
+  font-size: 11px;
 }
 
 a {
@@ -144,17 +150,22 @@ p br {
 }
 
 .job-experience {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 15px;
+  max-height: calc(100vh - 15px);
+  position: relative;
 }
 
 .job-experience__meta {
   display: flex;
+  flex: 0 0;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .job-experience__business {
+  flex: 1 0;
   text-transform: uppercase;
 }
 
@@ -198,6 +209,7 @@ p br {
 
 .job-experience__tool-set,
 .job-experience__portfolio {
+  flex: 1 0;
   margin: 0 0 .7em;
 }
 
@@ -220,6 +232,12 @@ p br {
 
 .job-experience__portfolio span {
   display: block;
+}
+
+.job-experience__summary {
+  display: block;
+  flex: 1 1;
+  overflow: auto;
 }
 
 .education-experience {
@@ -276,6 +294,21 @@ p br {
   margin: 15px 0 0;
   padding: 0.5em;
   position: relative;
+}
+
+.page-intro,
+.summary__title,
+.experience-set__title,
+.education-set__title {
+  -webkit-scroll-snap-coordinate: 0% 0%;
+  scroll-snap-coordinate: 0% 0%;
+  scroll-snap-align: start;
+}
+
+.job-experience {
+  -webkit-scroll-snap-coordinate: 10px 10px 10px 10px;
+  scroll-snap-coordinate: 10px 10px 10px 10px;
+  scroll-snap-align: start;
 }
 
 .summary__title {
