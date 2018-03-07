@@ -61,18 +61,31 @@
 				target="_blank">Opera</a></span> -->
 		</div>
 	</center>
-	<script src="./pages/app.js" type="module"></script>
+<!-- Google Analytics -->
   <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./service-worker.js')
-                .then(function (registration) {
-                    // console.log('Registered:', registration);
-                })
-                .catch(function (error) {
-                    // console.log('Registration failed: ', error);
-                });
-        }
-    </script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-115374216-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- App -->
+	<script src="./pages/app.js" type="module"></script>
+<!-- Service Worker -->
+ <script>
+   if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('/service-worker.js')
+       .then(function (registration) {
+         // console.log('Registered:', registration);
+       })
+       .catch(function (error) {
+         // console.log('Registration failed: ', error);
+       });
+    }
+  </script>
+<!-- Loaded app state -->
   <script>
     window.onload = function () {
 
