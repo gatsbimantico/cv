@@ -3,6 +3,7 @@ import Text          from '../components/text/text.js';
 import SkillSet      from '../components/skill-set/skill-set.js';
 import ExperienceSet from '../components/experience-set/experience-set.js';
 import EducationSet  from '../components/education-set/education-set.js';
+import Revision      from '../components/revision/revision.js';
 
 import ThemeStyleController from '../controllers/theme-styles/theme-style.js';
 
@@ -39,7 +40,8 @@ export default class CandidatePage {
           ]
           .filter(o => o)
         ),
-        educationSet  : new EducationSet(cv.education)
+        educationSet  : new EducationSet(cv.education),
+        revision      : new Revision()
       };
 
       this.controllers = {
@@ -64,6 +66,7 @@ ${this.$.pageIntro.outerHTML}
   ${this.$.skillSet.outerHTML}
   ${this.$.experienceSet.outerHTML}
   ${this.$.educationSet.outerHTML}
+  ${this.$.revision.outerHTML}
 </main>
       `;
 

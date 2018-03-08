@@ -1,6 +1,8 @@
 {
   "name": "Curriculum Vitae",
-  "short_name": "cv",
+  "author": "gatsbimantico",
+  "version": "1.0.B380",
+  "short_name": "CVjs",
   "start_url": "/cv",
   "display": "standalone",
   "background_color": "black",
