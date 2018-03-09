@@ -28,8 +28,6 @@ export default class SkypeButton {
 
   get outerHTML () {
 
-    console.log(this[this.partial + ['Partial']]);
-
     return `
 <span aria-label="Join me in a "></span>
 <div class="skype-button" aria-label="Skype">
