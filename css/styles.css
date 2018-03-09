@@ -228,7 +228,11 @@ p br {
 
 .column {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.column--four {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .column--three {
@@ -372,12 +376,17 @@ a:focus {
   .job-experience__summary {
     text-align: left;
   }
+
+  .column--four {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media print {
   body {
     margin: 0;
     box-shadow: none;
+    max-width: initial;
   }
 
   a {
@@ -444,5 +453,28 @@ a:focus {
   .experience-set,
   .education-set {
     padding: 15px calc(2vw) 0;
+  }
+
+  /* PRINT THEME */
+  .hero {
+    background-color: rgba(54, 57, 72, 0.6) !important;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .job-experience__tool,
+  a:hover,
+  a:focus {
+    color: rgba(54, 57, 72, 1) !important;
+  }
+
+  .summary__title,
+  .experience-set__title,
+  .education-set__title {
+    background: rgba(54, 57, 72, 0.3) !important;
+  }
+
+  .skype-button,
+  #revision-id {
+    display: none;
   }
 }

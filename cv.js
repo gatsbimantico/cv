@@ -38,12 +38,19 @@ I'm fully competent with modern frameworks (like Angular and Polymer), frontend 
     tools: {
 			main: [
 				{name: 'Polymer', version: '1'},
-				{name: 'jQuery', version: '3'},
+				{name: 'Redux'},
+				{name: 'Mocha'},
+				{name: 'Git'},
 				{name: 'Gulp', version: '4'},
-				{name: 'Node', version: '6'},
-				{name: 'Git'}
+				{name: 'jQuery', version: '3'}
 			],
-			others: ['Handlebars', 'Wordpress', 'Aem', 'Jahia']
+			others: [
+				{name: 'Node', version: '6'},
+        'Handlebars',
+        'Wordpress',
+        'Aem',
+        'Jahia'
+      ]
     },
     portfolio: {
       released: [
@@ -74,12 +81,16 @@ The time management is done in JIRA and Projector PSA.
       main: [
 				{name: 'Angular', version: '2'},
 				{name: 'TypeScript', version: '2'},
-				{name: 'Gulp', version: '3'},
-				{name: 'Node', version: '6'},
+				{name: 'Git'},
 				{name: 'Docker'},
-				{name: 'Git'}
+				{name: 'Gulp', version: '3'}
 			],
-      others: ['Java', 'Scala', 'Hadoop']
+      others: [
+				{name: 'Node', version: '6'},
+        'Java',
+        'Scala',
+        'Hadoop'
+      ]
     },
     description: `
 At Imatia I worked on the design and implementation of a business analytics dashboard for local administrations.
@@ -101,14 +112,19 @@ and to keep documented the time invested in every task through Elastic Projects.
     on: { start: '2015 Jun', end: '2016 Jun' },
     tools: {
       main: [
-				{name: 'Angular', version: '1'},
-				{name: 'Backbone'},
-				{name: 'jQuery', version: '1'},
+        {name: 'JSP'},
 				{name: 'HTML', version: '4'},
 				{name: 'CSS', version: '2'},
-				{name: 'SVN'}
+				{name: 'SVN'},
+				{name: 'jQuery', version: '1'}
 			],
-      others: ['JSP', 'Java', 'DB2', 'Jira']
+      others: [
+				{name: 'Angular', version: '1'},
+				{name: 'Backbone'},
+        'Java',
+        'DB2',
+        'Jira'
+      ]
     },
     portfolio: {
       dismissed: [
@@ -147,12 +163,18 @@ and submit the time spent on every task through an internal tool.
     on: { start: '2013 Nov', end: '2015 May' },
     tools: {
       main: [
-				{name: 'jQuery', version: '1'},
+        {name: 'Ruby-on-Rails'},
 				{name: 'HTML', version: '5'},
 				{name: 'CSS', version: '3'},
 				{name: 'D3'},
+				{name: 'jQuery', version: '1'}
 			],
-      others: ['Ruby-on-Rails', 'Java', 'Weka', 'RapidMiner', 'Python']
+      others: [
+        'Java',
+        'Weka',
+        'RapidMiner',
+        'Python'
+      ]
     },
     description: `
 After a brief attempt of being a entrepreneur with a social e-classroom website
