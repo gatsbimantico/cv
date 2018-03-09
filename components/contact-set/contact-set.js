@@ -1,5 +1,6 @@
 import PhoneSet from '../phone-set/phone-set.js'
 import EmailSet from '../email-set/email-set.js'
+import SkypeButton from '../skype-button/skype-button.js';
 import SiteSet  from '../site-set/site-set.js'
 
 export default class ContactSet {
@@ -7,9 +8,7 @@ export default class ContactSet {
   constructor(cv) {
 
     let config = Object.assign(
-      {
-        contact: {}
-      },
+      { contact: {} },
       cv
     );
 
@@ -33,6 +32,18 @@ export default class ContactSet {
       .filter(o => o)
     );
 
+    this.skype = new SkypeButton(
+      [
+        config.skype,
+        config.contact.skype,
+        config.skypeID,
+        config.contact.skypeID,
+        config.skypeId,
+        config.contact.skypeId,
+      ]
+      .filter(o => o).pop()
+    )
+
     this.siteSet = new SiteSet(
       [
         config.site,
@@ -51,6 +62,7 @@ export default class ContactSet {
 <section class="contact-set">
   ${this.phoneSet.outerHTML}
   ${this.emailSet.outerHTML}
+  ${this.skype.outerHTML}
   ${this.siteSet.outerHTML}
 </section>
     `;

@@ -149,6 +149,10 @@ p br {
   flex: 1 1;
 }
 
+.skype-button {
+  text-align: center;
+}
+
 .job-experience {
   margin-bottom: 15px;
   position: relative;

@@ -14,7 +14,8 @@ export const cv = {
     sites: [
       '//github.com/gatsbimantico',
       '//stackoverflow.com/users/2308745/gatsbimantico'
-    ]
+    ],
+    skype: 'https://join.skype.com/invite/nVxw0Bw8XoyS'
   },
   summary: `
 I am a front end web developer with over 4 years of experience.
