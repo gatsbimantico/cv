@@ -1,0 +1,265 @@
+* {
+  font-family: Assistant, sans-serif;
+  font-weight: 400;
+}
+
+html {
+  background-color: #EEE;
+}
+
+body {
+  background-color: #FFF;
+  box-shadow: 0 0.3em 0.7em -0.3em;
+  height: 100vh;
+  margin: 0;
+  opacity: 0;
+  transition: opacity .2s .1s ease-in-out;
+  -webkit-scroll-snap-type: mandatory;
+  scroll-snap-type: y mandatory;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+.page-intro {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  color: #EEE;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  flex: 1 1 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__pic {
+  background-size: cover;
+  border-radius: 50%;
+  height: 7em;
+  margin-bottom: 1em;
+  width: 7em;
+}
+
+.hero__pic--img {
+  display: none;
+}
+
+.hero__name {
+  margin: 0;
+  font-family: Muli, sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.hero__role {
+  margin: 0;
+  font-family: Muli, sans-serif;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Muli, sans-serif;
+  text-transform: uppercase;
+}
+
+h1, h3, h4, h5 {
+  font-weight: 900;
+}
+
+h2, h6 {
+  font-weight: 200;
+}
+
+h5 {
+  font-size: 11px;
+}
+
+a {
+  background: #DDD;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .3);
+  color: black;
+  display: block;
+  font-weight: 700;
+  line-height: 50px;
+  left: 0px;
+  padding: 0 8px;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s;
+  top: 0px;
+  white-space: nowrap;
+}
+
+a:hover,
+a:focus {
+  background: #C8C8C8;
+}
+
+a:active {
+  background: #CCC;
+}
+
+.contact-set {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+.phone-set,
+.email-set,
+.site-set {
+  display: flex;
+  flex: 1 1;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.phone-set .phone,
+.email-set .email,
+.site-set .url {
+  flex: 1 1;
+}
+
+.skype-button {
+  text-align: center;
+}
+
+
+
+.phone-set,
+.email-set,
+.site-set,
+.skill-set,
+.experience-set,
+.job-experience__tool-set,
+.job-experience__portfolio,
+.education-set,
+.education-experience__title-set {
+  list-style-type: none;
+}
+
+.page-intro,
+.summary__title,
+.experience-set__title,
+.education-set__title {
+  -webkit-scroll-snap-coordinate: 0% 0%;
+  scroll-snap-coordinate: 0% 0%;
+  scroll-snap-align: start;
+}
+
+/* THEME */
+.hero {
+  background-color: steelblue;
+}
+
+h3, h4, h5, h6,
+.job-experience__tool,
+a:hover,
+a:focus {
+  color: steelblue;
+}
+
+@media print {
+  html,
+  body {
+    background-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    box-shadow: none;
+    max-width: initial;
+  }
+
+  a {
+    box-shadow: none;
+    display: inline-block;
+    line-height: 20px;
+    visibility: hidden;
+    font-size: 12px;
+    width: 0;
+  }
+
+  a:before {
+    content: attr(href);
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%);
+    visibility: initial;
+  }
+
+  .page-intro {
+    background-color: #DDD;
+    display: block;
+    height: initial;
+    margin: 0 1em 1em 0;
+    position: relative;
+    padding: 1.2em;
+    width: 320px;
+  }
+
+  .page-intro:after {
+    content: 'js CV';
+    position: absolute;
+    left: 150%;
+    width: 148px;
+    height: 150px;
+    background: #FCD74D;
+    top: 50%;
+    border: 5px solid;
+    transform: translate(-50%,-50%);
+    font-size: 70px;
+    text-align: left;
+    line-height: 220px;
+    padding-left: 2px;
+  }
+
+  .hero {
+    padding: 3em 1em 1em;
+    position: relative;
+    text-align: right;
+    height: initial;
+    padding: 0 0 1em;
+  }
+
+  .hero__pic--div {
+    display: none;
+  }
+
+  .hero__role {
+    font-size: 18px;
+  }
+
+  .phone-set, .email-set, .site-set {
+    flex-direction: column;
+  }
+  /* PRINT THEME */
+  .hero {
+    background-color: #DDD !important;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  a:hover,
+  a:focus {
+    color: rgba(54, 57, 72, 1) !important;
+  }
+
+  .skype-button {
+    display: none;
+  }
+}

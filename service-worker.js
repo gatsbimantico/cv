@@ -1,20 +1,21 @@
 (function (app) {
   'use strict';
 
-  const CACHE_NAME = 'CVjs-1.0.B392',
+  const CACHE_NAME = 'CVjs-1.0.B4#0',
     externalUrlsToCache = [
-      'http://www.gravatar.com/avatar/e6deefe7eb4c5f22991e392cc720fed5.jpg?s=512&r=x',
-      'https://fonts.googleapis.com/css?family=Assistant:400,700|Muli:200,900',
-      'https://fonts.gstatic.com/s/assistant/v2/2sDcZGJYnIjSi6H75xkzaGW5Kb8VZA.woff2',
-      'https://fonts.gstatic.com/s/assistant/v2/2sDZZGJYnIjSi6H75xk700CsBJ0YTivYtg.woff2',
-      'https://fonts.gstatic.com/s/muli/v11/7Au_p_0qiz-adf3nOCX2z24PMFk.woff2',
+      'http://www.gravatar.com/avatar/*',
+      'https://fonts.googleapis.com/*',
+      'https://fonts.gstatic.com/*',
       'https://www.google-analytics.com/analytics.js'
     ],
     internalUrlsToCache = [
       '.',
       'index.html',
-      'css/styles.css',
-      'pages/app.js'
+      'css/candidate.css',
+      'pages/candidate.js',
+      'card.html',
+      'css/card.css',
+      'pages/card.js'
     ],
     urlsToCache = [
       ...internalUrlsToCache,

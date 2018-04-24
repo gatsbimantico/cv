@@ -7,7 +7,7 @@ import Revision      from '../components/revision/revision.js';
 
 import ThemeStyleController from '../controllers/theme-styles/theme-style.js';
 
-export default class CandidatePage {
+class CandidatePage {
 
   constructor() {
 
@@ -90,3 +90,5 @@ ${this.$.pageIntro.outerHTML}
   }
 
 }
+
+export const page = new CandidatePage();
