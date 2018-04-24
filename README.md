@@ -34,6 +34,8 @@ You can include my business card in any other website with:
 <iframe width="400" height="450" src="https://gatsbimantico.github.io/cv/card.html"></iframe>
 ```
 
+You can see an example at [this jsbin](https://output.jsbin.com/kopevoduco/1).
+
 ## How to do your own?
 
 You can fork the repo and keep it in sync,

@@ -29,15 +29,16 @@ body.loaded {
 }
 
 .hero {
+  align-items: center;
+  box-shadow: 0 -4px 10px -4px black inset;
   color: #EEE;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   position: relative;
   text-align: center;
-  flex: 1 1 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
 }
 
 .hero__pic {
