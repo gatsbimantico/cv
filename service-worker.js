@@ -1,7 +1,7 @@
 (function (app) {
   'use strict';
 
-  const CACHE_NAME = 'CVjs-1.0.B4#0',
+  const CACHE_NAME = 'CVjs-1.0.B58',
     externalUrlsToCache = [
       'http://www.gravatar.com/avatar/*',
       'https://fonts.googleapis.com/*',

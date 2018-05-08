@@ -3,7 +3,8 @@
 
 <head>
 	<title>JS generated CV</title>
- <meta name="description" content="Costas's awesome JS generated CV">
+  <base href="/cv/">
+  <meta name="description" content="Costas's awesome JS generated CV">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -73,7 +74,8 @@
     ga('send', 'pageview');
   </script>
 <!-- App -->
-	<script src="./pages/candidate.js" type="module"></script>
+	<!-- <script src="./pages/candidate.js" type="module"></script> -->
+	<script src="/es6-import-js/index.js" onload="es6Import('./pages/candidate.js');"></script>
 <!-- Service Worker -->
  <script>
    if ('serviceWorker' in navigator) {

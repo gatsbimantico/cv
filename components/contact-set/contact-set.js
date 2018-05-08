@@ -1,7 +1,7 @@
-import PhoneSet from '../phone-set/phone-set.js'
-import EmailSet from '../email-set/email-set.js'
+import PhoneSet from '../phone-set/phone-set.js';
+import EmailSet from '../email-set/email-set.js';
 import SkypeButton from '../skype-button/skype-button.js';
-import SiteSet  from '../site-set/site-set.js'
+import SiteSet  from '../site-set/site-set.js';
 
 export default class ContactSet {
 
