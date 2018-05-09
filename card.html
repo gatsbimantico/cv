@@ -28,7 +28,6 @@
     <div title="...ok, call me picky, I don't want to work with it">
       <p style="font-size: 1.3em;">Maybe your browser doesn't support:</p>
       <ol style="font-size: 1.7em;">
-        <li>ES6 import & export</li>
         <li>ES6 Service Workers & you're offline</li>
         <li>ES6 Lambda functions</li>
       </ol>
@@ -40,10 +39,10 @@
 		</p>
 		<br>
 		<div class="column column--two">
-			<!-- <span><a
+			<span><a
 				href="https://www.mozilla.org/en-GB/firefox/new/"
 				style="color: #ff9500;"
-				target="_blank">Firefox</a></span> -->
+				target="_blank">Firefox</a></span>
 			<span><a
 				href="https://www.google.com/chrome/"
 				style="color: #0078D7;"
@@ -72,7 +71,7 @@
     ga('send', 'pageview');
   </script>
 <!-- App -->
-  <script src="./pages/card.js" type="module"></script>
+  <script src="/es6-import-js/index.js" onload="es6Import('./pages/card.js');"></script>
 <!-- Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
