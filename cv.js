@@ -20,9 +20,9 @@ export const cv = {
   summary: `
 I am a front end web developer with over 4 years of experience.
 
-My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Volkswagen, Lipton and Inditex Group.
+My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Loveholidays, Volkswagen, Lipton and Inditex Group.
 
-I'm fully competent with modern frameworks (like Angular and Polymer), frontend utilities (like NodeJs, Gulp, Git, Docker) and agile methodologies (like Scrum or Khanban).
+I'm fully competent with modern frameworks (like React, Angular and Polymer), frontend utilities (like NodeJs, Gulp, Git, Docker), testing (functional and A/B tests) and agile methodologies (like Scrum or Khanban).
 	`,
   skills: [
     'Front end enthusiast',
@@ -33,8 +33,21 @@ I'm fully competent with modern frameworks (like Angular and Polymer), frontend 
   experiences: [{
 
     is: 'Front end web developer',
+    at: 'Loveholidays',
+    on: { start: '2018 May', end: "now" },
+    main: [
+      {name: 'React'}
+    ],
+    portfolio: {
+      released: [
+        'https://loveholidays.com'
+      ]
+    }
+  }, {
+
+    was: 'Front end web developer',
     at: 'Tribal worldwide',
-    on: { start: '2017 Jan', end: 'now' },
+    on: { start: '2017 Jan', end: '2018 May' },
     tools: {
 			main: [
 				{name: 'Polymer', version: '1'},
