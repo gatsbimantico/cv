@@ -6,8 +6,8 @@
 
 export const cv = {
   name: 'César Costas Carrera',
-	role: 'JavaScript Engineer',
-	color: '#84425d',
+  role: 'JavaScript Engineer',
+  color: '#84425d',
   contact: {
     phone: '+447920158374',
     email: 'costascarrera.cesar@gmail.com',
@@ -35,30 +35,52 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
     is: 'Front end web developer',
     at: 'Loveholidays',
     on: { start: '2018 May', end: "now" },
-    main: [
-      {name: 'React'}
-    ],
+    tools: {
+      main: [
+        { name: 'React', version: 16 },
+        { name: 'Redux' },
+        { name: 'Sass' },
+        { name: 'Karma' },
+        { name: 'Git' },
+        { name: 'Optimizely' },
+        { name: 'Google Analytics' },
+        { name: 'Google Optimize' }
+      ],
+    },
     portfolio: {
       released: [
-        'https://loveholidays.com'
+        'https://LoveHolidays.com'
       ]
-    }
+    },
+    description: `
+LoveHolidays is a fast growing ecommerce startup.
+There's three main teams related to the search engine,
+the booking process and testing the user experience.
+
+As part of the experience team I design, code and excute
+A/B and MV tests to add successful new features into the site,
+in a continuous & fast paced delivery.
+
+We use Github & Jira Server for version control and management.
+Doing weekly sprints to plan daily releases.
+    `
   }, {
 
     was: 'Front end web developer',
     at: 'Tribal worldwide',
     on: { start: '2017 Jan', end: '2018 May' },
     tools: {
-			main: [
-				{name: 'Polymer', version: '1'},
-				{name: 'Redux'},
-				{name: 'Mocha'},
-				{name: 'Git'},
-				{name: 'Gulp', version: '4'},
-				{name: 'jQuery', version: '3'}
-			],
-			others: [
-				{name: 'Node', version: '6'},
+      main: [
+        { name: 'Polymer', version: '1' },
+        { name: 'Redux' },
+        { name: 'Mocha' },
+        { name: 'Sass' },
+        { name: 'Git' },
+        { name: 'Gulp', version: '4' },
+        { name: 'jQuery', version: '3' }
+      ],
+      others: [
+        { name: 'Node', version: '6' },
         'Handlebars',
         'Wordpress',
         'Aem',
@@ -67,16 +89,16 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
     },
     portfolio: {
       released: [
-        'http://lipton.com',
-        'http://cartedor.co.uk/maisoncartedor',
-        'http://vw.co.uk'
+        'http://Lipton.com',
+        'http://CarteDor.co.uk/maisoncartedor',
+        'http://Volkswagen.co.uk'
       ]
     },
     description: `
 Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
 Each project is handled by a small team of 2 to 4 specialists.
 
-We use gulp and git for the front end, then the backend supplies the data. 
+We use gulp and git for the front end, then the backend supplies the data.
 I managed front-end development using my expertise in Polymer, jQuery and Handlebars, or pure HTML and CSS.
 Also had to work with AEM and Jahia.
 
@@ -92,14 +114,15 @@ The time management is done in JIRA and Projector PSA.
     on: { start: '2016 Jun', end: '2016 Dec' },
     tools: {
       main: [
-				{name: 'Angular', version: '2'},
-				{name: 'TypeScript', version: '2'},
-				{name: 'Git'},
-				{name: 'Docker'},
-				{name: 'Gulp', version: '3'}
-			],
+        { name: 'Angular', version: '2' },
+        { name: 'TypeScript', version: '2' },
+        { name: 'Sass' },
+        { name: 'Git' },
+        { name: 'Docker' },
+        { name: 'Gulp', version: '3' }
+      ],
       others: [
-				{name: 'Node', version: '6'},
+        { name: 'Node', version: '6' },
         'Java',
         'Scala',
         'Hadoop'
@@ -110,7 +133,7 @@ At Imatia I worked on the design and implementation of a business analytics dash
 
 Working with a team of 4 developers, I defined and implemented the data workflow and its visualization.
 
-I used Docker and Jekins for automatic deploy, Java to serve REST decoupled services 
+I used Docker and Jekins for automatic deploy, Java to serve REST decoupled services
 and Angular2 with TypeScript for the web components based front-end development.
 
 The workflow was to acomplish the tasks written on Redmine by the project manager,
@@ -125,15 +148,15 @@ and to keep documented the time invested in every task through Elastic Projects.
     on: { start: '2015 Jun', end: '2016 Jun' },
     tools: {
       main: [
-        {name: 'JSP'},
-				{name: 'HTML', version: '4'},
-				{name: 'CSS', version: '2'},
-				{name: 'SVN'},
-				{name: 'jQuery', version: '1'}
-			],
+        { name: 'JSP' },
+        { name: 'HTML', version: '4' },
+        { name: 'CSS', version: '2' },
+        { name: 'SVN' },
+        { name: 'jQuery', version: '1' }
+      ],
       others: [
-				{name: 'Angular', version: '1'},
-				{name: 'Backbone'},
+        { name: 'Angular', version: '1' },
+        { name: 'Backbone' },
         'Java',
         'DB2',
         'Jira'
@@ -141,18 +164,18 @@ and to keep documented the time invested in every task through Elastic Projects.
     },
     portfolio: {
       dismissed: [
-        '//massimodutti.com',
-        '//oysho.com',
-        '//pullandbear.com',
-        '//zarahome.com',
-        '//stradivarius.com',
-        '//bershka.com',
-        '//uterque.com',
-        '//lefties.com'
+        '//MassimoDutti.com',
+        '//Oysho.com',
+        '//PullAndBear.com',
+        '//ZaraHome.com',
+        '//Stradivarius.com',
+        '//Bershka.com',
+        '//Uterque.com',
+        '//Lefties.com'
       ]
     },
     description: `
-I managed web maintenance for a range of international Inditex's websites including 
+I managed web maintenance for a range of international Inditex's websites including
 MassimoDutti, ZaraHome, Oysho, Bershka, Stradivarius and PullAndBear.
 
 I worked within a team of about 20 developers, 15 testers and 10 project managers,
@@ -176,12 +199,12 @@ and submit the time spent on every task through an internal tool.
     on: { start: '2013 Nov', end: '2015 May' },
     tools: {
       main: [
-        {name: 'Ruby-on-Rails'},
-				{name: 'HTML', version: '5'},
-				{name: 'CSS', version: '3'},
-				{name: 'D3'},
-				{name: 'jQuery', version: '1'}
-			],
+        { name: 'Ruby-on-Rails' },
+        { name: 'HTML', version: '5' },
+        { name: 'CSS', version: '3' },
+        { name: 'D3' },
+        { name: 'jQuery', version: '1' }
+      ],
       others: [
         'Java',
         'Weka',
@@ -209,11 +232,11 @@ and register the time I spend in every task.
 
   }],
   education: [{
-		
-		titles: [
-			'Time Management',
-			'How to speak in public',
-			'Strength Deployment Inventory'
+
+    titles: [
+      'Time Management',
+      'How to speak in public',
+      'Strength Deployment Inventory'
     ], at: 'Tribal', on: '2018 - 2017'
 
   }, {

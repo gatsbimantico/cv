@@ -112,6 +112,61 @@ a:active {
   background: #CCC;
 }
 
+.site-loveholidays:hover {
+  background: #11aaf6;
+  color: white;
+}
+
+.site-volkswagen:hover {
+  background: #00a8ec;
+  color: white;
+}
+
+.site-cartedor:hover {
+  background: white;
+  color: #c38027;
+}
+
+.site-lipton:hover {
+  background: #ffe600;
+  color: #e50000;
+}
+
+.site-massimodutti:hover {
+  background: white;
+  color: black;
+}
+
+.site-oysho:hover {
+  background: white;
+  color: black;
+}
+
+.site-pullandbear:hover {
+  background: black;
+  color: white;
+}
+
+.site-zarahome:hover {
+  background: #ccc;
+  color: #888b8d;
+}
+
+.site-stradivarius:hover {
+  background: white;
+  color: black;
+}
+
+.site-bershka:hover {
+  background: black;
+  color: white;
+}
+
+.site-uterque:hover {
+  background: white;
+  color: black;
+}
+
 p br {
   content: '';
   display: block;
