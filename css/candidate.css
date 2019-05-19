@@ -115,6 +115,11 @@ a:active {
   background: #CCC;
 }
 
+b,
+strong {
+  font-weight: bold;
+}
+
 .site-loveholidays:hover {
   background: #11aaf6;
   color: white;
@@ -498,6 +503,10 @@ a:focus {
     flex: 1 0 auto;
   }
 
+  .job-experience__tool-set {
+    font-size: 0.8em;
+  }
+
   .summary,
   .job-experience__summary {
     text-align: left;
@@ -505,6 +514,12 @@ a:focus {
 
   .education-experience {
     margin: 3px 0 0;
+  }
+
+  .job-experience__portfolio a {
+    font-size: 0.8em;
+    line-height: 1;
+    box-shadow: none;
   }
 
   .skill-set__item,

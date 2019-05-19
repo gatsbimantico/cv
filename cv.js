@@ -18,28 +18,32 @@ export const cv = {
     skype: 'https://join.skype.com/invite/nVxw0Bw8XoyS'
   },
   summary: `
-I am a front end web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
+I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
 
-My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Loveholidays, Volkswagen, Lipton and Inditex Group.
+My passion for frontend development begun through data visualization working as a data analyst in a research project.
+Since then I've worked on high traffic sites for brands like Loveholidays, Volkswagen or Pull&Bear.
 
 I'm fully competent with modern frameworks (like React, Angular and Polymer), frontend utilities (like NodeJs, Gulp, Git, Docker), testing (functional and A/B tests) and agile methodologies (like Scrum or Khanban).
 	`,
   skills: [
-    'Front end enthusiast',
+    'Frontend enthusiast',
     'Fast learner',
     'Team builder',
     'Agile developer'
   ],
   experiences: [{
 
-    is: 'Front end web developer',
+    is: 'Frontend web developer',
     at: 'Loveholidays',
     on: { start: '2018 May', end: "now" },
     tools: {
       main: [
         { name: 'React', version: 16 },
         { name: 'Redux' },
+        { name: 'redux-sagas' },
         { name: 'Sass' },
+        { name: 'styled-components' },
+        { name: 'Jest' },
         { name: 'Karma' },
         { name: 'Git' },
         { name: 'Optimizely' },
@@ -53,20 +57,24 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
       ]
     },
     description: `
-Loveholidays is a fast growing ecommerce startup.
-There's three main teams related to the search engine,
-the booking process and testing the user experience.
+During my first year in the company, Loveholidays became
+one of the UK's top 100 private companies with the fastest-growing profit.
 
-As part of the experience team I design, code and excute
-A/B and MV tests to add successful new features into the site,
-in a continuous & fast paced delivery.
+After a couple of moths working at Loveholidays,
+two colleagues and I started the experiments team; where we design,
+code and excute A/B and MV tests to bring new features
+in a lean, continuous & fast paced delivery.
 
-We use Github & Jira Server for version control and management.
-Doing weekly sprints to plan daily releases.
+Since the begning my focus was on reinforcing two pilars:
+<b>Speed</b>: by updating the Jira workflow to optimize communication and diminish interruptions and dashboards summarizing Github PR's status.
+And <b>Quality and standards</b>: by adding and creating linting rules to reinforce standards, producing less conflicts and reducing the code review feedback.
+
+A list to which lately I added: user segmentation, live style guide, server-side rendering and process automation.
+Voted internally the best team of 2018, I guided the experiments team since its conception to its current 10 developers.
     `
   }, {
 
-    was: 'Front end web developer',
+    was: 'Frontend web developer',
     at: 'Tribal worldwide',
     on: { start: '2017 Jan', end: '2018 May' },
     tools: {
@@ -98,7 +106,7 @@ Doing weekly sprints to plan daily releases.
 Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
 Each project is handled by a small team of 2 to 4 specialists.
 
-We use gulp and git for the front end, then the backend supplies the data.
+We use gulp and git for the frontend, then the backend supplies the data.
 I managed front-end development using my expertise in Polymer, jQuery and Handlebars, or pure HTML and CSS.
 Also had to work with AEM and Jahia.
 
