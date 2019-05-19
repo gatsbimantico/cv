@@ -1,5 +1,5 @@
 let a = new Date(),
-  s = '~1234567890IZEASbTBqO-=}#$£/%°@.:';
+  s = '-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ⚀⚁⚂⚃⚄⚅⚊⚋⚌⚍⚎⚏☰☲☴☶☷☵☳☱☀☁☂★☆☉☐☑☒☕☘☝☠☢☣☯';
 
 console.log(
   s[a.getYear() - 100] +
