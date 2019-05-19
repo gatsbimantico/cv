@@ -3,10 +3,8 @@
 
   const CACHE_NAME = 'CVjs-1.0.B08',
     externalUrlsToCache = [
-      'http://www.gravatar.com/avatar/*',
-      'https://fonts.googleapis.com/*',
-      'https://fonts.gstatic.com/*',
-      'https://www.google-analytics.com/analytics.js'
+      'https://www.google-analytics.com/analytics.js',
+      'https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap',
     ],
     internalUrlsToCache = [
       '.',

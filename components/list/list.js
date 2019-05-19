@@ -1,9 +1,9 @@
 export default class List {
 
-  constructor(Type, list) {
+  constructor(Type, list = []) {
 
     this.Type = Type;
-    this.list = list; 
+    this.list = list.filter(o => o);
 
   }
 

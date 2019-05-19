@@ -18,7 +18,7 @@ export const cv = {
     skype: 'https://join.skype.com/invite/nVxw0Bw8XoyS'
   },
   summary: `
-I am a front end web developer with over 4 years of experience.
+I am a front end web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
 
 My passion for front end development begun while working on web data visualization as a data analyst. Since then I have worked on web development for a number of clients including Loveholidays, Volkswagen, Lipton and Inditex Group.
 
@@ -49,11 +49,11 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
     },
     portfolio: {
       released: [
-        'https://LoveHolidays.com'
+        'https://Loveholidays.com'
       ]
     },
     description: `
-LoveHolidays is a fast growing ecommerce startup.
+Loveholidays is a fast growing ecommerce startup.
 There's three main teams related to the search engine,
 the booking process and testing the user experience.
 

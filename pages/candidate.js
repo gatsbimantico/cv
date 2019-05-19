@@ -26,20 +26,14 @@ class CandidatePage {
       this.$ = {
         pageIntro     : new PageIntro(cv),
         summary       : new Text('summary', cv.summary),
-        skillSet      : new SkillSet(
-          [
-            cv.skill,
-            ...cv.skills
-          ]
-          .filter(o => o)
-        ),
-        experienceSet : new ExperienceSet(
-          [
-            cv.experience,
-            ...cv.experiences
-          ]
-          .filter(o => o)
-        ),
+        skillSet      : new SkillSet([
+          cv.skill,
+          ...cv.skills
+        ]),
+        experienceSet : new ExperienceSet([
+          cv.experience,
+          ...cv.experiences
+        ]),
         educationSet  : new EducationSet(cv.education),
         revision      : new Revision()
       };

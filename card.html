@@ -15,7 +15,7 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="steelblue">
 
-	<link href="https://fonts.googleapis.com/css?family=Assistant:400,700|Muli:200,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap" rel="stylesheet">
 	<link href="./css/card.css" rel="stylesheet">
 
   <link rel="manifest" href="./manifest.json">
@@ -23,75 +23,19 @@
 </head>
 
 <body>
-	<center>
-		<br><br><br><h1>Why am I seeing this?</h1><br><br>
-    <div title="...ok, call me picky, I don't want to work with it">
-      <p style="font-size: 1.3em;">Maybe your browser doesn't support:</p>
-      <ol style="font-size: 1.7em;">
-        <li>ES6 Service Workers & you're offline</li>
-        <li>ES6 Lambda functions</li>
-      </ol>
-      <p style="font-size: 1.3em;">or maybe your browser is older than 2017</p>
-    </div>
-		<br><br><br>
-		<p style="font-size: 1.3em;">
-			So why don't you try one of these?
-		</p>
-		<br>
-		<div class="column column--two">
-			<span><a
-				href="https://www.mozilla.org/en-GB/firefox/new/"
-				style="color: #ff9500;"
-				target="_blank">Firefox</a></span>
-			<span><a
-				href="https://www.google.com/chrome/"
-				style="color: #0078D7;"
-				target="_blank">Chrome</a></span>
-			<span><a
-				href="https://www.apple.com/safari/"
-				target="_blank">Safari</a></span>
-			<!-- <span><a
-				href="https://www.microsoft.com/en-gb/windows/microsoft-edge"
-				style="color: #0078D7;"
-				target="_blank">Edge</a></span> -->
-			<!-- <span><a
-				href="http://www.opera.com/es/computer"
-				style="color: #FF1B2D;"
-				target="_blank">Opera</a></span> -->
-		</div>
-	</center>
+	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
 <!-- Google Analytics -->
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-115374216-1', 'auto');
-    ga('send', 'pageview');
-  </script>
+    (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,'ga');
+    ga('create', 'UA-115374216-1', 'auto');ga('send', 'pageview');
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async></script>
 <!-- App -->
   <script src="/es6-import-js/index.js" onload="es6Import('./pages/card.js');"></script>
 <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(function (registration) {
-          // console.log('Registered:', registration);
-        })
-        .catch(function (error) {
-          // console.log('Registration failed: ', error);
-        });
-    }
-  </script>
+ 	<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
 <!-- Loaded app state -->
-  <script>
-    window.onload = function () {
-
-      document.getElementsByTagName('body')[0].className += 'loaded';
-
-    }
-  </script>
+  <script>window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }</script>
 </body>
 
 </html>
