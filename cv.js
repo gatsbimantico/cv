@@ -65,7 +65,7 @@ two colleagues and I started the experiments team; where we design,
 code and excute A/B and MV tests to bring new features
 in a lean, continuous & fast paced delivery.
 
-Since the begning my focus was on reinforcing two pilars:
+Since the begining my focus was on reinforcing two pilars:
 <b>Speed</b>: by updating the Jira workflow to optimize communication and diminish interruptions and dashboards summarizing Github PR's status.
 And <b>Quality and standards</b>: by adding and creating linting rules to reinforce standards, producing less conflicts and reducing the code review feedback.
 
@@ -92,7 +92,8 @@ Voted internally the best team of 2018, I guided the experiments team since its 
         'Handlebars',
         'Wordpress',
         'Aem',
-        'Jahia'
+        'Jahia',
+        'Jira'
       ]
     },
     portfolio: {
@@ -104,15 +105,11 @@ Voted internally the best team of 2018, I guided the experiments team since its 
     },
     description: `
 Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
-Each project is handled by a small team of 2 to 4 specialists.
+Each project is handled by a small team of 1 to 4 specialists.
 
-We use gulp and git for the frontend, then the backend supplies the data.
-I managed front-end development using my expertise in Polymer, jQuery and Handlebars, or pure HTML and CSS.
-Also had to work with AEM and Jahia.
+At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
 
-The workflow is a ticket based board with JIRA and Scrum.
-The goal is to provide the maximum value within the estimated time for the ticket.
-The time management is done in JIRA and Projector PSA.
+I took the lead rooting for reusable components, unit tests and understanding the problem and client needs before coding.
     `
 
   }, {
@@ -198,6 +195,8 @@ written and assigned in Jira by one of the Projects Managers,
 commit the code only once its finished and tested in a local machine,
 then review the bugs found by the testers team
 and submit the time spent on every task through an internal tool.
+
+During my work at ViewNext, I developed an internal static site meant to share knowledge and scripting tools for the distributed team. I mentored two junior developers and three interns.
     `
 
   }, {
@@ -232,10 +231,7 @@ my job goal was focused on data mining and data visualization.
 
 We used D3js for the graphs and Undescore and Crossfilter to manage the data.
 
-We were using Scrum, with daily and weekly meetings,
-so the workflow was to write and select the tasks with the client,
-choose my own tasks, commit soon even unfinished
-and register the time I spend in every task.
+We were using Scrum, with daily meetings and weekly sprints.
     `
 
   }],
