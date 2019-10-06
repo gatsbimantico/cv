@@ -18,10 +18,11 @@ export const cv = {
     skype: 'https://join.skype.com/invite/nVxw0Bw8XoyS'
   },
   summary: `
-I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
+I am Cesar "The wizard", a software developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience and even longer record of team working and entrepreneurism.
 
-My passion for frontend development begun through data visualization working as a data analyst in a research project.
-Since then I've worked on high traffic sites for brands like Loveholidays, Volkswagen or Pull&Bear.
+My passion is the client interface. I enjoy creating outstanding visualizations, enjoyable user experiences, readable and self documented code, and intutive lifesaving utils or libraries. Whatever I develop, I add that extra effort to produce "WOW!" and "So easy!" reactions.
+
+Often known for automating my (and my team's) workflow, I am an agile developer that has worked across research and production environments for brands like Loveholidays, Volkswagen or Pull&Bear.
 
 I'm fully competent with modern frameworks (like React, Angular and Polymer), frontend utilities (like NodeJs, Gulp, Git, Docker), testing (functional and A/B tests) and agile methodologies (like Scrum or Khanban).
 	`,
@@ -104,12 +105,11 @@ Voted internally the best team of 2018, I guided the experiments team since its 
       ]
     },
     description: `
-Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
-Each project is handled by a small team of 1 to 4 specialists.
+Tribal is a development agency where each project is handled by a small team of 1 to 4 specialists.
 
-At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
+At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring junior and intern developers.
 
-I took the lead rooting for reusable components, unit tests and understanding the problem and client needs before coding.
+I took the lead rooting for reusable components, unit tests, and understanding the problem and client needs before coding.
     `
 
   }, {
@@ -180,23 +180,16 @@ and to keep documented the time invested in every task through Elastic Projects.
       ]
     },
     description: `
-I managed web maintenance for a range of international Inditex's websites including
+I worked on web maintenance for a range of international websites including
 MassimoDutti, ZaraHome, Oysho, Bershka, Stradivarius and PullAndBear.
 
-I worked within a team of about 20 developers, 15 testers and 10 project managers,
-with some remote team memebers.
+The team was composed of about 20 developers, 15 testers and 10 project managers,
+with some remote team members.
 
-I used IBM tools for the backend and jquery for the frontend.
-While I was working there, we were migrating the web
+The stack was all IBM tools and jquery. I participated on migrating the web
 to use a decoupled backend via REST and migrating to Angular1.4
 
-The workflow was to implement the task,
-written and assigned in Jira by one of the Projects Managers,
-commit the code only once its finished and tested in a local machine,
-then review the bugs found by the testers team
-and submit the time spent on every task through an internal tool.
-
-During my work at ViewNext, I developed an internal static site meant to share knowledge and scripting tools for the distributed team. I mentored two junior developers and three interns.
+During my work at ViewNext, I developed an internal static site meant to share knowledge and scripting tools for the distributed team, and I mentored two junior developers and three interns.
     `
 
   }, {
