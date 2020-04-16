@@ -212,10 +212,6 @@ p br {
   flex: 1 1;
 }
 
-.skype-button {
-  text-align: center;
-}
-
 .job-experience {
   margin-bottom: 30px;
   position: relative;
@@ -552,7 +548,6 @@ a:focus {
     background: rgba(54, 57, 72, 0.3) !important;
   }
 
-  .skype-button,
   #revision-id {
     display: none;
   }

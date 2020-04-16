@@ -15,7 +15,6 @@ export default {
       '//github.com/gatsbimantico',
       '//stackoverflow.com/users/2308745/gatsbimantico'
     ],
-    skype: 'https://join.skype.com/invite/nVxw0Bw8XoyS'
   },
   summary: `
 I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.

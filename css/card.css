@@ -145,10 +145,6 @@ a:active {
   flex: 1 1;
 }
 
-.skype-button {
-  text-align: center;
-}
-
 
 
 .phone-set,
@@ -267,9 +263,5 @@ a:focus {
   a:hover,
   a:focus {
     color: rgba(54, 57, 72, 1) !important;
-  }
-
-  .skype-button {
-    display: none;
   }
 }
