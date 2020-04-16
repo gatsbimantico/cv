@@ -1,9 +1,8 @@
 (function (app) {
   'use strict';
 
-  const CACHE_NAME = 'CVjs-2.0.i06',
+  const CACHE_NAME = 'CVjs-2.0.j4e',
     externalUrlsToCache = [
-      'https://www.google-analytics.com/analytics.js',
       'https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap',
     ],
     internalUrlsToCache = [

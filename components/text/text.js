@@ -14,7 +14,7 @@ export default class Text {
 
   }
 
-  get outerHTML () {
+  toString() {
 
     return `
 <p class="${this.name}">${this.text}</p>

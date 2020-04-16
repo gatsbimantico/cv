@@ -1,27 +1,38 @@
-import Header     from '../header/header.js';
+import Header from '../header/header.js';
 import ContactSet from '../contact-set/contact-set.js';
+import List  from '../list/list.js';
+import Email from '../email-set/email.js';
 
 export default class PageIntro {
 
-  constructor(cv) {
+  constructor(props) {
+    const { contact = {}, name, role } = props;
 
-    let config = cv || {};
+    const emailSet = new List(Email,
+      [
+        props.email,
+        contact.email,
+        ...props.emails || [],
+        ...contact.emails || []
+      ]
+        .filter(o => o)
+    );
 
-    this.contact = new ContactSet(config);
+    this.contact = ContactSet({ ...props, contact, emailSet });
     this.header = new Header(
-      config.name,
-      config.role,
-      this.contact.emailSet.emailSet.list[0]
+      name,
+      role,
+      emailSet.list[0]
     );
 
   }
 
-  get outerHTML () {
+  toString() {
 
     return `
 <header class="page-intro">
-  ${this.header.outerHTML}
-  ${this.contact.outerHTML}
+  ${this.header}
+  ${this.contact}
 </header>
     `;
 

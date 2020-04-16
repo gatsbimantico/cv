@@ -1,17 +1,3 @@
-export default class Email {
-
-  constructor(email) {
-
-    this.email = email;
-
-  }
-
-  get outerHTML () {
-
-    return `
-<li class="email"><a href="mailto:${this.email}">${this.email}<span aria-label=","></span></a></li>
-    `;
-
-  }
-
-}
+export default (email) => `
+<li class="email"><a href="mailto:${email}">${email}<span aria-label=","></span></a></li>
+`;

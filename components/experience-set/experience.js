@@ -11,14 +11,14 @@ export default class Experience {
 
     this.role        = config.is || config.was;
     this.at          = config.at;
-    this.dateSet     = new DateSet(config.on || config);
-    this.toolSet     = new ToolSet(config.tools);
+    this.dateSet     = DateSet(config.on || config);
+    this.toolSet     = ToolSet(config.tools);
     this.portfolio   = new PortfolioSet(config.portfolio);
     this.description = new Text('job-experience__summary', config.description);
 
   }
 
-  get outerHTML() {
+  toString() {
 
     return `
 <li class="job-experience">
@@ -27,14 +27,14 @@ export default class Experience {
       <h4>${this.role}<span aria-label="."></span></h4>
       <div class="job-experience__meta">
         <p class="job-experience__business"><span aria-label="at "></span>${this.at}</p>
-        ${this.dateSet.outerHTML}
+        ${this.dateSet}
         <span aria-label="."></span>
       </div>
     </header>
     <section class="job-experience__main-section">
-      ${this.toolSet.outerHTML}
-      ${this.portfolio.outerHTML}
-      ${this.description.outerHTML}
+      ${this.toolSet}
+      ${this.portfolio}
+      ${this.description}
       <span aria-label="."></span>
     </section>
   </article>

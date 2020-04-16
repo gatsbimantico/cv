@@ -1,17 +1,3 @@
-export default class Skill {
-
-  constructor (skill) {
-
-    this.skill = skill;
-
-  }
-
-  get outerHTML () {
-
-    return `
-<li class="skill-set__item">${this.skill}<span aria-label=","></span></li>
-    `;
-
-  }
-
-}
+export default (skill) => `
+<li class="skill-set__item">${skill}<span aria-label=","></span></li>
+`;

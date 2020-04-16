@@ -23,7 +23,7 @@ export default class Tool {
 
   }
 
-  get outerHTML () {
+  toString() {
 
     return this.name || this.version ? `
 <li class="job-experience__tool">

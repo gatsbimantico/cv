@@ -26,7 +26,7 @@ export default class SkypeButton {
     `;
   }
 
-  get outerHTML () {
+  toString() {
 
     return `
 <span aria-label="Join me in a "></span>

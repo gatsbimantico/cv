@@ -10,7 +10,7 @@ export default class Header {
 
   }
 
-  get outerHTML () {
+  toString() {
     // e6deefe7eb4c5f22991e392cc720fed5
 
     return `

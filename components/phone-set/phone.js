@@ -1,17 +1,3 @@
-export default class Phone {
-
-  constructor(phone) {
-
-    this.phone = phone;
-
-  }
-
-  get outerHTML () {
-
-    return `
-<li class="phone"><a href="tel:${this.phone}">${this.phone}<span aria-label=","></span></a></li>
-    `;
-
-  }
-
-}
+export default (phone) => `
+<li class="phone"><a href="tel:${phone}">${phone}<span aria-label=","></span></a></li>
+`;

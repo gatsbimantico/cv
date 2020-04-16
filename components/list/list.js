@@ -13,10 +13,17 @@ export default class List {
 
   }
 
-  get outerHTML () {
+  toString() {
 
     let htmlList = this.list
-      .map(item => new this.Type(item).outerHTML),
+      .map(item => {
+        try {
+          return new this.Type(item);
+        } catch (e) {}
+        try {
+          return this.Type(item);
+        } catch (e) {}
+      }),
       lastItem;
 
     if (htmlList.length >= 2) {

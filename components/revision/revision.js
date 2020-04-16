@@ -9,7 +9,7 @@ export default class Revision {
 
   }
 
-  get outerHTML () {
+  toString() {
 
     this.manifest
       .then(app => {

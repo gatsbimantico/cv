@@ -7,7 +7,7 @@ export default class Url {
 
   }
 
-  get outerHTML () {
+  toString() {
 
     return `
 <li class="url"><a class="site-${this.siteName.toLowerCase()}" href="${this.url}" target="_blank">${this.siteName.replace(/([A-Z])/g, ' $1')}<span aria-label=","></span></a></li>

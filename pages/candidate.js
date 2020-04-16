@@ -1,88 +1,56 @@
-import PageIntro     from '../components/page-intro/page-intro.js';
-import Text          from '../components/text/text.js';
-import SkillSet      from '../components/skill-set/skill-set.js';
+import PageIntro from '../components/page-intro/page-intro.js';
+import Text from '../components/text/text.js';
+import SkillSet from '../components/skill-set/skill-set.js';
 import ExperienceSet from '../components/experience-set/experience-set.js';
-import EducationSet  from '../components/education-set/education-set.js';
-import Revision      from '../components/revision/revision.js';
+import EducationSet from '../components/education-set/education-set.js';
+import Revision from '../components/revision/revision.js';
 
 import ThemeStyleController from '../controllers/theme-styles/theme-style.js';
 
 class CandidatePage {
 
-  constructor() {
+  constructor(cv) {
+    if (!cv) return;
 
-    let cvPath = (this.externalCV || '../cv') + '.js';
+    this.cv = cv;
+    this.$ = {
+      pageIntro: new PageIntro(cv),
+      summary: new Text('summary', cv.summary),
+      skillSet: SkillSet([
+        cv.skill,
+        ...cv.skills
+      ]),
+      experienceSet: ExperienceSet([
+        cv.experience,
+        ...cv.experiences
+      ]),
+      revision: new Revision()
+    };
 
-    import(cvPath).then(mod => mod.cv).then(cv => {
+    this.controllers = {
+      themeStyle: new ThemeStyleController(cv.color)
+    };
 
-      if (!cv) {
+    document.body.innerHTML = this;
 
-        return;
-
-      }
-
-      document.title = cv.name + ' - CV';
-
-      this.$ = {
-        pageIntro     : new PageIntro(cv),
-        summary       : new Text('summary', cv.summary),
-        skillSet      : new SkillSet([
-          cv.skill,
-          ...cv.skills
-        ]),
-        experienceSet : new ExperienceSet([
-          cv.experience,
-          ...cv.experiences
-        ]),
-        educationSet  : new EducationSet(cv.education),
-        revision      : new Revision()
-      };
-
-      this.controllers = {
-        themeStyle: new ThemeStyleController(cv.color)
-      };
-
-      document.body.innerHTML = this.outerHTML;
-
-      this.controllers.themeStyle.init();
-
-    });
-
+    this.controllers.themeStyle.init();
   }
 
-  get outerHTML () {
+  toString() {
 
-      return `
-${this.$.pageIntro.outerHTML}
+    return `
+${this.$.pageIntro}
 <main>
   <h3 class="summary__title">Summary</h3>
-  ${this.$.summary.outerHTML}
-  ${this.$.skillSet.outerHTML}
-  ${this.$.experienceSet.outerHTML}
-  ${this.$.educationSet.outerHTML}
-  ${this.$.revision.outerHTML}
+  ${this.$.summary}
+  ${this.$.skillSet}
+  ${this.$.experienceSet}
+  ${EducationSet(this.cv)}
+  ${this.$.revision}
 </main>
       `;
 
   }
-
-  /**
-   * Obtains the query parameter for an external CV
-   *
-   * @returns {String} The CV path set in the url
-   */
-  get externalCV () {
-
-    if (window.location.search) {
-
-      return window.location.search.replace('?cv=', '');
-
-    }
-
-    return;
-
-  }
-
 }
 
-export const page = new CandidatePage();
+export default CandidatePage;

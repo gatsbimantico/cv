@@ -3,8 +3,8 @@
 
 <head>
 	<title>JS generated CV</title>
-  <base href="/cv/">
-  <meta name="description" content="Costas's awesome JS generated CV">
+	<base href="/cv/">
+	<meta name="description" content="Costas's awesome JS generated CV">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,28 +16,13 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="steelblue">
 
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap" rel="stylesheet">
-	<!-- <link href="./css/card.css" rel="stylesheet"> -->
-	<link href="./css/candidate.css" rel="stylesheet">
-
-  <link rel="manifest" href="./manifest.json">
-
+	<link rel="manifest" href="./manifest.json">
+	<link rel="icon" href="./cv-icon.png">
 </head>
 
 <body>
 	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
-<!-- Google Analytics -->
-  <script>
-    (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,'ga');
-    ga('create', 'UA-115374216-1', 'auto');ga('send', 'pageview');
-	</script>
-	<script src="https://www.google-analytics.com/analytics.js" async></script>
-<!-- App -->
-	<script type="module" src="./pages/candidate.js"></script>
-<!-- Service Worker -->
- 	<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
-<!-- Loaded app state -->
-  <script>window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }</script>
+	<script type="module" src="./app.js"></script>
 </body>
 
-</html>
+</html>

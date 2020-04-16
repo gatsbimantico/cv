@@ -4,7 +4,7 @@
  * CURRICULUM VITAE
  */
 
-export const cv = {
+export default {
   name: 'César Costas Carrera',
   role: 'JavaScript Engineer',
   color: '#84425d',

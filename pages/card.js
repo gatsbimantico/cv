@@ -8,7 +8,7 @@ class CardPage {
 
     let cvPath = (this.externalCV || '../cv') + '.js';
 
-    import(cvPath).then(mod => mod.cv).then(cv => {
+    import(cvPath).then(mod => mod.default).then(cv => {
 
       if (!cv) {
 
@@ -26,7 +26,7 @@ class CardPage {
         themeStyle: new ThemeStyleController(cv.color)
       };
 
-      document.body.innerHTML = this.outerHTML;
+      document.body.innerHTML = this;
 
       this.controllers.themeStyle.init();
 
@@ -34,10 +34,10 @@ class CardPage {
 
   }
 
-  get outerHTML () {
+  toString() {
 
       return `
-${this.$.pageIntro.outerHTML}
+${this.$.pageIntro}
       `;
 
   }
