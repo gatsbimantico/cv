@@ -1,0 +1,1442 @@
+From 7a61266cf13b9ffd6d9691ac242d8a4a396f580c Mon Sep 17 00:00:00 2001
+From: Cesar Carrera <cesar.carrera@ocado.com>
+Date: Thu, 16 Apr 2020 01:55:34 +0100
+Subject: [PATCH] Add app and migrate to functional components
+
+---
+ app.js                                      |  42 ++++++++
+ card.html                                   |  28 ++---
+ components/contact-set/contact-set.js       |  97 ++++++-----------
+ components/date-set/date-set.js             |  38 +------
+ components/education-set/education-set.js   |  22 +---
+ components/education-set/education-title.js |  20 +---
+ components/education-set/education.js       |  34 +-----
+ components/email-set/email-set.js           |  23 +---
+ components/email-set/email.js               |  20 +---
+ components/experience-set/experience-set.js |  20 +---
+ components/experience-set/experience.js     |  14 +--
+ components/header/header.js                 |   2 +-
+ components/list/list.js                     |  11 +-
+ components/page-intro/page-intro.js         |  33 ++++--
+ components/phone-set/phone-set.js           |  20 +---
+ components/phone-set/phone.js               |  20 +---
+ components/portfolio-set/portfolio-set.js   |   4 +-
+ components/revision/revision.js             |   2 +-
+ components/site-set/site-set.js             |  20 +---
+ components/skill-set/skill-set.js           |  20 +---
+ components/skill-set/skill.js               |  20 +---
+ components/skype-button/skype-button.js     |   2 +-
+ components/text/text.js                     |   2 +-
+ components/tool-set/tool-set.js             |  23 +---
+ components/tool-set/tool.js                 |   2 +-
+ components/url/url.js                       |   2 +-
+ cv-icon.png                                 | Bin 0 -> 10553 bytes
+ cv.js                                       |   2 +-
+ index.html                                  |  27 ++---
+ pages/candidate.js                          | 110 +++++++-------------
+ pages/card.js                               |   8 +-
+ service-worker.js                           |   3 +-
+ utils/index.js                              |  12 +++
+ utils/memo.js                               |  41 ++++++++
+ utils/native-components.js                  |  25 +++++
+ 35 files changed, 302 insertions(+), 467 deletions(-)
+ create mode 100644 app.js
+ create mode 100644 cv-icon.png
+ create mode 100644 utils/index.js
+ create mode 100644 utils/memo.js
+ create mode 100644 utils/native-components.js
+
+diff --git a/app.js b/app.js
+new file mode 100644
+index 0000000..a3a5233
+--- /dev/null
++++ b/app.js
+@@ -0,0 +1,42 @@
++import { location } from './utils/index.js';
++import native from './utils/native-components.js';
++import CandidatePage from './pages/candidate.js';
++
++const externalCV = location.current.searchParams.get('cv');
++console.log(location.current.pathname);
++
++Promise.all([
++    import(externalCV || '/cv/cv.js').then(r => r.default),
++    fetch('./manifest.json').then(r => r.json()),
++    fetch('./package.json').then(r => r.json()),
++])
++    .then(([cv, man, pkg]) => {
++        console.log([cv, man, pkg]);
++
++        native.setTitle(`${cv.name} (${cv.role}) ${man.name}`);
++
++        Promise.all([
++            // native.addStyleSheet('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap'),
++            native.addStyleSheet('./css/candidate.css'),
++        ]).then(() => {
++            // document.body.innerHTML = new CandidatePage(cv);
++            new CandidatePage(cv);
++        });
++
++
++        if (
++            man.version === pkg.version && // to skip the service worker on development
++            'serviceWorker' in navigator
++        ) {
++            navigator.serviceWorker.register('./service-worker.js');
++        }
++    })
++    .catch((err) => {
++        document.body.innerHTML = `
++        <div style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
++            ${err}
++        </div>
++        `;
++    });
++
++window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }
+\ No newline at end of file
+diff --git a/card.html b/card.html
+index 9ad7197..5decd2b 100644
+--- a/card.html
++++ b/card.html
+@@ -3,7 +3,7 @@
+ 
+ <head>
+ 	<title>JS generated CV</title>
+- <meta name="description" content="Costas's awesome JS generated CV">
++	<meta name="description" content="Costas's awesome JS generated CV">
+ 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+@@ -15,27 +15,21 @@
+ 	<!-- iOS Safari -->
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="steelblue">
+ 
+-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap" rel="stylesheet">
++	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap"
++		rel="stylesheet">
+ 	<link href="./css/card.css" rel="stylesheet">
+ 
+-  <link rel="manifest" href="./manifest.json">
+-
++	<link rel="manifest" href="./manifest.json">
+ </head>
+ 
+ <body>
+ 	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
+-<!-- Google Analytics -->
+-  <script>
+-    (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,'ga');
+-    ga('create', 'UA-115374216-1', 'auto');ga('send', 'pageview');
+-	</script>
+-	<script src="https://www.google-analytics.com/analytics.js" async></script>
+-<!-- App -->
+-  <script type="module" src="./pages/card.js"></script>
+-<!-- Service Worker -->
+- 	<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
+-<!-- Loaded app state -->
+-  <script>window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }</script>
++	<!-- App -->
++	<script type="module" src="./pages/card.js"></script>
++	<!-- Service Worker -->
++	<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
++	<!-- Loaded app state -->
++	<script>window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }</script>
+ </body>
+ 
+-</html>
++</html>
+\ No newline at end of file
+diff --git a/components/contact-set/contact-set.js b/components/contact-set/contact-set.js
+index 9b296d5..3a11471 100644
+--- a/components/contact-set/contact-set.js
++++ b/components/contact-set/contact-set.js
+@@ -1,72 +1,41 @@
+ import PhoneSet from '../phone-set/phone-set.js';
+-import EmailSet from '../email-set/email-set.js';
+ import SkypeButton from '../skype-button/skype-button.js';
+-import SiteSet  from '../site-set/site-set.js';
+-
+-export default class ContactSet {
+-
+-  constructor(cv) {
+-
+-    let config = Object.assign(
+-      { contact: {} },
+-      cv
+-    );
+-
+-    this.phoneSet = new PhoneSet(
+-      [
+-        config.phone,
+-        config.contact.phone,
+-        ...config.phones || [],
+-        ...config.contact.phones || []
+-      ]
+-      .filter(o => o)
+-    );
++import EmailSet from '../email-set/email-set.js';
++import SiteSet from '../site-set/site-set.js';
+ 
+-    this.emailSet = new EmailSet(
+-      [
+-        config.email,
+-        config.contact.email,
+-        ...config.emails || [],
+-        ...config.contact.emails || []
+-      ]
++const ContactSet = (props) => `
++<section class="contact-set">
++  ${PhoneSet(
++    [
++      props.phone,
++      props.contact.phone,
++      ...props.phones || [],
++      ...props.contact.phones || []
++    ]
+       .filter(o => o)
+-    );
+-
+-    this.skype = new SkypeButton(
+-      [
+-        config.skype,
+-        config.contact.skype,
+-        config.skypeID,
+-        config.contact.skypeID,
+-        config.skypeId,
+-        config.contact.skypeId,
+-      ]
++  )}
++  ${EmailSet(props.emailSet)}
++  ${new SkypeButton(
++    [
++      props.skype,
++      props.contact.skype,
++      props.skypeID,
++      props.contact.skypeID,
++      props.skypeId,
++      props.contact.skypeId,
++    ]
+       .filter(o => o).pop()
+-    )
+-
+-    this.siteSet = new SiteSet(
+-      [
+-        config.site,
+-        config.contact.site,
+-        ...config.sites || [],
+-        ...config.contact.sites || []
+-      ]
++  )}
++  ${SiteSet(
++    [
++      props.site,
++      props.contact.site,
++      ...props.sites || [],
++      ...props.contact.sites || []
++    ]
+       .filter(o => o)
+-    );
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
+-<section class="contact-set">
+-  ${this.phoneSet.outerHTML}
+-  ${this.emailSet.outerHTML}
+-  ${this.skype.outerHTML}
+-  ${this.siteSet.outerHTML}
++  )}
+ </section>
+-    `;
+-
+-  }
++`;
+ 
+-}
++export default ContactSet;
+diff --git a/components/date-set/date-set.js b/components/date-set/date-set.js
+index 1439b15..92810b8 100644
+--- a/components/date-set/date-set.js
++++ b/components/date-set/date-set.js
+@@ -1,36 +1,6 @@
+-export default class DateSet {
+-
+-  constructor (period) {
+-
+-    this.period = period || {};
+-
+-  }
+-
+-  get start () {
+-
+-    return this.period.start ? `
+-<span>from ${this.period.start}</span>
+-    ` : '';
+-
+-  }
+-
+-  get end () {
+-
+-    return this.period.end ? `
+-<span>to ${this.period.end}</span>
+-    ` : '';
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return this.period.start || this.period.end ? `
++export default ({ end, start }) => (start || end ? `
+ <p class="job-experience__date">
+-  ${this.start}
+-  ${this.end}
++  ${start ? `<span>from ${start}</span>` : ''}
++  ${end ? `<span>to ${end}</span>` : ''}
+ </p>
+-    ` : '';
+-
+-  }
+-
+-}
++    ` : '');
+diff --git a/components/education-set/education-set.js b/components/education-set/education-set.js
+index 4482bb7..886f8fd 100644
+--- a/components/education-set/education-set.js
++++ b/components/education-set/education-set.js
+@@ -1,23 +1,7 @@
+ import List from '../list/list.js';
+ import Education from './education.js';
+ 
+-export default class EducationSet {
+-
+-  constructor(educationSet) {
+-
+-    this.educationSet = new List(Education, educationSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default ({ education }) => `
+ <h3 class="education-set__title">Courses & Education<span aria-label="."></span></h3>
+-<ul class="education-set">
+-  ${this.educationSet.outerHTML}
+-</ul>
+-    `;
+-
+-  }
+-
+-}
++<ul class="education-set">${new List(Education, education)}</ul>
++`;
+diff --git a/components/education-set/education-title.js b/components/education-set/education-title.js
+index afc2dfb..88d6ee4 100644
+--- a/components/education-set/education-title.js
++++ b/components/education-set/education-title.js
+@@ -1,17 +1,3 @@
+-export default class EducationTitle {
+-
+-  constructor (title) {
+-
+-    this.title = title;
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
+-<li class="education-experience__title">${this.title}<span aria-label=","></span></li>
+-    `;
+-
+-  }
+-
+-}
++export default (title) => `
++<li class="education-experience__title">${title}<span aria-label=","></span></li>
++`;
+diff --git a/components/education-set/education.js b/components/education-set/education.js
+index 82366d1..e5305b7 100644
+--- a/components/education-set/education.js
++++ b/components/education-set/education.js
+@@ -1,38 +1,12 @@
+ import EducationTitle from './education-title.js';
+ import List           from '../list/list.js';
+ 
+-export default class Education {
+-
+-  constructor(education) {
+-
+-    if (education.titles) {
+-
+-      this.titleSet = new List(EducationTitle, education.titles);
+-      this.on = education.on;
+-      this.at = education.at;
+-
+-    }
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    if (!this.titleSet) {
+-
+-      return '';
+-
+-    }
+-
+-    return `
++export default ({ at, on, titles }) => (titles ? `
+ <li class="education-experience">
+   <ul class="education-experience__title-set">
+-    ${this.titleSet.outerHTML}
++    ${new List(EducationTitle, titles)}
+   </ul>
+-  <span>${this.on}</span> <span>@ ${this.at}</span>
++  <span>${on}</span> <span>@ ${at}</span>
+   <span aria-label="."></span>
+ </li>
+-    `;
+-
+-  }
+-
+-}
++` : '');
+diff --git a/components/email-set/email-set.js b/components/email-set/email-set.js
+index ff08010..c688d9d 100644
+--- a/components/email-set/email-set.js
++++ b/components/email-set/email-set.js
+@@ -1,24 +1,7 @@
+-import List  from '../list/list.js';
+-import Email from './email.js';
+-
+-export default class EmailSet {
+-
+-  constructor(emailSet) {
+-
+-    this.emailSet = new List(Email, emailSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default (emailSet) => `
+ <span aria-label="Email:"></span>
+ <ul class="email-set">
+-  ${this.emailSet.outerHTML}
++  ${emailSet}
+ </ul>
+ <span aria-label="."></span>
+-    `;
+-
+-  }
+-
+-}
++`;
+diff --git a/components/email-set/email.js b/components/email-set/email.js
+index 2ba38c6..9d32b5c 100644
+--- a/components/email-set/email.js
++++ b/components/email-set/email.js
+@@ -1,17 +1,3 @@
+-export default class Email {
+-
+-  constructor(email) {
+-
+-    this.email = email;
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
+-<li class="email"><a href="mailto:${this.email}">${this.email}<span aria-label=","></span></a></li>
+-    `;
+-
+-  }
+-
+-}
++export default (email) => `
++<li class="email"><a href="mailto:${email}">${email}<span aria-label=","></span></a></li>
++`;
+diff --git a/components/experience-set/experience-set.js b/components/experience-set/experience-set.js
+index 36ba041..b9f5c6d 100644
+--- a/components/experience-set/experience-set.js
++++ b/components/experience-set/experience-set.js
+@@ -1,23 +1,9 @@
+ import List from '../list/list.js';
+ import Experience from './experience.js';
+ 
+-export default class ExperienceSet {
+-
+-  constructor(experienceSet) {
+-
+-    this.experienceSet = new List(Experience, experienceSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default (experienceSet) => `
+ <h3 class="experience-set__title">Experiences<span aria-label="."></span></h3>
+ <ul class="experience-set">
+-  ${this.experienceSet.outerHTML}
++  ${new List(Experience, experienceSet)}
+ </ul>
+-    `;
+-
+-  }
+-
+-}
++`;
+diff --git a/components/experience-set/experience.js b/components/experience-set/experience.js
+index 28a98a9..b7d6796 100644
+--- a/components/experience-set/experience.js
++++ b/components/experience-set/experience.js
+@@ -11,14 +11,14 @@ export default class Experience {
+ 
+     this.role        = config.is || config.was;
+     this.at          = config.at;
+-    this.dateSet     = new DateSet(config.on || config);
+-    this.toolSet     = new ToolSet(config.tools);
++    this.dateSet     = DateSet(config.on || config);
++    this.toolSet     = ToolSet(config.tools);
+     this.portfolio   = new PortfolioSet(config.portfolio);
+     this.description = new Text('job-experience__summary', config.description);
+ 
+   }
+ 
+-  get outerHTML() {
++  toString() {
+ 
+     return `
+ <li class="job-experience">
+@@ -27,14 +27,14 @@ export default class Experience {
+       <h4>${this.role}<span aria-label="."></span></h4>
+       <div class="job-experience__meta">
+         <p class="job-experience__business"><span aria-label="at "></span>${this.at}</p>
+-        ${this.dateSet.outerHTML}
++        ${this.dateSet}
+         <span aria-label="."></span>
+       </div>
+     </header>
+     <section class="job-experience__main-section">
+-      ${this.toolSet.outerHTML}
+-      ${this.portfolio.outerHTML}
+-      ${this.description.outerHTML}
++      ${this.toolSet}
++      ${this.portfolio}
++      ${this.description}
+       <span aria-label="."></span>
+     </section>
+   </article>
+diff --git a/components/header/header.js b/components/header/header.js
+index d101c72..2797340 100644
+--- a/components/header/header.js
++++ b/components/header/header.js
+@@ -10,7 +10,7 @@ export default class Header {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+     // e6deefe7eb4c5f22991e392cc720fed5
+ 
+     return `
+diff --git a/components/list/list.js b/components/list/list.js
+index 497a283..b175efa 100644
+--- a/components/list/list.js
++++ b/components/list/list.js
+@@ -13,10 +13,17 @@ export default class List {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     let htmlList = this.list
+-      .map(item => new this.Type(item).outerHTML),
++      .map(item => {
++        try {
++          return new this.Type(item);
++        } catch (e) {}
++        try {
++          return this.Type(item);
++        } catch (e) {}
++      }),
+       lastItem;
+ 
+     if (htmlList.length >= 2) {
+diff --git a/components/page-intro/page-intro.js b/components/page-intro/page-intro.js
+index f43d1b4..54fd08e 100644
+--- a/components/page-intro/page-intro.js
++++ b/components/page-intro/page-intro.js
+@@ -1,27 +1,38 @@
+-import Header     from '../header/header.js';
++import Header from '../header/header.js';
+ import ContactSet from '../contact-set/contact-set.js';
++import List  from '../list/list.js';
++import Email from '../email-set/email.js';
+ 
+ export default class PageIntro {
+ 
+-  constructor(cv) {
+-
+-    let config = cv || {};
++  constructor(props) {
++    const { contact = {}, name, role } = props;
++
++    const emailSet = new List(Email,
++      [
++        props.email,
++        contact.email,
++        ...props.emails || [],
++        ...contact.emails || []
++      ]
++        .filter(o => o)
++    );
+ 
+-    this.contact = new ContactSet(config);
++    this.contact = ContactSet({ ...props, contact, emailSet });
+     this.header = new Header(
+-      config.name,
+-      config.role,
+-      this.contact.emailSet.emailSet.list[0]
++      name,
++      role,
++      emailSet.list[0]
+     );
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return `
+ <header class="page-intro">
+-  ${this.header.outerHTML}
+-  ${this.contact.outerHTML}
++  ${this.header}
++  ${this.contact}
+ </header>
+     `;
+ 
+diff --git a/components/phone-set/phone-set.js b/components/phone-set/phone-set.js
+index 82dea9d..625b692 100644
+--- a/components/phone-set/phone-set.js
++++ b/components/phone-set/phone-set.js
+@@ -1,24 +1,10 @@
+ import List  from '../list/list.js';
+ import Phone from './phone.js';
+ 
+-export default class PhoneSet {
+-
+-  constructor(phoneSet) {
+-
+-    this.phoneSet = new List(Phone, phoneSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default (phoneSet) => `
+ <span aria-label="Telephone:"></span>
+ <ul class="phone-set">
+-  ${this.phoneSet.outerHTML}
++  ${new List(Phone, phoneSet)}
+ </ul>
+ <span aria-label="."></span>
+-    `;
+-
+-  }
+-
+-}
++`;
+diff --git a/components/phone-set/phone.js b/components/phone-set/phone.js
+index ab70f97..d97a3b8 100644
+--- a/components/phone-set/phone.js
++++ b/components/phone-set/phone.js
+@@ -1,17 +1,3 @@
+-export default class Phone {
+-
+-  constructor(phone) {
+-
+-    this.phone = phone;
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
+-<li class="phone"><a href="tel:${this.phone}">${this.phone}<span aria-label=","></span></a></li>
+-    `;
+-
+-  }
+-
+-}
++export default (phone) => `
++<li class="phone"><a href="tel:${phone}">${phone}<span aria-label=","></span></a></li>
++`;
+diff --git a/components/portfolio-set/portfolio-set.js b/components/portfolio-set/portfolio-set.js
+index 1dc8581..816afaa 100644
+--- a/components/portfolio-set/portfolio-set.js
++++ b/components/portfolio-set/portfolio-set.js
+@@ -55,12 +55,12 @@ export default class PortfolioSet {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return this.sites.length ? `
+ <h5><span aria-label="and I helped to build "></span>Sites<span aria-label=" like"></span>:</h5>
+ <ul class="job-experience__portfolio ${this.columnClass}">
+-  ${this.sites.outerHTML}
++  ${this.sites}
+ </ul>
+ <span aria-label=";."></span>
+     ` : '';
+diff --git a/components/revision/revision.js b/components/revision/revision.js
+index 3d70301..ef2029b 100644
+--- a/components/revision/revision.js
++++ b/components/revision/revision.js
+@@ -9,7 +9,7 @@ export default class Revision {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     this.manifest
+       .then(app => {
+diff --git a/components/site-set/site-set.js b/components/site-set/site-set.js
+index 2e8d226..fb68272 100644
+--- a/components/site-set/site-set.js
++++ b/components/site-set/site-set.js
+@@ -1,24 +1,10 @@
+ import List  from '../list/list.js';
+ import Url from '../url/url.js';
+ 
+-export default class SiteSet {
+-
+-  constructor(siteSet) {
+-
+-    this.siteSet = new List(Url, siteSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default (siteSet) => `
+ <span aria-label="Sites:"></span>
+ <ul class="site-set">
+-  ${this.siteSet.outerHTML}
++  ${new List(Url, siteSet)}
+ </ul>
+ <span aria-label="."></span>
+-    `;
+-
+-  }
+-
+-}
++`;
+diff --git a/components/skill-set/skill-set.js b/components/skill-set/skill-set.js
+index 97a545c..d5395a8 100644
+--- a/components/skill-set/skill-set.js
++++ b/components/skill-set/skill-set.js
+@@ -1,22 +1,8 @@
+ import List from '../list/list.js';
+ import Skill from './skill.js';
+ 
+-export default class SkillSet {
+-
+-  constructor(skillSet) {
+-
+-    this.skillSet = new List(Skill, skillSet);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
++export default (skillSet) => `
+ <ul class="skill-set">
+-  ${this.skillSet.outerHTML}
++  ${new List(Skill, skillSet)}
+ </ul>
+-    `;
+-
+-  }
+-
+-}
++`;
+diff --git a/components/skill-set/skill.js b/components/skill-set/skill.js
+index 201b552..58dacbf 100644
+--- a/components/skill-set/skill.js
++++ b/components/skill-set/skill.js
+@@ -1,17 +1,3 @@
+-export default class Skill {
+-
+-  constructor (skill) {
+-
+-    this.skill = skill;
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return `
+-<li class="skill-set__item">${this.skill}<span aria-label=","></span></li>
+-    `;
+-
+-  }
+-
+-}
++export default (skill) => `
++<li class="skill-set__item">${skill}<span aria-label=","></span></li>
++`;
+diff --git a/components/skype-button/skype-button.js b/components/skype-button/skype-button.js
+index 0200e05..8250450 100644
+--- a/components/skype-button/skype-button.js
++++ b/components/skype-button/skype-button.js
+@@ -26,7 +26,7 @@ export default class SkypeButton {
+     `;
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return `
+ <span aria-label="Join me in a "></span>
+diff --git a/components/text/text.js b/components/text/text.js
+index 04b4e8a..f1aed19 100644
+--- a/components/text/text.js
++++ b/components/text/text.js
+@@ -14,7 +14,7 @@ export default class Text {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return `
+ <p class="${this.name}">${this.text}</p>
+diff --git a/components/tool-set/tool-set.js b/components/tool-set/tool-set.js
+index 1fdc7fd..35d6200 100644
+--- a/components/tool-set/tool-set.js
++++ b/components/tool-set/tool-set.js
+@@ -1,27 +1,10 @@
+ import List from '../list/list.js';
+ import Tool from './tool.js';
+ 
+-export default class ToolSet {
+-
+-  constructor (tools) {
+-
+-    let config = tools || {};
+-
+-    if (config.main)
+-      this.toolSet = new List(Tool, config.main);
+-
+-  }
+-
+-  get outerHTML () {
+-
+-    return this.toolSet ? `
++export default ({ main }) => (main ? `
+ <h5><span aria-label="where I used "></span>Tools<span aria-label=" like"></span>:</h5>
+ <ul class="job-experience__tool-set">
+-  ${this.toolSet.outerHTML}
++  ${new List(Tool, main)}
+ </ul>
+ <span aria-label=";."></span>
+-    ` : '';
+-
+-  }
+-
+-}
++` : '');
+diff --git a/components/tool-set/tool.js b/components/tool-set/tool.js
+index 90c3d68..000a72d 100644
+--- a/components/tool-set/tool.js
++++ b/components/tool-set/tool.js
+@@ -23,7 +23,7 @@ export default class Tool {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return this.name || this.version ? `
+ <li class="job-experience__tool">
+diff --git a/components/url/url.js b/components/url/url.js
+index 6cb1ed4..a3fff37 100644
+--- a/components/url/url.js
++++ b/components/url/url.js
+@@ -7,7 +7,7 @@ export default class Url {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+     return `
+ <li class="url"><a class="site-${this.siteName.toLowerCase()}" href="${this.url}" target="_blank">${this.siteName.replace(/([A-Z])/g, ' $1')}<span aria-label=","></span></a></li>
+diff --git a/cv-icon.png b/cv-icon.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..d02e0fd20fdd9dcf212163c1182803ff9f5e4a56
+GIT binary patch
+literal 10553
+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
+S>bceNndGFDC9A|g2L3PL^xZ80
+
+literal 0
+HcmV?d00001
+
+diff --git a/cv.js b/cv.js
+index e6757c9..da53190 100644
+--- a/cv.js
++++ b/cv.js
+@@ -4,7 +4,7 @@
+  * CURRICULUM VITAE
+  */
+ 
+-export const cv = {
++export default {
+   name: 'César Costas Carrera',
+   role: 'JavaScript Engineer',
+   color: '#84425d',
+diff --git a/index.html b/index.html
+index ac93a3b..f752a28 100644
+--- a/index.html
++++ b/index.html
+@@ -3,8 +3,8 @@
+ 
+ <head>
+ 	<title>JS generated CV</title>
+-  <base href="/cv/">
+-  <meta name="description" content="Costas's awesome JS generated CV">
++	<base href="/cv/">
++	<meta name="description" content="Costas's awesome JS generated CV">
+ 
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+@@ -16,28 +16,13 @@
+ 	<!-- iOS Safari -->
+ 	<meta name="apple-mobile-web-app-status-bar-style" content="steelblue">
+ 
+-	<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap" rel="stylesheet">
+-	<!-- <link href="./css/card.css" rel="stylesheet"> -->
+-	<link href="./css/candidate.css" rel="stylesheet">
+-
+-  <link rel="manifest" href="./manifest.json">
+-
++	<link rel="manifest" href="./manifest.json">
++	<link rel="icon" href="./cv-icon.png">
+ </head>
+ 
+ <body>
+ 	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
+-<!-- Google Analytics -->
+-  <script>
+-    (function(i,r){i['GoogleAnalyticsObject']=r;i[r]=function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();})(window,'ga');
+-    ga('create', 'UA-115374216-1', 'auto');ga('send', 'pageview');
+-	</script>
+-	<script src="https://www.google-analytics.com/analytics.js" async></script>
+-<!-- App -->
+-	<script type="module" src="./pages/candidate.js"></script>
+-<!-- Service Worker -->
+- 	<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./service-worker.js');</script>
+-<!-- Loaded app state -->
+-  <script>window.onload = function () { document.getElementsByTagName('body')[0].className += 'loaded'; }</script>
++	<script type="module" src="./app.js"></script>
+ </body>
+ 
+-</html>
++</html>
+\ No newline at end of file
+diff --git a/pages/candidate.js b/pages/candidate.js
+index f4ff07b..fa80458 100644
+--- a/pages/candidate.js
++++ b/pages/candidate.js
+@@ -1,88 +1,56 @@
+-import PageIntro     from '../components/page-intro/page-intro.js';
+-import Text          from '../components/text/text.js';
+-import SkillSet      from '../components/skill-set/skill-set.js';
++import PageIntro from '../components/page-intro/page-intro.js';
++import Text from '../components/text/text.js';
++import SkillSet from '../components/skill-set/skill-set.js';
+ import ExperienceSet from '../components/experience-set/experience-set.js';
+-import EducationSet  from '../components/education-set/education-set.js';
+-import Revision      from '../components/revision/revision.js';
++import EducationSet from '../components/education-set/education-set.js';
++import Revision from '../components/revision/revision.js';
+ 
+ import ThemeStyleController from '../controllers/theme-styles/theme-style.js';
+ 
+ class CandidatePage {
+ 
+-  constructor() {
+-
+-    let cvPath = (this.externalCV || '../cv') + '.js';
+-
+-    import(cvPath).then(mod => mod.cv).then(cv => {
+-
+-      if (!cv) {
+-
+-        return;
+-
+-      }
+-
+-      document.title = cv.name + ' - CV';
+-
+-      this.$ = {
+-        pageIntro     : new PageIntro(cv),
+-        summary       : new Text('summary', cv.summary),
+-        skillSet      : new SkillSet([
+-          cv.skill,
+-          ...cv.skills
+-        ]),
+-        experienceSet : new ExperienceSet([
+-          cv.experience,
+-          ...cv.experiences
+-        ]),
+-        educationSet  : new EducationSet(cv.education),
+-        revision      : new Revision()
+-      };
+-
+-      this.controllers = {
+-        themeStyle: new ThemeStyleController(cv.color)
+-      };
+-
+-      document.body.innerHTML = this.outerHTML;
+-
+-      this.controllers.themeStyle.init();
+-
+-    });
+-
++  constructor(cv) {
++    if (!cv) return;
++
++    this.cv = cv;
++    this.$ = {
++      pageIntro: new PageIntro(cv),
++      summary: new Text('summary', cv.summary),
++      skillSet: SkillSet([
++        cv.skill,
++        ...cv.skills
++      ]),
++      experienceSet: ExperienceSet([
++        cv.experience,
++        ...cv.experiences
++      ]),
++      revision: new Revision()
++    };
++
++    this.controllers = {
++      themeStyle: new ThemeStyleController(cv.color)
++    };
++
++    document.body.innerHTML = this;
++
++    this.controllers.themeStyle.init();
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+-      return `
+-${this.$.pageIntro.outerHTML}
++    return `
++${this.$.pageIntro}
+ <main>
+   <h3 class="summary__title">Summary</h3>
+-  ${this.$.summary.outerHTML}
+-  ${this.$.skillSet.outerHTML}
+-  ${this.$.experienceSet.outerHTML}
+-  ${this.$.educationSet.outerHTML}
+-  ${this.$.revision.outerHTML}
++  ${this.$.summary}
++  ${this.$.skillSet}
++  ${this.$.experienceSet}
++  ${EducationSet(this.cv)}
++  ${this.$.revision}
+ </main>
+       `;
+ 
+   }
+-
+-  /**
+-   * Obtains the query parameter for an external CV
+-   *
+-   * @returns {String} The CV path set in the url
+-   */
+-  get externalCV () {
+-
+-    if (window.location.search) {
+-
+-      return window.location.search.replace('?cv=', '');
+-
+-    }
+-
+-    return;
+-
+-  }
+-
+ }
+ 
+-export const page = new CandidatePage();
++export default CandidatePage;
+diff --git a/pages/card.js b/pages/card.js
+index 6154268..00e6920 100644
+--- a/pages/card.js
++++ b/pages/card.js
+@@ -8,7 +8,7 @@ class CardPage {
+ 
+     let cvPath = (this.externalCV || '../cv') + '.js';
+ 
+-    import(cvPath).then(mod => mod.cv).then(cv => {
++    import(cvPath).then(mod => mod.default).then(cv => {
+ 
+       if (!cv) {
+ 
+@@ -26,7 +26,7 @@ class CardPage {
+         themeStyle: new ThemeStyleController(cv.color)
+       };
+ 
+-      document.body.innerHTML = this.outerHTML;
++      document.body.innerHTML = this;
+ 
+       this.controllers.themeStyle.init();
+ 
+@@ -34,10 +34,10 @@ class CardPage {
+ 
+   }
+ 
+-  get outerHTML () {
++  toString() {
+ 
+       return `
+-${this.$.pageIntro.outerHTML}
++${this.$.pageIntro}
+       `;
+ 
+   }
+diff --git a/service-worker.js b/service-worker.js
+index e1a49c2..4ce76c8 100755
+--- a/service-worker.js
++++ b/service-worker.js
+@@ -1,9 +1,8 @@
+ (function (app) {
+   'use strict';
+ 
+-  const CACHE_NAME = 'CVjs-2.0.i06',
++  const CACHE_NAME = 'CVjs-2.0.j4e',
+     externalUrlsToCache = [
+-      'https://www.google-analytics.com/analytics.js',
+       'https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap',
+     ],
+     internalUrlsToCache = [
+diff --git a/utils/index.js b/utils/index.js
+new file mode 100644
+index 0000000..a7bc2f6
+--- /dev/null
++++ b/utils/index.js
+@@ -0,0 +1,12 @@
++import Memo from './memo.js';
++
++const memo = new Memo();
++window.memo = memo;
++
++export const hasWindow = typeof window !== 'undefined';
++export const hasLocation = hasWindow && 'location' in window;
++export const parseURL = memo.parseURL = (url) => new URL(url || 'http://nobrowserhost');
++
++export const location = {
++    get current() { return parseURL(hasLocation && window.location.href); }
++};
+diff --git a/utils/memo.js b/utils/memo.js
+new file mode 100644
+index 0000000..1340ac2
+--- /dev/null
++++ b/utils/memo.js
+@@ -0,0 +1,41 @@
++/**
++ * MEMO
++ * ----
++ * 
++ * This is my state machine, avoids executing functions given the same params as input.
++ */
++
++export default function Memo(options = {
++    expire: 0, // number of milliseconds to expire the cache
++}) {
++    const cache = {};
++    const proxyGetter = (obj, prop, ...args) => {
++        const key = JSON.stringify(args.map(o => (o.toString ? o.toString() : o)));
++        if (!(prop in cache)) {
++            cache[prop] = {};
++        }
++
++        if (!(prop in obj)) {
++            return null;
++        } else if (typeof cache[prop] !== 'object') {
++            return cache[prop];
++        } else if (!(key in cache[prop])) {
++            if (typeof obj[prop] === 'function') {
++                cache[prop][key] = obj[prop].call(obj, ...args);
++            } else {
++                cache[prop][key] = obj[prop];
++            }
++            if (options.expire) {
++                setTimeout(() => {
++                    delete cache[prop][key];
++                }, options.expire);
++            }
++        }
++
++        return cache[prop][key];
++    }
++    return new Proxy({}, {
++        get: (obj, prop) => (...args) => proxyGetter(obj, prop, ...args),
++        set: (obj, prop, value) => (delete cache[prop], obj[prop] = value),
++    });
++}
+diff --git a/utils/native-components.js b/utils/native-components.js
+new file mode 100644
+index 0000000..9532334
+--- /dev/null
++++ b/utils/native-components.js
+@@ -0,0 +1,25 @@
++import Memo from './memo.js';
++
++const dom = new Memo({ expire: 1000 });
++window.components = dom;
++
++const newDomTag = (tag = 'div', definition = v => v) => {
++    const el = document.createElement(tag);
++    definition(el);
++    return el;
++};
++
++dom.$ = (selector) => [...document.querySelectorAll(selector)];
++dom.byTagName = (tag) => document.getElementsByTagName(tag);
++dom.Head = () => dom.byTagName('head')[0];
++dom.new = newDomTag;
++dom.setTitle = (title) => dom.byTagName('title')[0].innerHTML = title;
++dom.addStyleSheet = (url) => new Promise(res => dom.Head().appendChild(
++    newDomTag('link', el => {
++        el.href = url;
++        el.rel = 'stylesheet';
++        el.onload = res;
++    })
++));
++
++export default dom;
+-- 
+2.21.1 (Apple Git-122.3)
+
