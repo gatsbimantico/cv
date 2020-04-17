@@ -18,7 +18,7 @@ class CandidatePage {
       summary: new Text('summary', cv.summary),
       skillSet: SkillSet([
         cv.skill,
-        ...cv.skills
+        ...(cv.skills || [])
       ]),
       experienceSet: ExperienceSet([
         cv.experience,

@@ -317,6 +317,7 @@ p br {
   color: steelblue;
   padding: 0;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .education-experience__title {
@@ -470,7 +471,7 @@ a:focus {
   }
 
   .hero__pic {
-    border-radius: 0 30% 70% 20%;
+    border-radius: 70% 60% 80% 50%;
     top: 0;
     left: 0;
     height: 93%;
@@ -489,6 +490,10 @@ a:focus {
 
   .contact-set {
     flex-direction: row;
+  }
+
+  .contact-set .site-set {
+    display: none;
   }
 
   .job-experience {
