@@ -13,6 +13,7 @@ export default class Experience {
     this.at          = config.at;
     this.dateSet     = DateSet(config.on || config);
     this.toolSet     = ToolSet(config.tools);
+    console.log(config.at);
     this.portfolio   = new PortfolioSet(config.portfolio);
     this.description = new Text('job-experience__summary', config.description);
 
@@ -24,9 +25,9 @@ export default class Experience {
 <li class="job-experience">
   <article class="job-experience__article">
     <header class="job-experience__header">
-      <h4>${this.role}<span aria-label="."></span></h4>
+      <h4>${this.at}<span aria-label="."></span></h4>
       <div class="job-experience__meta">
-        <p class="job-experience__business"><span aria-label="at "></span>${this.at}</p>
+        <p class="job-experience__business"><span aria-label="at "></span>${this.role}</p>
         ${this.dateSet}
         <span aria-label="."></span>
       </div>

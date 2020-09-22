@@ -4,5 +4,9 @@
   "private": false,
   "homepage": "http://gatsbimantico.github.io/cv",
   "dependencies": {
+    "mime": "^2.4.6"
+  },
+  "scripts": {
+    "start": "node ./server.js"
   }
 }
