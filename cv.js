@@ -20,6 +20,17 @@ export default {
 I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
 This CV currently under maintenance.
   `,/**
+7.0 - 7 years
+7.1 - over 7 years
+7.2 - over 7 years
+7.3 - over 7 years
+7.4 - over 7 years
+7.5 - over 7 ½ years
+7.6 - over 7 ½ years
+7.7 - over 7 ½ years
+7.8 - over 7 ½ years
+7.9 - aproximately 8 years
+
 My passion for frontend development begun through data visualization working as a data analyst in a research project.
 Since then I've worked on high traffic sites for brands like Loveholidays, Volkswagen or Pull&Bear.
 
