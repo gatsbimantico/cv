@@ -19,4 +19,7 @@ http.createServer(function (req, res) {
     res.writeHead(200);
     res.end(data);
   });
-}).listen(3000);
+}).listen(3000, (error) => {
+  if (error) return console.log(error);
+  console.log('Now serving at https://localhost:3000');
+});
