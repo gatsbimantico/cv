@@ -7,6 +7,6 @@
     "mime": "^2.4.6"
   },
   "scripts": {
-    "start": "node ./server.js"
+    "start": "node ./index.js"
   }
 }
