@@ -6,8 +6,8 @@
 
 export default {
   name: 'César Costas Carrera',
-  role: 'Software Engineer (SE2)',
-  color: '#84425d',
+  role: 'Software Engineer',
+  color: '#b3002a',
   contact: {
     phone: '+447920158374',
     email: 'costascarrera.cesar@gmail.com',
@@ -32,18 +32,20 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
 
     is: 'Software Engineer Ⅱ',
     at: 'Ocado',
-    on: { start: '2020 Jan', end: "now" },
+    on: { start: 'Jan 2020', end: "now" },
     tools: {
       main: [
-        { name: 'React', version: '16' },
+        { name: 'React', version: '17' },
         { name: 'Redux' },
-        { name: 'styled-components' },
-        { name: 'Enzime' },
+        { name: 'styled-components', version: 5 },
         { name: 'RTL' },
-        { name: 'Node', version: '10' },
+        { name: 'Node', version: '14' },
+      ],
+      others: [
+        { name: 'Enzime' },
         { name: 'Gitlab' },
         { name: 'Jira Cloud' },
-      ],
+      ]
     },
     portfolio: {
       released: [
@@ -57,18 +59,18 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
 
     was: 'Frontend web developer',
     at: 'Loveholidays',
-    on: { start: '2018 May', end: "2020 Jan" },
+    on: { start: 'May 2018', end: "2020" },
     tools: {
       main: [
         { name: 'React', version: 16 },
-        { name: 'Redux' },
         { name: 'redux-sagas' },
-        { name: 'styled-components' },
+        { name: 'styled-components', version: 5 },
         { name: 'Enzime' },
-        { name: 'Github' },
-        { name: 'Jira Cloud' },
       ],
       others: [
+        { name: 'Redux' },
+        { name: 'Github' },
+        { name: 'Jira Cloud' },
         { name: 'Sass' },
         { name: 'Karma' },
         { name: 'Optimizely' },
@@ -110,20 +112,20 @@ I took the lead rooting for reusable components, unit tests and understanding th
 
     was: 'Frontend web developer',
     at: 'Tribal worldwide',
-    on: { start: '2017 Jan', end: '2018 May' },
+    on: { start: 'Jan 2017', end: 'May 2018' },
     tools: {
       main: [
         { name: 'Polymer', version: '1' },
         { name: 'Redux' },
         { name: 'Mocha' },
+      ],
+      others: [
         { name: 'Sass' },
         { name: 'Gulp', version: '4' },
         { name: 'jQuery', version: '3' },
         { name: 'Node', version: '6' },
         { name: 'Git' },
         { name: 'Jira' },
-      ],
-      others: [
         'Handlebars',
         'Wordpress',
         'Aem',
@@ -144,20 +146,20 @@ I took the lead rooting for reusable components, unit tests and understanding th
 
     was: 'Full stack web developer',
     at: 'Imatia innovation',
-    on: { start: '2016 Jun', end: '2016 Dec' },
+    on: { start: 'Jun 2016 Jun', end: '2017' },
     tools: {
       main: [
         { name: 'Angular', version: '2' },
         { name: 'TypeScript', version: '2' },
+        { name: 'Docker' },
+        'Scala',
+      ],
+      others: [
         { name: 'Sass' },
         { name: 'Gulp', version: '3' },
         { name: 'Gitlab' },
-        { name: 'Docker' },
-      ],
-      others: [
         { name: 'Node', version: '6' },
         'Java',
-        'Scala',
         'Hadoop',
       ]
     },
@@ -168,16 +170,16 @@ I took the lead rooting for reusable components, unit tests and understanding th
 
     was: 'Full stack web developer',
     at: 'ViewNext',
-    on: { start: '2015 Jun', end: '2016 Jun' },
+    on: { start: 'Jun 2015', end: 'Jun 2016' },
     tools: {
       main: [
-        { name: 'Java' },
-        { name: 'JSP' },
-        { name: 'SVN' },
+        { name: 'Java', version: 5 },
         { name: 'jQuery', version: '1' },
-        { name: 'Jira' },
       ],
       others: [
+        { name: 'JSP' },
+        { name: 'SVN' },
+        { name: 'Jira' },
         { name: 'HTML', version: '4' },
         { name: 'CSS', version: '2' },
         { name: 'Angular', version: '1' },
@@ -185,18 +187,18 @@ I took the lead rooting for reusable components, unit tests and understanding th
         'DB2',
       ]
     },
-    portfolio: {
-      dismissed: [
-        'https://www.massimodutti.com/',
-        'https://www.oysho.com/',
-        'https://www.pullandbear.com/',
-        'https://www.zarahome.com/',
-        'https://www.stradivarius.com/',
-        'https://www.bershka.com/',
-        'https://www.uterque.com/',
-        'https://www.lefties.com/'
-      ]
-    },
+    // portfolio: {
+    //   dismissed: [
+    //     'https://www.massimodutti.com/',
+    //     'https://www.oysho.com/',
+    //     'https://www.pullandbear.com/',
+    //     'https://www.zarahome.com/',
+    //     'https://www.stradivarius.com/',
+    //     'https://www.bershka.com/',
+    //     'https://www.uterque.com/',
+    //     'https://www.lefties.com/'
+    //   ]
+    // },
     description: `
     `,
 
@@ -204,7 +206,7 @@ I took the lead rooting for reusable components, unit tests and understanding th
 
     was: 'Full stack web developer',
     at: 'University of Vigo',
-    on: { start: '2013 Nov', end: '2015 May' },
+    on: { start: 'Nov 2013', end: 'May 2015' },
     tools: {
       main: [
         { name: 'Ruby-on-Rails' },
@@ -248,13 +250,13 @@ I took the lead rooting for reusable components, unit tests and understanding th
     ], at: 'ViewNext', on: 2015
 
   }, {
-*/
+*//*
     titles: [
       'Intro to Machine Learning'
     ], at: 'Udacity', on: 2012
 
   }, {
-
+*/
     titles: [
       'BSC. Physics'
     ], at: 'University of Vigo', on: 2005
