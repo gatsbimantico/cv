@@ -17,19 +17,9 @@ export default {
     ],
   },
   summary: `
-I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
+I am a frontend web developer with ${semanticYearsOfExperience('11/15/2013')}.
 This CV currently under maintenance.
   `,/**
-7.0 - 7 years
-7.1 - over 7 years
-7.2 - over 7 years
-7.3 - over 7 years
-7.4 - over 7 years
-7.5 - over 7 ½ years
-7.6 - over 7 ½ years
-7.7 - over 7 ½ years
-7.8 - over 7 ½ years
-7.9 - aproximately 8 years
 
 My passion for frontend development begun through data visualization working as a data analyst in a research project.
 Since then I've worked on high traffic sites for brands like Loveholidays, Volkswagen or Pull&Bear.
@@ -271,3 +261,46 @@ The values that I induced in the team were: Speed (quick tasks, big impact, fast
 
   }]
 };
+
+function semanticYearsOfExperience (startDate) {
+  const diff = Math.floor((new Date() - new Date(startDate)) / 3.1536e+9) / 10;
+  const int = Math.floor(diff);
+  const decimal = Number(`${diff}`[2] || 0);
+  
+  let sem = '';
+  if (diff < 0.5) {
+    sem = `no`;
+  } else if (diff === 0.5) {
+    sem = `half a year of`;
+  } else if (diff >= 0.5 && diff < 0.9) {
+    sem = `over half a year of`;
+  } else {
+    if (decimal !== 0 && decimal !== 5 && decimal !== 9) {
+      sem = `over `;
+    } else if (decimal === 9) {
+      sem = `aproximately `;
+    }
+
+    if (diff < 1.9) {
+      sem += `a`;
+    } else if (diff >= 2 && decimal < 9) {
+      sem += int;
+    } else if (diff >= 1.9 && decimal === 9) {
+      sem += int + 1;
+    }
+
+    if (diff > 2 && decimal >= 5 && decimal < 9) {
+      sem += ` ½`;
+    }
+
+    sem += diff >= 1.9 ? ` years` : ` year`;
+
+    if (diff < 2 && decimal >= 5 && decimal < 9) {
+      sem += ` and a half`;
+    }
+
+    sem += ` of experience`;
+  }
+
+  return sem;
+}
