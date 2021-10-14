@@ -232,6 +232,11 @@ p br {
   overflow: auto;
 }
 
+.job-experience__main-section > h5,
+.job-experience__main-section > ul {
+  display: inline-block;
+}
+
 .job-experience__meta {
   display: flex;
   flex-direction: row;

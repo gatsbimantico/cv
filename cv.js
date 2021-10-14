@@ -32,7 +32,7 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
   experiences: [{
 
     is: 'Software Engineer Ⅱ',
-    at: 'Ocado',
+    at: 'Ocado Technology',
     on: { start: 'Jan 2020', end: "now" },
     tools: {
       main: [
@@ -86,11 +86,11 @@ I worked with my colleagues on edge frontend responsibilities like accessibility
         { name: 'Google Optimize' },
       ],
     },
-    portfolio: {
-      released: [
-        'https://loveholidays.com'
-      ]
-    },
+    // portfolio: {
+    //   released: [
+    //     'https://loveholidays.com'
+    //   ]
+    // },
     description: `
 My time at Loveholidays was completely in sync with the needs of their business.
 I joined to help scale the business internationally and moving from django into a React frontend.
