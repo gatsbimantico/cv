@@ -47,11 +47,11 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
         { name: 'Jira Cloud' },
       ]
     },
-    portfolio: {
-      released: [
-        'https://groceries.morrisons.com/browse',
-      ]
-    },
+    // portfolio: {
+    //   released: [
+    //     'https://groceries.morrisons.com/browse',
+    //   ]
+    // },
     description: `
     `
 
@@ -132,13 +132,13 @@ I took the lead rooting for reusable components, unit tests and understanding th
         'Jahia',
       ]
     },
-    portfolio: {
-      released: [
-        'http://lipton.com',
-        'http://cartedor.co.uk/maisoncartedor',
-        'http://volkswagen.co.uk',
-      ]
-    },
+    // portfolio: {
+    //   released: [
+    //     'http://lipton.com',
+    //     'http://cartedor.co.uk/maisoncartedor',
+    //     'http://volkswagen.co.uk',
+    //   ]
+    // },
     description: `
     `,
 
