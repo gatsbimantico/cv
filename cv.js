@@ -20,6 +20,17 @@ export default {
 I am a frontend web developer with over ${Math.floor((new Date() - new Date('11/15/2013')) / 3.1536e+9) / 10} years of experience.
 This CV currently under maintenance.
   `,/**
+7.0 - 7 years
+7.1 - over 7 years
+7.2 - over 7 years
+7.3 - over 7 years
+7.4 - over 7 years
+7.5 - over 7 ½ years
+7.6 - over 7 ½ years
+7.7 - over 7 ½ years
+7.8 - over 7 ½ years
+7.9 - aproximately 8 years
+
 My passion for frontend development begun through data visualization working as a data analyst in a research project.
 Since then I've worked on high traffic sites for brands like Loveholidays, Volkswagen or Pull&Bear.
 
@@ -53,6 +64,13 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
     //   ]
     // },
     description: `
+Ocado's development culture relies on high autonomy.
+
+I lead the engineering team to work on
+ legal aspects of the site as compliance with cookies,
+ and pushed for initiatives to prevent the project from becoming legacy or be exposed to security holes.
+
+I worked with my colleagues on edge frontend responsibilities like accessibility, performance, and developing features designed by the UX team.
     `
 
   }, {
@@ -84,29 +102,13 @@ I'm fully competent with modern frameworks (like React, Angular and Polymer), fr
       ]
     },
     description: `
-    `/**
-    During my first year in the company, Loveholidays became
-    one of the UK's top 100 private companies with the fastest-growing profit.
-    
-    After a couple of moths working at Loveholidays,
-    two colleagues and I started the experiments team; where we design,
-    code and excute A/B and MV tests to bring new features
-    in a lean, continuous & fast paced delivery.
-    
-    Since the begining my focus was on reinforcing two pilars:
-    <b>Speed</b>: by updating the Jira workflow to optimize communication and diminish interruptions and dashboards summarizing Github PR's status.
-    And <b>Quality and standards</b>: by adding and creating linting rules to reinforce standards, producing less conflicts and reducing the code review feedback.
-    
-    A list to which lately I added: user segmentation, live style guide, server-side rendering and process automation.
-    Voted internally the best team of 2018, I guided the experiments team since its conception to its current 10 developers.
-        ` *//**
-Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
-Each project is handled by a small team of 1 to 4 specialists.
+My time at Loveholidays was completely in sync with the needs of their business.
+I joined to help scale the business internationally and moving from django into a React frontend.
 
-At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
+I lead by example the experiments team from its inception with two developers until its end with three frontend teams with around 15 developers.
 
-I took the lead rooting for reusable components, unit tests and understanding the problem and client needs before coding.
-    ` */
+The values that I induced in the team were: Speed (quick tasks, big impact, fast pipeline), quality, standards (close to native and semantic), and performance.
+    `,
 
   }, {
 
@@ -140,6 +142,12 @@ I took the lead rooting for reusable components, unit tests and understanding th
     //   ]
     // },
     description: `
+    Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
+    Each project is handled by a small team of 1 to 4 specialists.
+
+    At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
+
+    I took the lead rooting for reusable components, unit tests and understanding the problem and client needs before coding.
     `,
 
   }, {
