@@ -1,12 +1,7 @@
-import EducationTitle from './education-title.js';
-import List           from '../list/list.js';
-
-export default ({ at, on, titles }) => (titles ? `
-<li class="education-experience">
-  <span>${on}</span> <span>@ ${at}</span>
-  <ul class="education-experience__title-set">
-    ${new List(EducationTitle, titles)}
-  </ul>
-  <span aria-label="."></span>
-</li>
-` : '');
+export default ({ institution, studyType, area, endDate }) => titles ? `
+  <li class="education-experience">
+    <span>${endDate}</span> <span>@ ${institution}</span>
+    <p class="education-experience__title">${studyType} in ${area}<span aria-label=","></span></p>
+    <span aria-label="."></span>
+  </li>
+` : '';

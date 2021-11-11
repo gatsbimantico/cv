@@ -1,7 +1,7 @@
 (function (app) {
   'use strict';
 
-  const CACHE_NAME = 'CVjs-2.0.k0d',
+  const CACHE_NAME = 'CVjs-3.0.kaa',
     externalUrlsToCache = [
       'https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700|Work+Sans:300,600&display=swap',
     ],

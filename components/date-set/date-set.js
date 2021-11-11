@@ -5,10 +5,10 @@ const dateDiff = ({ end, start }) => {
   return `${years} year${years > 1 ? 's' : ''}`;
 };
 
-export default ({ end, start }) => (start || end ? `
-<p class="job-experience__date">
-  ${start && end ? `<small>${dateDiff({ end, start })}, </small>` : ''}
-  ${start ? `<span>from ${start}</span>` : ''}
-  ${end ? `<span>to ${end}</span>` : ''}
-</p>
-    ` : '');
+export default ({ endDate, startDate }) => startDate || endDate ? `
+  <p class="job-experience__date">
+    ${startDate && endDate ? `<small>${dateDiff({ endDate, startDate })}, </small>` : ''}
+    ${startDate ? `<span>from ${startDate}</span>` : ''}
+    ${endDate ? `<span>to ${endDate}</span>` : ''}
+  </p>
+` : '';

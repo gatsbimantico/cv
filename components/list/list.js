@@ -1,44 +1,15 @@
-export default class List {
+export default (Type, list = []) => {
+  let htmlList = list.filter(o => o).map(Type),
+    lastItem;
 
-  constructor(Type, list = []) {
+  if (htmlList.length >= 2) {
 
-    this.Type = Type;
-    this.list = list.filter(o => o);
+    lastItem = (new DOMParser()).parseFromString(htmlList.pop(), 'text/html').body.firstChild;
+    lastItem.innerHTML = `<span aria-label=" and "></span>` + lastItem.innerHTML
 
-  }
-
-  get length () {
-
-    return this.list.length;
+    return htmlList.join('') + lastItem.outerHTML;
 
   }
 
-  toString() {
-
-    let htmlList = this.list
-      .map(item => {
-        try {
-          return new this.Type(item);
-        } catch (e) {}
-        try {
-          return this.Type(item);
-        } catch (e) {}
-      }),
-      lastItem;
-
-    if (htmlList.length >= 2) {
-
-      lastItem = (new DOMParser()).parseFromString(htmlList.pop(), 'text/html').body.firstChild;
-      lastItem.innerHTML = `<span aria-label=" and "></span>` + lastItem.innerHTML
-
-      return htmlList.join('') + lastItem.outerHTML;
-
-    } else {
-
-      return htmlList.join('');
-
-    }
-
-  }
-
+  return htmlList.join('');
 }

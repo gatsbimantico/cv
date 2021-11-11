@@ -120,60 +120,6 @@ strong {
   font-weight: bold;
 }
 
-.site-loveholidays:hover {
-  background: #11aaf6;
-  color: white;
-}
-
-.site-volkswagen:hover {
-  background: #00a8ec;
-  color: white;
-}
-
-.site-cartedor:hover {
-  background: white;
-  color: #c38027;
-}
-
-.site-lipton:hover {
-  background: #ffe600;
-  color: #e50000;
-}
-
-.site-massimodutti:hover {
-  background: white;
-  color: black;
-}
-
-.site-oysho:hover {
-  background: white;
-  color: black;
-}
-
-.site-pullandbear:hover {
-  background: black;
-  color: white;
-}
-
-.site-zarahome:hover {
-  background: #ccc;
-  color: #888b8d;
-}
-
-.site-stradivarius:hover {
-  background: white;
-  color: black;
-}
-
-.site-bershka:hover {
-  background: black;
-  color: white;
-}
-
-.site-uterque:hover {
-  background: white;
-  color: black;
-}
 
 p br {
   content: '';
@@ -181,13 +127,7 @@ p br {
   margin: .3em 0 0;
 }
 
-.skill-set {
-  margin: 0;
-}
 
-.skill-set__item {
-  list-style: none;
-}
 
 .contact-set {
   display: flex;
@@ -195,22 +135,12 @@ p br {
   flex-direction: column;
 }
 
-.phone-set,
-.email-set,
-.site-set {
-  display: flex;
+.phone,
+.email {
   flex: 1 1;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
-.phone-set .phone,
-.email-set .email,
-.site-set .url {
-  flex: 1 1;
-}
 
 .job-experience {
   margin-bottom: 30px;
@@ -225,6 +155,11 @@ p br {
 
 .job-experience__header {
   flex: 1 0;
+  position: sticky;
+  top: 46px;
+  background: white;
+  z-index: 200;
+  padding: 5px 0 0;
 }
 
 .job-experience__main-section {
@@ -268,6 +203,7 @@ p br {
 
 .job-experience__tool-set {
   padding: 0;
+  margin: 0 0 15px;
 }
 
 .job-experience__tool-name,
@@ -280,47 +216,6 @@ p br {
   margin: 0 0 0 5px;
 }
 
-.job-experience__portfolio {
-  padding: 0;
-  overflow: auto;
-  text-align: center;
-}
-
-.job-experience__portfolio a {
-  max-width: 350px;
-  margin: 0 auto;
-  text-transform: capitalize;
-}
-
-.job-experience__tool-set,
-.job-experience__portfolio {
-  margin: 0 0 15px;
-}
-
-.column {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.column--four {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.column--three {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.column--two {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.column--single {
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.job-experience__portfolio span {
-  display: block;
-}
 
 .education-experience {
   margin: 10px 0 0;
@@ -348,20 +243,14 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Nanum Gothic', sans-serif;
 }
 
-.phone-set,
-.email-set,
-.site-set,
-.skill-set,
 .experience-set,
 .job-experience__tool-set,
-.job-experience__portfolio,
 .education-set,
 .education-experience__title-set {
   list-style-type: none;
 }
 
 .summary,
-.skill-set,
 .experience-set,
 .education-set {
   margin: 0;
@@ -374,7 +263,9 @@ h1, h2, h3, h4, h5, h6,
   color: white;
   margin: 30px 0 0;
   padding: 10px;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 300;
 }
 
 .page-intro,
@@ -446,10 +337,6 @@ a:focus {
   .job-experience__summary {
     text-align: left;
   }
-
-  .column--four {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 @media print {
@@ -496,10 +383,6 @@ a:focus {
     flex-direction: row;
   }
 
-  .contact-set .site-set {
-    display: none;
-  }
-
   .job-experience {
     page-break-inside: avoid;
   }
@@ -521,19 +404,11 @@ a:focus {
     margin: 3px 0 0;
   }
 
-  .job-experience__portfolio a {
-    font-size: 0.8em;
-    line-height: 1;
-    box-shadow: none;
-  }
-
-  .skill-set__item,
   .education-experience__title {
     display: inline-block;
   }
 
   .summary,
-  .skill-set,
   .experience-set,
   .education-set {
     padding: 15px calc(2vw) 0;
