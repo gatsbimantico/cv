@@ -352,6 +352,7 @@ a:focus {
 
   a {
     line-height: 32px;
+    box-shadow: none;
   }
 
   .page-intro {
@@ -434,6 +435,7 @@ a:focus {
   .experience-set__title,
   .education-set__title {
     background: rgba(54, 57, 72, 0.3) !important;
+    margin: 10px 0 0;
   }
 
   #revision-id {
