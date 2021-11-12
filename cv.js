@@ -14,12 +14,13 @@
     phone: '+447920158374',
     email: 'costascarrera.cesar@gmail.com',
     summary: `
-I am a problem solver with ${semanticYearsOfExperience('11/15/2013')} in the frontend,
- Through my roles at different businesses, I have contributed to solve most of the scale up and edge issues from the web:
- Performance, Accessibility, Analytics, Internationalisation, Design systems, Modularisation with version control, A/B Testing, Drag&Drop page builders, SSR/Static/Hybrid rendering methods,...
- with all kind of tests: e2e, integration, visual and unit tests.
+I am a problem solver with ${semanticYearsOfExperience('11/15/2013')} in the frontend.
 
-I'm a team player and I care about the product. I like to get involved into business solutions as much as collaborate with my colleagues.
+Through my roles at different businesses, I have contributed to solving most scaling up and cutting edge issues related to web development including:
+ performance, acessibility, analytics, internationalisation, building design systems, modularisation with version control, A/B testing, drag and drop page builders, and SSR/static/hybrid rendering methods.
+ And I have carried out all kinds of testing: end to end, integration, contract, visual and unit tests.
+
+I am a team player and I deeply care about the products I work on. I like to get involved in business solutions and enjoy collaborating with my colleagues.
     `,
     location: {
       city: 'London',
@@ -46,10 +47,10 @@ I'm a team player and I care about the product. I like to get involved into busi
 Ocado's development culture relies on high autonomy.
 
 I lead the engineering team to work on
- legal aspects of the site as compliance with cookies,
- and pushed for initiatives to prevent the project from becoming legacy or be exposed to security holes.
+ legal aspects of the site such as compliance with cookies,
+ and pushed for initiatives to prevent the project from becoming legacy or being exposed to security holes.
 
-I worked with my colleagues on edge frontend responsibilities like accessibility, performance, and developing features designed by the UX team.
+I worked with my colleagues on cutting edge frontend responsibilities like accessibility, performance, and developing features designed by the UX team.
     `
 
   }, {
@@ -57,14 +58,13 @@ I worked with my colleagues on edge frontend responsibilities like accessibility
     name: 'Loveholidays',
     position: 'Frontend web developer',
     startDate: 'May 2018', endDate: '2020',
-    tools: [ 'React 16', 'Redux', 'styled-components 5', 'Sass', /* 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
+    tools: [ 'React 16', 'Redux', 'styled-components 5', /* 'Sass', 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
     summary: `
 My time at Loveholidays was completely in sync with the needs of their business.
-I joined to help scale the business internationally and moving from django into a React frontend.
+I joined to help scale the business internationally and migrating from Django into a React frontend.
 
 I lead by example the experiments team from its inception with two developers until its end with three frontend teams with around 15 developers.
-
-The values that I induced in the team were: Speed (quick tasks, big impact, fast pipeline), quality, standards (close to native and semantic), and performance.
+The values that I induced in the team were: speed (quick tasks, big impact, fast pipeline), quality, standards (close to native and semantic), and performance.
     `,
 
   }, {
@@ -72,14 +72,14 @@ The values that I induced in the team were: Speed (quick tasks, big impact, fast
     name: 'Tribal worldwide',
     position: 'Frontend web developer',
     startDate: 'Jan 2017', endDate: 'May 2018',
-    tools: [ 'Polymer 1', 'Redux', 'Mocha', 'Sass', 'Gulp 4', 'jQuery 3', 'Node 6', 'Git', 'Handlebars', 'Wordpress', /* 'Jira', 'Aem', 'Jahia', */ ],
+    tools: [ 'Polymer 1', 'Redux', 'Mocha', 'Sass', 'Node 6', /* 'Gulp 4', 'jQuery 3', 'Git', 'Handlebars', 'Wordpress', 'Jira', 'Aem', 'Jahia', */ ],
     summary: `
-Tribal is an hybrid Ad-Development agency that provides websites to their advertising clients.
+Tribal is a hybrid ad-development agency that provides websites to their advertising clients.
 Each project is handled by a small team of 1 to 4 specialists.
 
 At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
 
-I took the lead rooting for reusable components, unit tests and understanding the problem and client needs before coding.
+I took the initiative on improving performance through rooting for reusable components, unit tests and understanding the problem and the client needs before coding.
     `,
 
   }, {
@@ -87,21 +87,21 @@ I took the lead rooting for reusable components, unit tests and understanding th
     name: 'Imatia innovation',
     position: 'Full stack web developer',
     startDate: 'Jun 2016 Jun', endDate: '2017',
-    tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Gulp 3', 'Gitlab', 'Node 6', /* 'Docker', 'Scala', 'Java', 'Hadoop', */ ],
+    tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', /* 'Gulp 3', 'Gitlab', 'Docker', 'Scala', 'Java', 'Hadoop', */ ],
 
   }, {
 
     name: 'ViewNext',
     position: 'Full stack web developer',
     startDate: 'Jun 2015', endDate: 'Jun 2016',
-    tools: [ 'jQuery 1', 'HTML 4', 'CSS 2', 'Angular 1', 'Backbone', /* 'Java 5', 'SVN', 'JSP', 'Jira', 'DB2', */ ],
+    tools: [ 'Angular 1', 'jQuery 1', 'HTML 4', 'CSS 2', /* 'Backbone', 'Java 5', 'SVN', 'JSP', 'Jira', 'DB2', */ ],
 
   }, {
 
     name: 'University of Vigo',
     position: 'Full stack web developer',
     startDate: 'Nov 2013', endDate: 'May 2015',
-    tools: [ 'jQuery 1', 'D3js', 'HTML 5', 'CSS 3', /* 'Ruby-on-Rails', 'Java', 'Weka', 'RapidMiner', 'Python', */ ],
+    tools: [ 'D3js', 'jQuery 1', 'HTML 5', 'CSS 3', /* 'Ruby-on-Rails', 'Java', 'Weka', 'RapidMiner', 'Python', */ ],
 
   }],
   education: [{
@@ -129,7 +129,7 @@ function semanticYearsOfExperience (startDate) {
     if (decimal !== 0 && decimal !== 5 && decimal !== 9) {
       sem = `over `;
     } else if (decimal === 9) {
-      sem = `aproximately `;
+      sem = `approximately `;
     }
 
     if (diff < 1.9) {

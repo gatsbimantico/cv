@@ -10,13 +10,9 @@ dom.new = (tag = 'div', definition = v => v) => {
 };
 dom.byTagName = (tag) => document.getElementsByTagName(tag);
 dom.$ = (selector) => [...document.querySelectorAll(selector)];
-dom.$$ = {
-    get head() { return dom.byTagName('head')[0]; },
-    get title() { return dom.byTagName('title')[0]; },
-};
 
-dom.setTitle = (title) => dom.$$.title.innerHTML = title;
-dom.addStyleSheet = (url) => new Promise(res => dom.$$.head.appendChild(
+dom.setTitle = (title) => dom.byTagName('title')[0].innerHTML = title;
+dom.addStyleSheet = (url) => new Promise(res => dom.byTagName('head')[0].appendChild(
     dom.new('link', el => {
         el.href = url;
         el.rel = 'stylesheet';

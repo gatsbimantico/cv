@@ -16,6 +16,7 @@ body {
   opacity: 0;
   transition: opacity .2s .1s ease-in-out;
   -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
   scroll-snap-type: y mandatory;
 }
 
@@ -273,12 +274,14 @@ h1, h2, h3, h4, h5, h6,
 .experience-set__title,
 .education-set__title {
   -webkit-scroll-snap-coordinate: 0% 0%;
+  -ms-scroll-snap-coordinate: 0% 0%;
   scroll-snap-coordinate: 0% 0%;
   scroll-snap-align: start;
 }
 
 .job-experience {
   -webkit-scroll-snap-coordinate: 0% 0%;
+  -ms-scroll-snap-coordinate: 0% 0%;
   scroll-snap-coordinate: 0% 0%;
   scroll-snap-align: start;
 }
@@ -312,6 +315,7 @@ a:focus {
 @media (min-height:641px) {
   body {
     -webkit-scroll-snap-type: proximity;
+    -ms-scroll-snap-type: y proximity;
     scroll-snap-type: y proximity;
   }
 }
