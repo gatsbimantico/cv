@@ -21,5 +21,5 @@ http.createServer(function (req, res) {
   });
 }).listen(3000, (error) => {
   if (error) return console.log(error);
-  console.log('Now serving at https://localhost:3000');
+  console.log('Now serving at http://localhost:3000');
 });

@@ -39,10 +39,22 @@ I am a team player and I deeply care about the products I work on. I like to get
   color: '#b3002a',
   work: [{
 
+    name: 'Nutmeg',
+    position: 'Senior Software Engineer',
+    startDate: 'Feb 2022', endDate: 'now',
+    tools: [ 'React 17', 'SASS', 'Node 16', 'RTL', 'Jenkins', 'Argo', 'Terraform', /* 'AWS', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    summary: `
+As part of Nutmeg's product team I've developed UI elements with great detail on accessibility and simplicity.
+
+Collaborated with colleagues while leading or being lead in initiatives, and also with BE, UX and infrastructure teams.
+    `
+
+  }, {
+
     name: 'Ocado Technology',
     position: 'Software Engineer Ⅱ',
-    startDate: 'Jan 2020', endDate: 'now',
-    tools: [ 'React 17', 'Redux', 'styled-components 5', 'Node 14', /* 'RTL',  'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    startDate: 'Jan 2020', endDate: 'Jan 2022',
+    tools: [ 'React 17', 'Redux', 'styled-components 5', 'Node 14', 'RTL', /* 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
 Ocado's development culture relies on high autonomy.
 
@@ -58,7 +70,7 @@ I worked with my colleagues on cutting edge frontend responsibilities like acces
     name: 'Loveholidays',
     position: 'Frontend web developer',
     startDate: 'May 2018', endDate: '2020',
-    tools: [ 'React 16', 'Redux', 'styled-components 5', /* 'Sass', 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
+    tools: [ 'React 16', 'Redux', 'styled-components 5', 'Sass', /* 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
     summary: `
 My time at Loveholidays was completely in sync with the needs of their business.
 I joined to help scale the business internationally and migrating from Django into a React frontend.
@@ -87,21 +99,21 @@ I took the initiative on improving performance through rooting for reusable comp
     name: 'Imatia innovation',
     position: 'Full stack web developer',
     startDate: 'Jun 2016 Jun', endDate: '2017',
-    tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', /* 'Gulp 3', 'Gitlab', 'Docker', 'Scala', 'Java', 'Hadoop', */ ],
+    tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', 'Docker', 'Scala', 'Java', 'Hadoop', /* 'Gulp 3', 'Gitlab', */ ],
 
   }, {
 
     name: 'ViewNext',
     position: 'Full stack web developer',
     startDate: 'Jun 2015', endDate: 'Jun 2016',
-    tools: [ 'Angular 1', 'jQuery 1', 'HTML 4', 'CSS 2', /* 'Backbone', 'Java 5', 'SVN', 'JSP', 'Jira', 'DB2', */ ],
+    tools: [ 'Angular 1', 'Java 5', 'DB2', /* 'jQuery 1', 'HTML 4', 'CSS 2', 'Backbone', 'SVN', 'JSP', 'Jira', */ ],
 
   }, {
 
     name: 'University of Vigo',
     position: 'Full stack web developer',
     startDate: 'Nov 2013', endDate: 'May 2015',
-    tools: [ 'D3js', 'jQuery 1', 'HTML 5', 'CSS 3', /* 'Ruby-on-Rails', 'Java', 'Weka', 'RapidMiner', 'Python', */ ],
+    tools: [ 'D3js', 'jQuery 1', 'Ruby-on-Rails', /* 'HTML 5', 'CSS 3', 'Java', 'Weka', 'RapidMiner', 'Python', */ ],
 
   }],
   education: [{
