@@ -14,13 +14,16 @@
     phone: '+447920158374',
     email: 'costascarrera.cesar@gmail.com',
     summary: `
-I am a problem solver with ${semanticYearsOfExperience('11/15/2013')} in the frontend.
+I am a software engineer with ${semanticYearsOfExperience('2013-11-15')} in web development.
 
-Through my roles at different businesses, I have contributed to solving most scaling up and cutting edge issues related to web development including:
- performance, acessibility, analytics, internationalisation, building design systems, modularisation with version control, A/B testing, drag and drop page builders, and SSR/static/hybrid rendering methods.
- And I have carried out all kinds of testing: end to end, integration, contract, visual and unit tests.
+I have helped businesses to improve on:
+ performance, acessibility, analytics, compliance,
+ internationalisation, whitelabelling,
+ microfrontends, design systems, tokenisation,
+ testing, CI/CD, IaC,
+ CMS, SEO, CRO, and others.
 
-I am a team player and I deeply care about the products I work on. I like to get involved in business solutions and enjoy collaborating with my colleagues.
+I am a team player, and I deeply care about the products I contribute to.
     `,
     location: {
       city: 'London',
@@ -42,11 +45,14 @@ I am a team player and I deeply care about the products I work on. I like to get
     name: 'Nutmeg',
     position: 'Senior Software Engineer',
     startDate: 'Feb 2022', endDate: 'now',
-    tools: [ 'React 17', 'SASS', 'Node 16', 'RTL', 'Jenkins', 'Argo', 'Terraform', /* 'AWS', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    tools: [ 'React 17', 'Node 18', 'SASS', 'RTL', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
-As part of Nutmeg's product team I've developed UI elements with great detail on accessibility and simplicity.
-
-Collaborated with colleagues while leading or being lead in initiatives, and also with BE, UX and infrastructure teams.
+I became part of the product team
+ and was shortly promoted due my contributions to the design system.
+ I collaborated company-wide beyond engineering teams,
+ delivering features, tools, business ideas and architectural decisions. 
+ In February 2023 I was selected to form the Developer Experience team.
+ Since then we refreshed almost every tool in the stack, and we keep improving iteratively. 
     `
 
   }, {
@@ -54,15 +60,12 @@ Collaborated with colleagues while leading or being lead in initiatives, and als
     name: 'Ocado Technology',
     position: 'Software Engineer Ⅱ',
     startDate: 'Jan 2020', endDate: 'Jan 2022',
-    tools: [ 'React 17', 'Redux', 'styled-components 5', 'Node 14', 'RTL', /* 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    tools: [ 'React 17', 'Node 14', 'styled-components 5', 'RTL', 'Redux', /* 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
-Ocado's development culture relies on high autonomy.
-
-I lead the engineering team to work on
- legal aspects of the site such as compliance with cookies,
- and pushed for initiatives to prevent the project from becoming legacy or being exposed to security holes.
-
-I worked with my colleagues on cutting edge frontend responsibilities like accessibility, performance, and developing features designed by the UX team.
+I was hired to join the ecommere team.
+ In addition to my responsibilities I championed best practices on
+ accessibility, performance, compliance,
+ and created technical initiatives to keep the project evergreen.
     `
 
   }, {
@@ -70,13 +73,14 @@ I worked with my colleagues on cutting edge frontend responsibilities like acces
     name: 'Loveholidays',
     position: 'Frontend web developer',
     startDate: 'May 2018', endDate: '2020',
-    tools: [ 'React 16', 'Redux', 'styled-components 5', 'Sass', /* 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
+    tools: [ 'React 16', 'styled-components 5', 'Redux', /* 'Sass', 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
     summary: `
-My time at Loveholidays was completely in sync with the needs of their business.
-I joined to help scale the business internationally and migrating from Django into a React frontend.
-
-I lead by example the experiments team from its inception with two developers until its end with three frontend teams with around 15 developers.
-The values that I induced in the team were: speed (quick tasks, big impact, fast pipeline), quality, standards (close to native and semantic), and performance.
+Loveholidays was migrating to React when I joined.
+ Soon after, I was invited with other two colleagues to form the CRO team
+ which we grew to 15 developers within a year.
+ I improved the development process
+ and cross-team communications
+ with dashboards, metrics and documentation.
     `,
 
   }, {
@@ -84,14 +88,14 @@ The values that I induced in the team were: speed (quick tasks, big impact, fast
     name: 'Tribal worldwide',
     position: 'Frontend web developer',
     startDate: 'Jan 2017', endDate: 'May 2018',
-    tools: [ 'Polymer 1', 'Redux', 'Mocha', 'Sass', 'Node 6', /* 'Gulp 4', 'jQuery 3', 'Git', 'Handlebars', 'Wordpress', 'Jira', 'Aem', 'Jahia', */ ],
+    tools: [ 'Polymer 1', 'Aem', 'Jahia', /* 'Redux', 'Mocha', 'Sass', 'Node 6', 'Gulp 4', 'jQuery 3', 'Git', 'Handlebars', 'Wordpress', 'Jira', */ ],
     summary: `
-Tribal is a hybrid ad-development agency that provides websites to their advertising clients.
-Each project is handled by a small team of 1 to 4 specialists.
-
-At Tribal I contributed to Wordpress, AEM and Polymer proyects, while mentoring a junior and an intern developers.
-
-I took the initiative on improving performance through rooting for reusable components, unit tests and understanding the problem and the client needs before coding.
+At this award-winning agency I developed features for multiple clients.
+ While working for Volkswagen,
+ I designed, together with backend developers,
+ an SSR flow for Jahia and Polymer allowing us to migrate
+ from a CMS server multi-page site,
+ to a CMS driven SPA.
     `,
 
   }, {
@@ -99,21 +103,21 @@ I took the initiative on improving performance through rooting for reusable comp
     name: 'Imatia innovation',
     position: 'Full stack web developer',
     startDate: 'Jun 2016 Jun', endDate: '2017',
-    tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', 'Docker', 'Scala', 'Java', 'Hadoop', /* 'Gulp 3', 'Gitlab', */ ],
+    /* tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', 'Docker', 'Scala', 'Java', 'Hadoop', 'Gulp 3', 'Gitlab' ], */
 
   }, {
 
     name: 'ViewNext',
     position: 'Full stack web developer',
     startDate: 'Jun 2015', endDate: 'Jun 2016',
-    tools: [ 'Angular 1', 'Java 5', 'DB2', /* 'jQuery 1', 'HTML 4', 'CSS 2', 'Backbone', 'SVN', 'JSP', 'Jira', */ ],
+    /* tools: [ 'Angular 1', 'Java 5', 'DB2', 'jQuery 1', 'HTML 4', 'CSS 2', 'Backbone', 'SVN', 'JSP', 'Jira' ], */
 
   }, {
 
     name: 'University of Vigo',
     position: 'Full stack web developer',
     startDate: 'Nov 2013', endDate: 'May 2015',
-    tools: [ 'D3js', 'jQuery 1', 'Ruby-on-Rails', /* 'HTML 5', 'CSS 3', 'Java', 'Weka', 'RapidMiner', 'Python', */ ],
+    /* tools: [ 'D3js', 'jQuery 1', 'Ruby-on-Rails',  'HTML 5', 'CSS 3', 'Java', 'Weka', 'RapidMiner', 'Python' ], */
 
   }],
   education: [{

@@ -9,7 +9,6 @@ import ThemeStyle from '../controllers/theme-styles/theme-style.js';
 export default ({ cv, manifest }) => cv ? `
   ${PageIntro(cv)}
   <main>
-    <h3 class="summary__title">Summary</h3>
     ${Text({ class: 'summary', text: cv.basics.summary })}
     ${ExperienceSet(cv)}
     ${EducationSet(cv)}

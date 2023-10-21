@@ -25,7 +25,6 @@ body.loaded {
 }
 
 .page-intro {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -41,22 +40,6 @@ body.loaded {
   display: flex;
   flex-direction: column;
   padding: 30px 0;
-}
-
-.hero__pic {
-  background-size: cover;
-  border-radius: 50%;
-  height: 7em;
-  margin-bottom: 1em;
-  width: 7em;
-}
-
-.hero__pic--div {
-  flex: 0 0 7em;
-}
-
-.hero__pic--img {
-  display: none;
 }
 
 .hero__name {
@@ -144,7 +127,6 @@ p br {
 
 
 .job-experience {
-  margin-bottom: 30px;
   position: relative;
 }
 
@@ -161,6 +143,9 @@ p br {
   background: white;
   z-index: 200;
   padding: 5px 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: .4em;
 }
 
 .job-experience__main-section {
@@ -168,30 +153,18 @@ p br {
   overflow: auto;
 }
 
-.job-experience__main-section > h5,
-.job-experience__main-section > ul {
-  display: inline-block;
-}
-
-.job-experience__meta {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.job-experience__business {
+.job-experience__position {
   text-transform: uppercase;
+  flex: 1 0;
 }
 
 .job-experience__date {
-  border-bottom: 0.5px solid black;
-  flex: 1 0 90%;
+  flex: 1 0 100%;
   font-style: italic;
   padding: 0 .5em 0 0;
   position: relative;
-  text-align: right;
-  margin: 0 0 .7em .4em;
   top: -5px;
+  display: none;
 }
 
 .job-experience__tool {
@@ -204,7 +177,10 @@ p br {
 
 .job-experience__tool-set {
   padding: 0;
-  margin: 0 0 15px;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: .4em;
 }
 
 .job-experience__tool-name,
@@ -215,11 +191,6 @@ p br {
 
 .job-experience__tool-version {
   margin: 0 0 0 5px;
-}
-
-
-.education-experience {
-  margin: 10px 0 0;
 }
 
 .education-experience__title-set {
@@ -255,14 +226,16 @@ h1, h2, h3, h4, h5, h6,
 .experience-set,
 .education-set {
   margin: 0;
-  padding: 30px calc(2vw + 15px) 0;
+  padding: 30px calc(2vw + 15px);
+  display: flex;
+  flex-flow: column;
+  gap: 1.5em;
 }
 
 .summary__title,
 .experience-set__title,
 .education-set__title {
   color: white;
-  margin: 30px 0 0;
   padding: 10px;
   position: sticky;
   top: 0;
@@ -361,27 +334,9 @@ a:focus {
   }
 
   .hero {
-    padding: 3em 1em 1em;
+    padding: 0 0 .4em;
     position: relative;
     text-align: right;
-  }
-
-  .hero__pic {
-    border-radius: 70% 60% 80% 50%;
-    top: 0;
-    left: 0;
-    height: 93%;
-    margin: 0;
-    position: absolute;
-    width: auto;
-  }
-
-  .hero__pic--div {
-    display: none;
-  }
-
-  .hero__pic--img {
-    display: inline-block;
   }
 
   .contact-set {
@@ -416,7 +371,14 @@ a:focus {
   .summary,
   .experience-set,
   .education-set {
-    padding: 15px calc(2vw) 0;
+    padding: .4em calc(2vw);
+    gap: .4em;
+  }
+
+  .summary__title,
+  .experience-set__title,
+  .education-set__title {
+    padding: .1em 10px;
   }
 
   /* PRINT THEME */
@@ -435,7 +397,6 @@ a:focus {
   .experience-set__title,
   .education-set__title {
     background: rgba(54, 57, 72, 0.3) !important;
-    margin: 10px 0 0;
   }
 
   #revision-id {
