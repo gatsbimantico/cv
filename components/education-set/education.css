@@ -1,0 +1,16 @@
+:scope {
+  @media print {
+    margin: 3px 0 0;
+  }
+
+  & > p {
+    font-family: 'Nanum Gothic', sans-serif;
+    display: block;
+    font-weight: 200;
+    margin-top: 0;
+    
+    @media print {
+      display: inline-block;
+    }
+  }
+}

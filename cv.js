@@ -1,6 +1,6 @@
 /**
  * @name CURRICULUM_VITAE
- * @author César Costas Carrera
+ * @author César Costas
  * 
  * Curriculum in JS meant to be used with this repo.
  * Based on the schema from https://github.com/jsonresume/resume-schema
@@ -8,22 +8,20 @@
 
  export default {
   basics: {
-    name: 'César Costas Carrera',
+    name: 'César Costas',
     label: 'Software Engineer',
     /* Optional, image. Otherwise it takes it from gravatar */
-    phone: '+447920158374',
-    email: 'costascarrera.cesar@gmail.com',
+    phone: '+44-792-015-8374',
+    email: 'hello@weareour.tech',
     summary: `
 I am a software engineer with ${semanticYearsOfExperience('2013-11-15')} in web development.
 
 I have helped businesses to improve on:
  performance, acessibility, analytics, compliance,
  internationalisation, whitelabelling,
- microfrontends, design systems, tokenisation,
- testing, CI/CD, IaC,
- CMS, SEO, CRO, and others.
-
-I am a team player, and I deeply care about the products I contribute to.
+ micro-frontends, design systems, tokenisation,
+ testing, C.I./C.D., I.a.C.,
+ C.M.S., S.E.O., C.R.O., and others.
     `,
     location: {
       city: 'London',
@@ -42,24 +40,34 @@ I am a team player, and I deeply care about the products I contribute to.
   color: '#b3002a',
   work: [{
 
+    name: 'JPMorgan Chase (Nutmeg)',
+    position: 'Developer Experience VP2',
+    startDate: 'Feb 2023', endDate: 'now',
+    tools: [ 'React 16', 'Node 18', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    summary: `
+In February 2023, together with two colleagues, started the Developer Experience team.
+ Since then we refreshed almost every tool in the stack, and we keep improving iteratively.
+ Most notable are the efforts around styling architecture and npm dependencies.
+    `
+
+  }, {
+
     name: 'Nutmeg',
-    position: 'Senior Software Engineer',
-    startDate: 'Feb 2022', endDate: 'now',
-    tools: [ 'React 17', 'Node 18', 'SASS', 'RTL', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    position: 'Frontend Engineer VP1',
+    startDate: 'Feb 2022', endDate: 'Feb 2023',
+    tools: [ 'React 16', 'Node 16', 'SASS', 'RTL', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
 I became part of the product team
  and was shortly promoted due my contributions to the design system.
  I collaborated company-wide beyond engineering teams,
- delivering features, tools, business ideas and architectural decisions. 
- In February 2023 I was selected to form the Developer Experience team.
- Since then we refreshed almost every tool in the stack, and we keep improving iteratively. 
+ delivering features, tools, business ideas and architectural decisions.
     `
 
   }, {
 
     name: 'Ocado Technology',
-    position: 'Software Engineer Ⅱ',
-    startDate: 'Jan 2020', endDate: 'Jan 2022',
+    position: 'Frontend SE2',
+    startDate: '2020', endDate: 'Jan 2022',
     tools: [ 'React 17', 'Node 14', 'styled-components 5', 'RTL', 'Redux', /* 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
 I was hired to join the ecommere team.
@@ -87,7 +95,7 @@ Loveholidays was migrating to React when I joined.
 
     name: 'Tribal worldwide',
     position: 'Frontend web developer',
-    startDate: 'Jan 2017', endDate: 'May 2018',
+    startDate: '2017', endDate: 'May 2018',
     tools: [ 'Polymer 1', 'Aem', 'Jahia', /* 'Redux', 'Mocha', 'Sass', 'Node 6', 'Gulp 4', 'jQuery 3', 'Git', 'Handlebars', 'Wordpress', 'Jira', */ ],
     summary: `
 At this award-winning agency I developed features for multiple clients.
@@ -102,23 +110,23 @@ At this award-winning agency I developed features for multiple clients.
 
     name: 'Imatia innovation',
     position: 'Full stack web developer',
-    startDate: 'Jun 2016 Jun', endDate: '2017',
+    startDate: 'Jun 2016', endDate: '2017',
     /* tools: [ 'Angular 2', 'TypeScript 2', 'Sass', 'Node 6', 'Docker', 'Scala', 'Java', 'Hadoop', 'Gulp 3', 'Gitlab' ], */
-
+    // summary: `    `,
   }, {
 
-    name: 'ViewNext',
+    name: 'IBM (ViewNext)',
     position: 'Full stack web developer',
     startDate: 'Jun 2015', endDate: 'Jun 2016',
     /* tools: [ 'Angular 1', 'Java 5', 'DB2', 'jQuery 1', 'HTML 4', 'CSS 2', 'Backbone', 'SVN', 'JSP', 'Jira' ], */
-
+    // summary: `    `,
   }, {
 
     name: 'University of Vigo',
     position: 'Full stack web developer',
     startDate: 'Nov 2013', endDate: 'May 2015',
     /* tools: [ 'D3js', 'jQuery 1', 'Ruby-on-Rails',  'HTML 5', 'CSS 3', 'Java', 'Weka', 'RapidMiner', 'Python' ], */
-
+    // summary: `    `,
   }],
   education: [{
 
@@ -132,7 +140,7 @@ At this award-winning agency I developed features for multiple clients.
 function semanticYearsOfExperience (startDate) {
   const diff = Math.floor((new Date() - new Date(startDate)) / 3.1536e+9) / 10;
   const int = Math.floor(diff);
-  const decimal = Number(`${diff}`[2] || 0);
+  const decimal = 10 * (diff - int);
   
   let sem = '';
   if (diff < 0.5) {

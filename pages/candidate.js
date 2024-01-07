@@ -1,18 +1,30 @@
-import PageIntro from '../components/page-intro/page-intro.js';
-import Text from '../components/text/text.js';
-import ExperienceSet from '../components/experience-set/experience-set.js';
-import EducationSet from '../components/education-set/education-set.js';
-import Revision from '../components/revision/revision.js';
+import { withElement } from "VanillaDOM";
 
-import ThemeStyle from '../controllers/theme-styles/theme-style.js';
+import Theme from "../components/page/theme.js";
+import Title from "../components/page/title.js";
+import Intro from "../components/page/intro.js";
+import ExperienceSet from "../components/experience-set/experience-set.js";
+import EducationSet from "../components/education-set/education-set.js";
+import Revision from "../components/revision/revision.js";
+import Summary from "../components/summary/summary.js";
 
-export default ({ cv, manifest }) => cv ? `
-  ${PageIntro(cv)}
-  <main>
-    ${Text({ class: 'summary', text: cv.basics.summary })}
-    ${ExperienceSet(cv)}
-    ${EducationSet(cv)}
-    ${Revision({ manifest })}
-  </main>
-  ${ThemeStyle({ color: cv.color })}
-` : '';
+export default ({ cv, manifest }) => {
+  if (!cv) return [];
+
+  return [
+    Intro(cv),
+    withElement({
+      tagName: "main",
+      children: [
+        Theme(cv),
+        Title({
+          textContent: `${cv.basics.name} (${cv.basics.label}) ${manifest.name}`,
+        }),
+        Summary(cv.basics.summary),
+        ExperienceSet(cv),
+        EducationSet(cv),
+      ],
+    }),
+    Revision({ manifest }),
+  ];
+};

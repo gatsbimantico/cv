@@ -1,13 +1,13 @@
 {
   "name": "cv",
   "author": "Cesar Costas Carrera",
-  "version": "4.0.m0h",
+  "version": "5.0.n17",
   "private": false,
   "homepage": "http://gatsbimantico.github.io/cv",
   "dependencies": {
     "mime": "^2.4.6"
   },
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node --watch ./dev-server.js"
   }
 }

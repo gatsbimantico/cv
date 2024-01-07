@@ -1,15 +1,22 @@
 {
   "name": "Curriculum Vitae",
   "author": "Cesar Costas Carrera",
-  "version": "3.0.l9q",
+  "version": "5.0.n17",
   "short_name": "CVjs",
   "start_url": "/cv",
   "display": "standalone",
-  "background_color": "black",
+  "background_color": "#EEEEEE",
+  "theme_color": "black",
   "icons": [{
     "src": "/cv/cv-icon.png",
     "type": "image/png",
-    "sizes": "144x144"
+    "sizes": "144x144",
+    "purpose": "any"
+  }, {
+    "src": "/cv/cv-icon-512.png",
+    "type": "image/png",
+    "sizes": "512x512",
+    "purpose": "maskable"
   }],
   "background": {
     "scripts": ["service-worker.js"]

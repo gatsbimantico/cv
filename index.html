@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 
 <head>
-	<title>JS generated CV</title>
+	<!-- Original title, this is what the Search Engine will read -->
+	<title>César Costas - Curriculum Vitae</title>
+	<!-- This should be the repo name -->
 	<base href="/cv/">
+
+	<!-- META -->
+	<meta charset="UTF-8">
 	<meta name="description" content="Costas's awesome JS generated CV">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="steelblue">
 	<!-- Windows Phone -->
@@ -16,13 +19,20 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="steelblue">
 
+	<!-- PWA Manifest -->
 	<link rel="manifest" href="./manifest.json">
+	<!-- Icon -->
 	<link rel="icon" href="./cv-icon.png">
+	
+	<!-- Link to Vanilla Framework -->
+	<script type="importmap">{ "imports": { "VanillaDOM": "./utils/vanilla.dom.js", "VanillaCSS": "./utils/vanilla.css.js" } }</script>
 </head>
 
 <body>
+	<!-- Loading image : Will be destroyed by the content -->
 	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
+	<!-- App Entrypoint -->
 	<script type="module" src="./app.js"></script>
 </body>
 
-</html>
+</html>

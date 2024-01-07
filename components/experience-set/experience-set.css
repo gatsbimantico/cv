@@ -1,0 +1,33 @@
+:scope {
+  & > h3 {
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    background: var(--cv-color);
+    -webkit-scroll-snap-coordinate: 0% 0%;
+    -ms-scroll-snap-coordinate: 0% 0%;
+    scroll-snap-coordinate: 0% 0%;
+    scroll-snap-align: start;
+
+    @media print {
+      padding: 0.1em 10px;
+      background: rgba(54, 57, 72, 0.3) !important;
+    }
+  }
+
+  & > ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 30px calc(2vw + 15px);
+    display: flex;
+    flex-flow: column;
+    gap: 1.5em;
+
+    @media print {
+      padding: 0.4em calc(2vw);
+      gap: 0.4em;
+    }
+  }
+}

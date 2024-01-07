@@ -1,0 +1,17 @@
+:scope {
+  display: flex;
+  flex-direction: column;
+  -webkit-scroll-snap-coordinate: 0% 0%;
+  -ms-scroll-snap-coordinate: 0% 0%;
+  scroll-snap-coordinate: 0% 0%;
+  scroll-snap-align: start;
+
+  @media (min-width:813px) {
+    height: initial;
+  }
+
+  @media print {
+    display: block;
+    height: initial;
+  }
+}

@@ -1,0 +1,8 @@
+:scope {
+  position: sticky;
+  top: calc(100vh - 48px);
+
+  @media print {
+    display: none;
+  }
+}

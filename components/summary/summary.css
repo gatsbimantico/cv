@@ -1,0 +1,8 @@
+:scope {
+  margin: 0;
+  padding: 30px calc(2vw + 15px);
+
+  @media print {
+    padding: .4em calc(2vw);
+  }
+}
