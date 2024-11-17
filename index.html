@@ -11,6 +11,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Costas's awesome JS generated CV">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">
 	<!-- Chrome, Firefox OS and Opera -->
 	<meta name="theme-color" content="steelblue">
 	<!-- Windows Phone -->
@@ -30,7 +31,9 @@
 
 <body>
 	<!-- Loading image : Will be destroyed by the content -->
-	<img src="./loading.svg" style="height:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
+	<div style="height:50px;width:50px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="25 25 50 50" style="height:100%;transform-origin:center center;width:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto"><animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 0 0" repeatCount="indefinite" to="360 0 0" type="rotate"/><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"><animate attributeName="stroke-dashoffset" dur="1.5s" repeatCount="indefinite" values="0;-35;-124"/><animate attributeName="stroke-dasharray" dur="1.5s" repeatCount="indefinite" values="1,200;89,200;89,200"/></circle></svg>
+	</div>
 	<!-- App Entrypoint -->
 	<script type="module" src="./app.js"></script>
 </body>

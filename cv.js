@@ -14,8 +14,7 @@
     phone: '+44-792-015-8374',
     email: 'hello@weareour.tech',
     summary: `
-I am a software engineer with ${semanticYearsOfExperience('2013-11-15')} in web development.
-
+As a software engineer with ${semanticYearsOfExperience('2013-11-15')} in web development,
 I have helped businesses to improve on:
  performance, acessibility, analytics, compliance,
  internationalisation, whitelabelling,
@@ -37,25 +36,41 @@ I have helped businesses to improve on:
       url: 'https://stackoverflow.com/users/2308745/gatsbimantico'
     }],
   },
-  color: '#b3002a',
+  defaultLanguage: 'en-GB',
+  color: '#b3006a',
   work: [{
 
-    name: 'JPMorgan Chase (Nutmeg)',
-    position: 'Developer Experience VP2',
-    startDate: 'Feb 2023', endDate: 'now',
-    tools: [ 'React 16', 'Node 18', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    name: 'Nutmeg',
+    position: 'Backoffice Engineer VP2',
+    startDate: '2024', endDate: 'now',
+    tools: [
+      'React 18', 'Node 20',
+      'RTL', 'Jest', 'Storybook',
+      'Playwright',
+      'SASS', 'CSS 3',
+      'Jenkins', 'Terraform', 'AWS',
+    ],
     summary: `
-In February 2023, together with two colleagues, started the Developer Experience team.
- Since then we refreshed almost every tool in the stack, and we keep improving iteratively.
- Most notable are the efforts around styling architecture and npm dependencies.
+Contributed from inception into a greenfield project
+ with a lot of focus on security, maintainability and stakeholder experience.
+ This project will replace all of the current back office operations of the company.
     `
 
   }, {
 
-    name: 'Nutmeg',
+    position: 'Developer Experience VP2',
+    startDate: 'Feb 2023', endDate: '2024',
+    summary: `
+Together with two colleagues, started the Developer Experience team.
+ Since then we refreshed almost every tool in the stack, and we keep improving iteratively.
+ Most notable are the efforts around npm dependencies and white labelling architecture.
+    `
+
+  }, {
+
     position: 'Frontend Engineer VP1',
     startDate: 'Feb 2022', endDate: 'Feb 2023',
-    tools: [ 'React 16', 'Node 16', 'SASS', 'RTL', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
+    // tools: [ 'React 16', 'Node 16', 'SASS', 'RTL', 'Cypress', 'Jenkins', 'Terraform', 'AWS', /* 'Argo', 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
 I became part of the product team
  and was shortly promoted due my contributions to the design system.
@@ -70,7 +85,7 @@ I became part of the product team
     startDate: '2020', endDate: 'Jan 2022',
     tools: [ 'React 17', 'Node 14', 'styled-components 5', 'RTL', 'Redux', /* 'Enzime', 'Gitlab', 'Jira Cloud', */ ],
     summary: `
-I was hired to join the ecommere team.
+I was hired to join the e-commerce team.
  In addition to my responsibilities I championed best practices on
  accessibility, performance, compliance,
  and created technical initiatives to keep the project evergreen.
@@ -84,7 +99,7 @@ I was hired to join the ecommere team.
     tools: [ 'React 16', 'styled-components 5', 'Redux', /* 'Sass', 'redux-sagas', 'Enzime', 'Github', 'Jira Cloud', 'Karma', 'Optimizely', 'Google Analytics', 'Google Optimize', */ ],
     summary: `
 Loveholidays was migrating to React when I joined.
- Soon after, I was invited with other two colleagues to form the CRO team
+ Soon after, I was invited with other two colleagues to form the C.R.O. team
  which we grew to 15 developers within a year.
  I improved the development process
  and cross-team communications

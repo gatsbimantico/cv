@@ -5,13 +5,39 @@
   -ms-scroll-snap-coordinate: 0% 0%;
   scroll-snap-coordinate: 0% 0%;
   scroll-snap-align: start;
+  background: linear-gradient(45deg, var(--cv-color), hsl(from var(--cv-color) calc(h*0.95) calc(s*0.6) calc(l*1.5)));
+  color: #EEE;
+  line-height: 2em;
 
   @media (min-width:813px) {
     height: initial;
   }
 
+  @media (min-width:1644px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh;
+    min-height: 475px;
+    z-index: -1;
+
+    .container {
+      max-width: 772px;
+      font-size: 20px;
+
+      @media print {
+        max-width: none;
+      }
+    }
+  }
+
   @media print {
     display: block;
     height: initial;
+    position: static;
+    color: black;
+    background: white;
+    z-index: initial;
   }
 }

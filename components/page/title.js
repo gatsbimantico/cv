@@ -1,6 +1,6 @@
 import { withElement } from "VanillaDOM";
 
-export default ({ textContent }) => {
+export const Title = ({ textContent }) => {
   if (!textContent) return;
 
   const currentTitle = document.head.querySelector("title");

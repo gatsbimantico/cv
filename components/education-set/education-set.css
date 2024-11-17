@@ -5,7 +5,7 @@
     position: sticky;
     top: 0;
     z-index: 300;
-    background: var(--cv-color);
+    background: radial-gradient(ellipse at top, var(--cv-font-color), var(--cv-color));
     -webkit-scroll-snap-coordinate: 0% 0%;
     -ms-scroll-snap-coordinate: 0% 0%;
     scroll-snap-coordinate: 0% 0%;

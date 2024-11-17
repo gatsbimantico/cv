@@ -1,11 +1,11 @@
 import { esmImport } from "VanillaDOM";
 import { withStyles } from "VanillaCSS";
-import styles from './education.css' assert { type: 'css' };
+import styles from './education.css' with { type: 'css' };
 
 const { scope } = withStyles(styles, 'education');
-const { content } = await esmImport(import.meta).from("./education.html").assert({ type: "html" }); // prettier-ignore
+const { content } = await esmImport(import.meta).from("./education.html").with({ type: "html" }); // prettier-ignore
 
-export default ({ institution, studyType, area, endDate }) => {
+export const Education = ({ institution, studyType, area, endDate }) => {
   const html = content.firstChild.cloneNode(true);
 
   html.className = scope;

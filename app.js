@@ -1,9 +1,12 @@
 import { whenDOMLoaded } from "VanillaDOM";
-import GenericError from "./components/error/generic-error.js";
-import HotReloadTimer from "./components/hot-reload/timer.js";
-import CandidatePage from "./pages/candidate.js";
+
+import { GenericError } from "./components/error/generic-error.js";
+import { Timer as HotReloadTimer } from "./components/hot-reload/timer.js";
+import { CandidatePage } from "./pages/candidate.js";
+
 import cv from "./cv.js";
-import manifest from "./manifest.json" assert { type: "json" };
+
+import manifest from "./manifest.json" with { type: "json" };
 
 try {
   document.body.replaceChildren(...CandidatePage({ cv, manifest }));

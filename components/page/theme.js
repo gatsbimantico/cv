@@ -1,6 +1,6 @@
 import { withElement } from "VanillaDOM";
 import { withGlobalStyles } from "VanillaCSS";
-import globalStyles from './global-styles.css' assert { type: 'css' };
+import globalStyles from './global-styles.css' with { type: 'css' };
 
 const MetaColor = ({ tagName = 'meta', name, content }) => {
   const currentElement = document.querySelector(`${tagName}[name="${name}"]`);
@@ -15,7 +15,7 @@ const MetaColor = ({ tagName = 'meta', name, content }) => {
   }
 };
 
-export default ({ color = "steelblue" }) => {
+export const Theme = ({ color = "steelblue" }) => {
   withGlobalStyles(globalStyles);
   withGlobalStyles(`:root { --cv-color: ${color}; }`, 'root-theme');
 

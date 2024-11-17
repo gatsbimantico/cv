@@ -1,10 +1,10 @@
 import { withElement } from "VanillaDOM";
 import { withStyles } from "VanillaCSS";
-import styles from "./revision.css" assert { type: "css" };
+import styles from "./revision.css" with { type: "css" };
 
 const { scope } = withStyles(styles);
 
-export default ({ manifest }) =>
+export const Revision = ({ manifest }) =>
   withElement({
     tagName: "footer",
     id: "revision-id",

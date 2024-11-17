@@ -1,15 +1,15 @@
 import { withElement, esmImport } from "VanillaDOM";
 import { withStyles } from "VanillaCSS";
-import styles from "./tool-set.css" assert { type: "css" };
+import styles from "./tool-set.css" with { type: "css" };
 
-import List from "../list/list.js";
-import Tool from "./tool.js";
+import { List } from "../list/list.js";
+import { Tool } from "./tool.js";
 
 const { scope } = withStyles(styles, "tool-set");
 const { content: htmlTemplate } =
-  await esmImport(import.meta).from("./tool-set.html").assert({ type: "html" }); // prettier-ignore
+  await esmImport(import.meta).from("./tool-set.html").with({ type: "html" }); // prettier-ignore
 
-export default ({
+export const ToolSet = ({
   hydrate = htmlTemplate.cloneNode(true),
   tools,
 }) => {

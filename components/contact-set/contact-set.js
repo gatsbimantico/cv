@@ -1,11 +1,11 @@
 import { withElement, esmImport } from "VanillaDOM";
 import { withStyles } from "VanillaCSS";
-import styles from "./contact-set.css" assert { type: "css" };
+import styles from "./contact-set.css" with { type: "css" };
 
-const { content } = await esmImport(import.meta).from("./contact-set.html").assert({ type: "html" }); // prettier-ignore
+const { content } = await esmImport(import.meta).from("./contact-set.html").with({ type: "html" }); // prettier-ignore
 const { scope } = withStyles(styles, "contact-set");
 
-export default ({ phone, email, hydrate = content.firstChild.cloneNode(true) }) =>
+export const ContactSet = ({ phone, email, hydrate = content.firstChild.cloneNode(true) }) =>
   withElement({
     hydrate,
     className: scope,

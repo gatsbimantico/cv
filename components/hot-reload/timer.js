@@ -1,5 +1,5 @@
 import { withStyles } from "VanillaCSS";
-import styles from "./timer.css" assert { type: "css" };
+import styles from "./timer.css" with { type: "css" };
 
 const { scope } = withStyles(styles, "hot-reload-timer");
 
@@ -16,7 +16,7 @@ const hotReloadFn = async (promisedDiff) => {
 }
 const getDiff = () => fetch('./hot').then(r => r.text());
 
-export default () => {
+export const Timer = () => {
   const el = document.createElement('div');
 
   el.style.transition = HOT_RELOAD_INTERVAL + 'ms linear';

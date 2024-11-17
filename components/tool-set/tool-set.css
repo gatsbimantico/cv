@@ -16,7 +16,7 @@
     white-space: nowrap;
     border: 1px solid;
     padding: 0 3px;
-    color: var(--cv-color);
+    color: var(--cv-font-color);
     gap: 5px;
     font-family: "Nanum Gothic", sans-serif;
     font-weight: 200;

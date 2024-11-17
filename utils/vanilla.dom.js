@@ -46,8 +46,8 @@ export function withElement({
 // https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md
 export const esmImport = (meta) => ({
   from: (url) => ({
-    assert: async (assert) => {
-      if (assert.type === "html") {
+    with: async (attribute) => {
+      if (attribute.type === "html") {
         const fullURL = new URL(url, meta.url);
         const fileContent = await fetch(fullURL).then((r) => r.text());
         const template = document.createElement("template");

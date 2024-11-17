@@ -1,8 +1,8 @@
 import { withElement, esmImport } from "VanillaDOM";
 
-const { content } = await esmImport(import.meta).from("./tool.html").assert({ type: "html" }); // prettier-ignore
+const { content } = await esmImport(import.meta).from("./tool.html").with({ type: "html" }); // prettier-ignore
 
-export default (tool = "") => {
+export const Tool = (tool = "") => {
   const [, name, version] = tool.match(/^(\D+)(?: (\d+))?$/);
 
   if (!name) return null;

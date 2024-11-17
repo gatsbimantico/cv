@@ -1,13 +1,13 @@
 <li>
+  <h4 tabindex="0" name="name">{{Company}}</h4>
+  <slot name="tool-set"></slot>
   <header>
-    <h4 name="name">{{Company}},</h4>
-    <p class="position">
+    <p class="position" tabindex="0">
       <span name="position">{{position}}</span>
     </p>
     <slot name="date-set"></slot>
   </header>
   <section>
-    <slot name="tool-set"></slot>
     <p name="summary"></p>
   </section>
 </li>
